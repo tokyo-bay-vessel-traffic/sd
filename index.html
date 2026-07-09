@@ -1,0 +1,661 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#0A1420" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#E9EFF5" media="(prefers-color-scheme: light)">
+<meta name="description" content="東京湾（東航路・西航路）の入出航予定と気象・海象をスマホでまとめて閲覧">
+<title>東京湾 入出航予定</title>
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%93%3C/text%3E%3C/svg%3E">
+<style>html,body{margin:0;background:#0A1420;}@media(prefers-color-scheme:light){html,body{background:#E9EFF5;}}</style>
+</head>
+<body><style>
+  :root{
+    --bg:#0A1420; --bg2:#0F1E30; --panel:#0d1c2e; --alt:#0e2135;
+    --line:#22394f; --line2:#2d4a66;
+    --text:#E6EEF6; --dim:#93A8BC; --faint:#6a8299;
+    --accent:#38D6D0; --accent-ink:#062024;
+    --in:#33C98B; --out:#F2A83B; --shift:#8E9BFF;
+    --pilot:#38D6D0;
+    --shadow:0 1px 0 rgba(255,255,255,.03), 0 8px 24px -12px rgba(0,0,0,.6);
+    --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;
+    --jp:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,system-ui,sans-serif;
+  }
+  @media (prefers-color-scheme: light){
+    :root{
+      --bg:#E9EFF5; --bg2:#FFFFFF; --panel:#FFFFFF; --alt:#F1F6FB;
+      --line:#D6E1EC; --line2:#C3D3E1;
+      --text:#0E2233; --dim:#55708A; --faint:#7c93a8;
+      --accent:#0C8B95; --accent-ink:#ffffff;
+      --in:#0E9C67; --out:#C67C13; --shift:#5560CC;
+      --pilot:#0C8B95;
+      --shadow:0 1px 0 rgba(255,255,255,.6), 0 6px 18px -10px rgba(24,60,90,.25);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0A1420; --bg2:#0F1E30; --panel:#0d1c2e; --alt:#0e2135;
+    --line:#22394f; --line2:#2d4a66; --text:#E6EEF6; --dim:#93A8BC; --faint:#6a8299;
+    --accent:#38D6D0; --accent-ink:#062024; --in:#33C98B; --out:#F2A83B; --shift:#8E9BFF; --pilot:#38D6D0;
+    --shadow:0 1px 0 rgba(255,255,255,.03), 0 8px 24px -12px rgba(0,0,0,.6);
+  }
+  :root[data-theme="light"]{
+    --bg:#E9EFF5; --bg2:#FFFFFF; --panel:#FFFFFF; --alt:#F1F6FB;
+    --line:#D6E1EC; --line2:#C3D3E1; --text:#0E2233; --dim:#55708A; --faint:#7c93a8;
+    --accent:#0C8B95; --accent-ink:#ffffff; --in:#0E9C67; --out:#C67C13; --shift:#5560CC; --pilot:#0C8B95;
+    --shadow:0 1px 0 rgba(255,255,255,.6), 0 6px 18px -10px rgba(24,60,90,.25);
+  }
+
+  *{box-sizing:border-box;}
+  body{margin:0;}
+  .app{
+    font-family:var(--jp);
+    background:
+      radial-gradient(120% 60% at 50% -10%, color-mix(in srgb, var(--accent) 9%, transparent), transparent 60%),
+      var(--bg);
+    color:var(--text);
+    min-height:100vh;
+    max-width:520px; margin:0 auto;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  /* ---------- header ---------- */
+  .hd{
+    position:sticky; top:0; z-index:30;
+    /* 上下=濃いグリーン → 中央=薄いグリーン の縦グラデーション（アクセント色ベース） */
+    background:linear-gradient(180deg,
+      color-mix(in srgb, var(--accent) 40%, var(--bg)) 0%,
+      color-mix(in srgb, var(--accent) 8%, var(--bg)) 50%,
+      color-mix(in srgb, var(--accent) 40%, var(--bg)) 100%);
+    border-bottom:1px solid var(--line);
+    padding:10px 14px 8px;
+    box-shadow:var(--shadow);
+  }
+  .hd-top{display:flex; align-items:center; gap:11px;}
+  .radar{width:44px; height:44px; flex:0 0 auto; border-radius:50%;}
+  .brand{flex:1; min-width:0;}
+  .eyebrow{
+    font-family:var(--mono); font-size:9.5px; letter-spacing:.24em;
+    color:var(--accent); text-transform:uppercase; font-weight:600;
+    display:flex; align-items:center; gap:6px;
+  }
+  .eyebrow::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 50%,transparent),transparent);}
+  .title{font-size:19px; font-weight:800; letter-spacing:.02em; margin:1px 0 0; line-height:1.15;}
+  .refresh{flex:0 0 auto; width:33px; height:33px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--accent); font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0;}
+  .refresh:active{transform:translateY(1px);}
+  .refresh:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .refresh .ricon{display:inline-block;}
+  .refresh.spin .ricon{animation:rspin .9s ease-in-out infinite;}
+  @keyframes rspin{to{transform:rotate(360deg);}}
+  .hd-actions{flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:3px;}
+  .upd-mini{font-family:var(--mono); font-size:8.5px; color:var(--faint); white-space:nowrap; line-height:1; letter-spacing:.02em;}
+  .clock{
+    text-align:right; font-family:var(--mono); line-height:1.15;
+  }
+  .clock .cdate{font-size:15px; font-weight:600; color:var(--dim); font-variant-numeric:tabular-nums; letter-spacing:.01em; white-space:nowrap;}
+  .clock .now{font-size:15px; font-weight:700; color:var(--text); font-variant-numeric:tabular-nums; margin-top:1px;}
+
+  .controls{display:flex; align-items:center; gap:8px; margin-top:9px;}
+  .seg{display:flex; background:var(--bg); border:1px solid var(--line); border-radius:9px; padding:2px; gap:2px; flex:1;}
+  .seg button{
+    flex:1; appearance:none; border:0; background:transparent; color:var(--dim);
+    font-family:var(--jp); font-size:12.5px; font-weight:700; padding:6px 4px; border-radius:7px;
+    cursor:pointer; letter-spacing:.02em; transition:.15s;
+  }
+  .seg button[aria-pressed="true"]{background:var(--accent); color:var(--accent-ink); box-shadow:0 1px 6px -1px color-mix(in srgb,var(--accent) 55%, transparent);}
+  .seg button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .filterbar{padding:16px 12px 6px;}
+  .filterbar .seg{padding:3px;}
+  .filterbar .seg button{font-size:13.5px; padding:9px 4px;}
+  .pilotToggle{
+    appearance:none; border:1px solid var(--line); background:var(--bg); color:var(--dim);
+    font-family:var(--jp); font-weight:700; font-size:12px; border-radius:9px; padding:7px 10px; cursor:pointer;
+    white-space:nowrap; display:flex; align-items:center; gap:5px;
+  }
+  .pilotToggle[aria-pressed="true"]{border-color:var(--pilot); color:var(--pilot); background:color-mix(in srgb,var(--pilot) 12%, var(--bg));}
+  .pilotToggle:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
+  .pdot{width:7px;height:7px;border-radius:50%;background:var(--pilot);}
+
+  /* データ古さ警告バナー */
+  .stale{margin:9px 12px 0; padding:8px 11px; border-radius:9px; font-size:12px; font-weight:700; line-height:1.4; color:#7a4b00; background:#ffd98a; border:1px solid #e0a94a;}
+  @media (prefers-color-scheme:dark){ .stale{color:#ffdca8; background:color-mix(in srgb,#F2A83B 20%, var(--bg)); border-color:color-mix(in srgb,#F2A83B 45%,transparent);} }
+  :root[data-theme="dark"] .stale{color:#ffdca8; background:color-mix(in srgb,#F2A83B 20%, var(--bg)); border-color:color-mix(in srgb,#F2A83B 45%,transparent);}
+  :root[data-theme="light"] .stale{color:#7a4b00; background:#ffd98a; border-color:#e0a94a;}
+
+  /* ---------- 現況パネル（気象・海象） ---------- */
+  .env{padding:10px 12px 2px;}
+  .env-card{background:var(--bg2); border:1px solid var(--line); border-radius:12px; overflow:hidden; box-shadow:var(--shadow);}
+  .env-head{display:flex; align-items:center; gap:7px; padding:7px 11px; font-family:var(--mono); font-size:9px; letter-spacing:.1em; text-transform:uppercase; color:var(--accent); border-bottom:1px solid var(--line); background:color-mix(in srgb,var(--accent) 7%, var(--bg2));}
+  .env-head b{color:var(--text); font-weight:700; letter-spacing:0; font-size:11px; font-family:var(--jp);}
+  .env-row{display:flex; align-items:center; gap:9px; padding:8px 11px; border-bottom:1px solid var(--line);}
+  .env-row:last-child{border-bottom:0;}
+  .env-ico{font-size:17px; line-height:1; flex:0 0 auto; width:20px; text-align:center;}
+  .env-lbl{font-family:var(--mono); font-size:8.5px; letter-spacing:.06em; color:var(--faint); text-transform:uppercase; flex:0 0 auto;}
+  .env-val{font-family:var(--mono); font-variant-numeric:tabular-nums; color:var(--text); font-size:12.5px; font-weight:600;}
+  .env-sep{color:var(--faint); margin:0 2px;}
+  /* 天気行 */
+  .wx-text{font-family:var(--jp); font-weight:700; font-size:13.5px; line-height:1.2;}
+  .wx-sub{font-family:var(--mono); font-size:13.5px; color:var(--dim); margin-top:3px; font-variant-numeric:tabular-nums;}
+  .wx-sub .hi{color:var(--out); font-weight:800;}
+  .wx-sub .lo{color:#4ea3e8; font-weight:800;}
+  @media (prefers-color-scheme:light){ .wx-sub .lo{color:#2f7cc0;} }
+  :root[data-theme="light"] .wx-sub .lo{color:#2f7cc0;}
+  .wx-sub .pop{color:var(--accent); font-weight:800;}
+  .wx-sub .wx-pfx{font-size:11px; font-weight:600;}
+  .radar-btn{margin-left:auto; flex:0 0 auto; display:flex; align-items:center; gap:5px; text-decoration:none;
+    font-family:var(--jp); font-weight:800; font-size:11px; line-height:1.05; color:var(--accent-ink);
+    background:var(--accent); padding:8px 11px; border-radius:10px; box-shadow:0 1px 9px -2px color-mix(in srgb,var(--accent) 60%,transparent);}
+  .radar-btn .ri{font-size:14px;}
+  .radar-btn:active{transform:translateY(1px);}
+  /* 日出入・風・潮 行の値並び */
+  .env-pair{display:flex; align-items:baseline; gap:5px;}
+  .env-flow{display:flex; flex-wrap:wrap; align-items:baseline; gap:4px 12px; min-width:0;}
+  .env-val .u{font-size:8.5px; color:var(--faint); margin-left:1px; font-weight:500;}
+  .env-val .cm{color:var(--dim); font-weight:700;}
+  /* 風向（東・東北東）を観測地点名（十号地・海ほたる）と同じ大きさに */
+  .env-val .wdir{font-size:8.5px; font-weight:600; color:var(--dim);}
+  .tide-hi{color:var(--out);} .tide-lo{color:#4ea3e8;}
+  :root[data-theme="light"] .tide-lo{color:#2f7cc0;}
+  @media (prefers-color-scheme:light){ .tide-lo{color:#2f7cc0;} }
+  /* 潮名チップ（大潮/中潮/小潮/長潮/若潮） */
+  .tide-name{margin-left:auto; flex:0 0 auto; align-self:center; font-family:var(--jp); font-weight:800; font-size:12.5px; padding:3px 10px; border-radius:8px; letter-spacing:.04em; white-space:nowrap;}
+  .tide-name.tn-o{color:var(--out); background:color-mix(in srgb,var(--out) 16%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--out) 45%,transparent);}
+  .tide-name.tn-b{color:#3f97e0; background:color-mix(in srgb,#3f97e0 16%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,#3f97e0 45%,transparent);}
+  .tide-name.tn-n{color:var(--accent); background:color-mix(in srgb,var(--accent) 15%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--accent) 42%,transparent);}
+  .tide-name.tn-d{color:var(--dim); background:color-mix(in srgb,var(--dim) 15%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--dim) 35%,transparent);}
+  :root[data-theme="light"] .tide-name.tn-b{color:#2f7cc0;}
+
+  /* ---------- column labels ---------- */
+  .cols{
+    position:sticky; top:var(--hdH,116px); z-index:20;
+    display:grid; grid-template-columns:var(--grid);
+    gap:5px; padding:5px 12px 5px 15px; align-items:center;
+    background:color-mix(in srgb,var(--bg) 92%, var(--accent) 3%);
+    border-bottom:1px solid var(--line);
+    font-family:var(--mono); font-size:8.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint);
+  }
+  .cols .r{text-align:right;}
+  .cols .c{text-align:center;}
+  .cols .pilotcol,.cols .routecol{font-size:7px; letter-spacing:0;}
+
+  :root{--grid:42px 26px 48px minmax(0,1fr) 40px 28px;}
+
+  /* ---------- hour divider ---------- */
+  .hour{
+    position:sticky; top:calc(var(--hdH,116px) + 22px); z-index:10;
+    display:flex; align-items:center; gap:9px; padding:9px 14px 5px;
+    background:linear-gradient(180deg, var(--bg), color-mix(in srgb,var(--bg) 85%, transparent));
+    backdrop-filter:blur(3px);
+  }
+  .hour .hbar{width:9px;height:9px;border-radius:2px;flex:0 0 auto;box-shadow:0 0 10px -1px var(--hc);}
+  .hour .htime{font-family:var(--mono); font-size:15px; font-weight:700; letter-spacing:.04em; color:var(--text); font-variant-numeric:tabular-nums;}
+  .hour .hcount{font-family:var(--mono); font-size:10px; color:var(--faint);}
+  .hour .hrule{flex:1; height:1px; background:linear-gradient(90deg,var(--hc),transparent); opacity:.55;}
+
+  /* ---------- rows ---------- */
+  .rows{padding:0 0 40px;}
+  .row{
+    display:grid; grid-template-columns:var(--grid); gap:5px; align-items:center;
+    padding:9px 12px 9px 15px; margin:0;
+    border-bottom:1px solid color-mix(in srgb, var(--text) 16%, transparent);
+    position:relative;
+  }
+  /* 左バー = 時間帯（時刻）／背景 = 入航・出航・シフトの区分 */
+  .row::before{content:""; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--hc);}
+  .row.d-in{background:color-mix(in srgb, var(--in) 13%, var(--bg));}
+  .row.d-out{background:color-mix(in srgb, var(--out) 13%, var(--bg));}
+  .row.d-shift{background:color-mix(in srgb, var(--shift) 15%, var(--bg));}
+
+  /* 1時間ごとの区切り＝太字罫線 */
+  .hourbreak{height:0; border-top:3px solid color-mix(in srgb, var(--accent) 55%, var(--line2)); margin:0;}
+  /* スケジュールの日付見出し */
+  .datehdr{display:flex; align-items:baseline; gap:9px; padding:11px 14px 8px; font-family:var(--mono); font-weight:800; letter-spacing:.03em; background:color-mix(in srgb,var(--accent) 9%, var(--bg)); border-top:2px solid color-mix(in srgb,var(--accent) 50%,var(--line2)); border-bottom:1px solid var(--line);}
+  .datehdr .dmd{font-size:16px; color:var(--text); font-variant-numeric:tabular-nums;}
+  .datehdr .dwd{font-size:13px; color:var(--accent); letter-spacing:.06em;}
+  .datehdr .rel{font-family:var(--jp); font-size:11.5px; color:var(--out); font-weight:800; padding:2px 8px; border-radius:7px; background:color-mix(in srgb,var(--out) 15%,transparent);}
+
+  .c-time{font-family:var(--mono); font-size:14px; font-weight:700; letter-spacing:.01em; font-variant-numeric:tabular-nums;}
+  .c-dir{display:flex;}
+  .pill{
+    font-size:11px; font-weight:800; padding:2px 0; width:100%; text-align:center;
+    border-radius:6px; letter-spacing:.02em; line-height:1.5;
+  }
+  .pill.in{color:var(--in); background:color-mix(in srgb,var(--in) 16%, transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--in) 40%,transparent);}
+  .pill.out{color:var(--out); background:color-mix(in srgb,var(--out) 16%, transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--out) 40%,transparent);}
+  .pill.shift{color:var(--shift); background:color-mix(in srgb,var(--shift) 16%, transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--shift) 40%,transparent);}
+
+  /* バース = 時刻と同じ濃さ・大きさ。必ず1行（長いシフトバースのみ自動縮小） */
+  .c-berth{font-family:var(--mono); font-size:14px; font-weight:700; color:var(--text); letter-spacing:.01em; white-space:nowrap; line-height:1.22; overflow:hidden;}
+  .c-berth.bs{font-size:11px;}
+  .c-berth.bxs{font-size:9px; letter-spacing:-.02em;}
+  .c-ship{display:flex; flex-direction:column; justify-content:center; min-width:0;}
+  .ship-nm{font-size:14px; font-weight:600; line-height:1.22; word-break:break-word;}
+  .mt-link{color:inherit; text-decoration:none; border-bottom:1px dotted color-mix(in srgb, var(--accent) 60%, transparent);}
+  .mt-link:active{opacity:.65;}
+  .ship-meta{font-family:var(--mono); font-size:11px; color:var(--dim); margin-top:2px; font-variant-numeric:tabular-nums; letter-spacing:.01em;}
+  .ship-meta b{font-weight:700; color:var(--text);}
+  .c-route{display:flex; justify-content:center;}
+  .route{font-family:var(--mono); font-size:11px; font-weight:800; padding:2px 6px; border-radius:5px; letter-spacing:.04em; line-height:1.35;}
+  .route.e{color:#7fd0ff; background:color-mix(in srgb,#7fd0ff 15%,transparent);}
+  .route.w{color:#ffc98a; background:color-mix(in srgb,#ffc98a 15%,transparent);}
+  .route.p{color:var(--dim); background:color-mix(in srgb,var(--dim) 16%,transparent);}
+  .route.port{font-size:8px; font-weight:700; padding:1px 3px; letter-spacing:0; line-height:1.12; white-space:normal; word-break:break-all; max-width:100%; text-align:center;}
+  @media (prefers-color-scheme:light){.route.e{color:#1f6fa8;background:#e3f0fa;} .route.w{color:#a5680d;background:#faf0df;}}
+  :root[data-theme="light"] .route.e{color:#1f6fa8;background:#e3f0fa;}
+  :root[data-theme="light"] .route.w{color:#a5680d;background:#faf0df;}
+
+  .c-num{font-family:var(--mono); font-size:12.5px; font-weight:500; text-align:right; font-variant-numeric:tabular-nums; color:var(--text);}
+  /* 長さ300m以上：船名・長さ・トン数を紫の極太字で強調 */
+  .c-ship.big .ship-nm,.c-ship.big .ship-meta,.c-ship.big .ship-meta b{font-weight:900; color:#8B5CF6;}
+  @media (prefers-color-scheme:dark){ .c-ship.big .ship-nm,.c-ship.big .ship-meta,.c-ship.big .ship-meta b{color:#B79CFF;} }
+  :root[data-theme="light"] .c-ship.big .ship-nm,:root[data-theme="light"] .c-ship.big .ship-meta,:root[data-theme="light"] .c-ship.big .ship-meta b{color:#7C3AED;}
+  :root[data-theme="dark"] .c-ship.big .ship-nm,:root[data-theme="dark"] .c-ship.big .ship-meta,:root[data-theme="dark"] .c-ship.big .ship-meta b{color:#B79CFF;}
+  .c-pilot{display:flex; justify-content:center;}
+  .pbadge{width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:800;}
+  .pbadge.yes{color:var(--pilot); background:color-mix(in srgb,var(--pilot) 18%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--pilot) 55%,transparent);}
+  .pbadge.no{color:var(--faint); font-weight:500; font-size:12px;}
+
+  /* now marker */
+
+  .empty{text-align:center;color:var(--faint);padding:60px 20px;font-size:13px;}
+
+  /* footer */
+  .ft{padding:16px 16px 30px; border-top:1px solid var(--line); margin-top:8px;}
+  .ft .lg{display:flex;gap:14px;flex-wrap:wrap;font-size:10.5px;color:var(--dim);align-items:center;margin-bottom:12px;}
+  .ft .lg span{display:inline-flex;align-items:center;gap:5px;}
+  .ft .sw{width:11px;height:11px;border-radius:3px;}
+  .ft .upd2{font-family:var(--mono);font-size:11px;color:var(--dim);margin-bottom:11px;font-variant-numeric:tabular-nums;}
+  .ft .src{font-size:10.5px;color:var(--faint);line-height:1.6;}
+  .ft .src a{color:var(--accent);text-decoration:none;}
+
+  @media (max-width:380px){
+    :root{--grid:38px 24px 44px minmax(0,1fr) 38px 26px;}
+    .cols,.row{gap:4px;}
+    .c-time,.c-berth{font-size:13px;} .ship-nm{font-size:12.5px;}
+  }
+  @media (prefers-reduced-motion:reduce){ .sweep{display:none;} }
+</style>
+
+<div class="app">
+  <header class="hd">
+    <div class="hd-top">
+      <canvas class="radar" width="88" height="88" aria-hidden="true"></canvas>
+      <div class="brand">
+        <div class="eyebrow">TOKYO&nbsp;BAY&nbsp;VESSEL&nbsp;TRAFFIC</div>
+        <h1 class="title">東京湾 入出航予定</h1>
+      </div>
+      <div class="hd-actions">
+        <button class="refresh" id="refreshBtn" type="button" aria-label="データを更新" title="データを更新"><span class="ricon">⚓</span></button>
+        <div class="upd-mini" id="updMini">--:--</div>
+      </div>
+    </div>
+  </header>
+
+  <div class="stale" id="staleBar" hidden></div>
+  <section class="env" id="env"></section>
+
+  <div class="cols" aria-hidden="true">
+    <div>時刻</div><div class="c">種別</div><div>バース</div><div>船名</div>
+    <div class="c pilotcol">パイロット</div><div class="c routecol">航路</div>
+  </div>
+
+  <main class="rows" id="list"></main>
+
+  <nav class="filterbar" aria-label="航路の絞り込み">
+    <div class="seg" role="group" aria-label="航路">
+      <button data-route="all" aria-pressed="true">すべて</button>
+      <button data-route="port" aria-pressed="false">係船</button>
+      <button data-route="東" aria-pressed="false">東航路</button>
+      <button data-route="西" aria-pressed="false">西航路</button>
+    </div>
+  </nav>
+
+  <footer class="ft">
+    <div class="upd2">データ最終更新（公式）: <span id="upd">—</span></div>
+    <div class="src">
+      出典：海上保安庁 東京湾海上交通センター（東京MARTIS）入出航予定情報<br>
+      <a id="s1" href="https://www6.kaiho.mlit.go.jp/tokyowan/schedule/TOKYOHIGASHI/schedule_1.html" target="_blank" rel="noopener">東航路の公式ページ</a> ／ <a id="s2" href="https://www6.kaiho.mlit.go.jp/tokyowan/schedule/TOKYONISHI/schedule_1.html" target="_blank" rel="noopener">西航路の公式ページ</a> ／ <a id="s3" href="https://www.kouwan2.metro.tokyo.jp/app/keisen" target="_blank" rel="noopener">係船（東京港港湾情報システム）</a><br>
+      本サイトは上記公開情報を見やすく整理して表示するものです。運航の判断は必ず公式情報をご確認ください。
+    </div>
+  </footer>
+</div>
+
+<script>
+  const EMBEDDED = [{"time":"07/09 05:00","dir":"入航","berth":"VI","ship":"ひまわり５","length":"166","tons":"10470","pilot":"Ｘ","route":"東"},{"time":"07/09 05:00","dir":"入航","berth":"VAC","ship":"フェリーびざん","length":"190","tons":"12636","pilot":"Ｘ","route":"東"},{"time":"07/09 05:30","dir":"入航","berth":"LLC","ship":"押船 第２栄光丸/バージ 栄光丸","length":"50","tons":"603","pilot":"Ｘ","route":"東"},{"time":"07/09 06:00","dir":"入航","berth":"AF","ship":"ながら","length":"136","tons":"7432","pilot":"Ｘ","route":"東"},{"time":"07/09 07:30","dir":"入航","berth":"AE","ship":"げんぶ","length":"134","tons":"5689","pilot":"Ｘ","route":"東"},{"time":"07/09 08:45","dir":"入航","berth":"LOB","ship":"第５栄豊丸","length":"90","tons":"2491","pilot":"Ｘ","route":"東"},{"time":"07/09 09:00","dir":"入航","berth":"AA","ship":"INNOVATOR","length":"121","tons":"2187","pilot":"Ｘ","route":"東"},{"time":"07/09 11:30","dir":"入航","berth":"LA","ship":"琉球エキスプレス７","length":"190","tons":"13631","pilot":"Ｘ","route":"東"},{"time":"07/09 12:00","dir":"出航","berth":"LLC","ship":"押船 第２栄光丸/バージ 栄光丸","length":"50","tons":"603","pilot":"Ｘ","route":"東"},{"time":"07/09 12:00","dir":"出航","berth":"LOB","ship":"第５栄豊丸","length":"90","tons":"2491","pilot":"Ｘ","route":"東"},{"time":"07/09 12:20","dir":"出航","berth":"L","ship":"シンフォニー モデルナ","length":"83","tons":"2618","pilot":"Ｘ","route":"東"},{"time":"07/09 13:30","dir":"入航","berth":"AB","ship":"ひょうご","length":"94","tons":"749","pilot":"Ｘ","route":"東"},{"time":"07/09 15:00","dir":"出航","berth":"AA","ship":"INNOVATOR","length":"121","tons":"3410","pilot":"Ｘ","route":"東"},{"time":"07/09 16:50","dir":"出航","berth":"L","ship":"シンフォニー モデルナ","length":"83","tons":"2618","pilot":"Ｘ","route":"東"},{"time":"07/09 19:00","dir":"出航","berth":"VAC","ship":"フェリーびざん","length":"190","tons":"12636","pilot":"Ｘ","route":"東"},{"time":"07/09 19:30","dir":"出航","berth":"L","ship":"シンフォニー モデルナ","length":"83","tons":"2618","pilot":"Ｘ","route":"東"},{"time":"07/09 21:00","dir":"出航","berth":"VI","ship":"ひまわり５","length":"166","tons":"10470","pilot":"Ｘ","route":"東"},{"time":"07/09 05:00","dir":"出航","berth":"Y2","ship":"JOSCO SHINE","length":"171","tons":"18885","pilot":"有","route":"西"},{"time":"07/09 05:00","dir":"出航","berth":"SE","ship":"VICTORY STAR","length":"127","tons":"7406","pilot":"Ｘ","route":"西"},{"time":"07/09 05:00","dir":"出航","berth":"O6","ship":"NAVIOS CYAN","length":"272","tons":"75680","pilot":"有","route":"西"},{"time":"07/09 05:30","dir":"出航","berth":"Y2","ship":"SITC HAINAN","length":"171","tons":"17119","pilot":"有","route":"西"},{"time":"07/09 07:00","dir":"入航","berth":"Y2","ship":"SINOTRANS BANGKOK","length":"171","tons":"19070","pilot":"有","route":"西"},{"time":"07/09 07:00","dir":"入航","berth":"O7","ship":"ONE MODERN","length":"302","tons":"78316","pilot":"有","route":"西"},{"time":"07/09 07:00","dir":"入航","berth":"A0","ship":"YM INCEPTION","length":"172","tons":"16488","pilot":"有","route":"西"},{"time":"07/09 07:00","dir":"入航","berth":"O2","ship":"SITC YUANHE","length":"146","tons":"9925","pilot":"Ｘ","route":"西"},{"time":"07/09 07:00","dir":"入航","berth":"SI","ship":"神泉丸","length":"174","tons":"14054","pilot":"Ｘ","route":"西"},{"time":"07/09 07:05","dir":"入航","berth":"A3","ship":"MILD PEONY","length":"171","tons":"18166","pilot":"有","route":"西"},{"time":"07/09 07:30","dir":"入航","berth":"O6","ship":"はるかぜ","length":"116","tons":"3429","pilot":"Ｘ","route":"西"},{"time":"07/09 10:55","dir":"入航","berth":"O1","ship":"SITC ZHENGDE","length":"171","tons":"19011","pilot":"有","route":"西"},{"time":"07/09 12:00","dir":"入航","berth":"Y2","ship":"TS JOHOR","length":"147","tons":"9981","pilot":"Ｘ","route":"西"},{"time":"07/09 13:30","dir":"出航","berth":"SI","ship":"神泉丸","length":"174","tons":"14054","pilot":"Ｘ","route":"西"},{"time":"07/09 15:00","dir":"入航","berth":"SC","ship":"清浦丸","length":"111","tons":"2524","pilot":"Ｘ","route":"西"},{"time":"07/09 15:00","dir":"出航","berth":"O6","ship":"はるかぜ","length":"125","tons":"3429","pilot":"Ｘ","route":"西"},{"time":"07/09 15:00","dir":"入航","berth":"SK","ship":"神明丸","length":"160","tons":"13091","pilot":"Ｘ","route":"西"},{"time":"07/09 16:30","dir":"出航","berth":"Y2","ship":"SINOTRANS BANGKOK","length":"171","tons":"19070","pilot":"有","route":"西"},{"time":"07/09 16:30","dir":"入航","berth":"Y2","ship":"JIANG YUAN YUAN BO","length":"142","tons":"9590","pilot":"Ｘ","route":"西"},{"time":"07/09 16:30","dir":"出航","berth":"A0","ship":"YM INCEPTION","length":"172","tons":"16488","pilot":"有","route":"西"},{"time":"07/09 16:30","dir":"出航","berth":"O2","ship":"SITC YUANHE","length":"146","tons":"9925","pilot":"Ｘ","route":"西"},{"time":"07/09 17:30","dir":"入航","berth":"O4","ship":"CNC SULAWESI","length":"171","tons":"18724","pilot":"有","route":"西"},{"time":"07/09 18:00","dir":"入航","berth":"SD","ship":"AKITA TRADER","length":"148","tons":"9980","pilot":"Ｘ","route":"西"},{"time":"07/09 18:00","dir":"入航","berth":"SI","ship":"海王丸","length":"190","tons":"13624","pilot":"Ｘ","route":"西"},{"time":"07/09 18:20","dir":"入航","berth":"P","ship":"さるびあ丸","length":"118","tons":"6099","pilot":"Ｘ","route":"西"},{"time":"07/09 19:00","dir":"出航","berth":"SK","ship":"神明丸","length":"160","tons":"13091","pilot":"Ｘ","route":"西"},{"time":"07/09 19:10","dir":"入航","berth":"O","ship":"橘丸","length":"118","tons":"5681","pilot":"Ｘ","route":"西"},{"time":"07/09 20:30","dir":"入航","berth":"X4","ship":"ひまわり９","length":"166","tons":"10626","pilot":"Ｘ","route":"西"},{"time":"07/09 20:30","dir":"入航","berth":"A0","ship":"INVICTA","length":"172","tons":"19035","pilot":"有","route":"西"},{"time":"07/09 21:30","dir":"入航","berth":"O2","ship":"SITC PINGHE","length":"146","tons":"9925","pilot":"Ｘ","route":"西"},{"time":"07/09 22:00","dir":"出航","berth":"P","ship":"さるびあ丸","length":"118","tons":"6099","pilot":"Ｘ","route":"西"},{"time":"07/09 22:30","dir":"出航","berth":"O","ship":"橘丸","length":"118","tons":"5681","pilot":"Ｘ","route":"西"},{"time":"07/09 23:00","dir":"出航","berth":"A2","ship":"A ONTAKE","length":"141","tons":"9562","pilot":"Ｘ","route":"西"},{"time":"07/09 23:00","dir":"出航","berth":"SI","ship":"海王丸","length":"190","tons":"13624","pilot":"Ｘ","route":"西"},{"time":"07/09 23:30","dir":"入航","berth":"AK02C","ship":"まや","length":"-","tons":"749","pilot":"-","route":"青海","port":true},{"time":"07/10 04:00","dir":"出航","berth":"AK02C","ship":"まや","length":"-","tons":"749","pilot":"-","route":"青海","port":true},{"time":"07/10 07:15","dir":"入航","berth":"AK02C","ship":"WESTWOOD VICTORIA","length":"-","tons":"32551","pilot":"-","route":"青海","port":true},{"time":"07/10 18:00","dir":"出航","berth":"AK02C","ship":"WESTWOOD VICTORIA","length":"-","tons":"32551","pilot":"-","route":"青海","port":true},{"time":"07/10 19:00","dir":"入航","berth":"AK02C","ship":"OOCL NEW ZEALAND","length":"-","tons":"40168","pilot":"-","route":"青海","port":true},{"time":"07/10 08:00","dir":"入航","berth":"XC00C","ship":"清安丸","length":"-","tons":"9957","pilot":"-","route":"芝浦","port":true},{"time":"07/10 21:00","dir":"出航","berth":"XC00C","ship":"清安丸","length":"-","tons":"9957","pilot":"-","route":"芝浦","port":true},{"time":"07/09 06:00","dir":"入航","berth":"LL05C","ship":"金吉丸","length":"-","tons":"481","pilot":"-","route":"若洲建材","port":true},{"time":"07/09 09:00","dir":"出航","berth":"LL05C","ship":"金吉丸","length":"-","tons":"481","pilot":"-","route":"若洲建材","port":true},{"time":"07/09 06:30","dir":"入航","berth":"NK00C","ship":"博祐丸","length":"-","tons":"498","pilot":"-","route":"辰巳","port":true},{"time":"07/09 09:30","dir":"入航","berth":"NH00C","ship":"友正丸","length":"-","tons":"460","pilot":"-","route":"辰巳","port":true},{"time":"07/09 10:30","dir":"出航","berth":"NH00C","ship":"友正丸","length":"-","tons":"460","pilot":"-","route":"辰巳","port":true},{"time":"07/09 17:00","dir":"入航","berth":"ND00C","ship":"新洋丸","length":"-","tons":"498","pilot":"-","route":"辰巳","port":true},{"time":"07/10 07:00","dir":"入航","berth":"NJ00C","ship":"サヌキフジ","length":"-","tons":"499","pilot":"-","route":"辰巳","port":true},{"time":"07/10 20:30","dir":"入航","berth":"NF00C","ship":"第十八清光丸","length":"-","tons":"199","pilot":"-","route":"辰巳","port":true},{"time":"07/09 18:45","dir":"入航","berth":"OD03C","ship":"AVIOS","length":"-","tons":"17785","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 05:00","dir":"出航","berth":"OD03C","ship":"AVIOS","length":"-","tons":"17785","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 07:30","dir":"入航","berth":"OE04C","ship":"ADDISON","length":"-","tons":"27779","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 18:00","dir":"出航","berth":"OE04C","ship":"ADDISON","length":"-","tons":"27779","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 07:30","dir":"入航","berth":"OB01C","ship":"CONSIGNIA","length":"-","tons":"9972","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 16:30","dir":"出航","berth":"OB01C","ship":"CONSIGNIA","length":"-","tons":"9972","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 18:30","dir":"入航","berth":"OC02C","ship":"MARTI STAR II","length":"-","tons":"9610","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 19:30","dir":"入航","berth":"OB01C","ship":"HALCYON","length":"-","tons":"9971","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/10 21:00","dir":"入航","berth":"OB01C","ship":"XIN MING ZHOU 18","length":"-","tons":"9653","pilot":"-","route":"大井コンテナ(TPT)","port":true},{"time":"07/09 06:00","dir":"入航","berth":"JG00C","ship":"第十共栄丸","length":"-","tons":"499","pilot":"-","route":"大井建材","port":true},{"time":"07/09 11:00","dir":"出航","berth":"JG00C","ship":"第十共栄丸","length":"-","tons":"499","pilot":"-","route":"大井建材","port":true},{"time":"07/09 06:00","dir":"入航","berth":"JD00C","ship":"第三共栄丸","length":"-","tons":"499","pilot":"-","route":"大井建材","port":true},{"time":"07/09 09:00","dir":"出航","berth":"JD00C","ship":"第三共栄丸","length":"-","tons":"499","pilot":"-","route":"大井建材","port":true},{"time":"07/09 06:00","dir":"入航","berth":"JE00C","ship":"薩觀丸","length":"-","tons":"749","pilot":"-","route":"大井建材","port":true},{"time":"07/09 14:00","dir":"出航","berth":"JE00C","ship":"薩觀丸","length":"-","tons":"749","pilot":"-","route":"大井建材","port":true},{"time":"07/10 07:30","dir":"入航","berth":"SC00C","ship":"PEGASUS PETA","length":"-","tons":"9988","pilot":"-","route":"品川","port":true},{"time":"07/10 15:30","dir":"出航","berth":"SC00C","ship":"PEGASUS PETA","length":"-","tons":"9988","pilot":"-","route":"品川","port":true},{"time":"07/10 09:00","dir":"入航","berth":"SK00C","ship":"神北丸","length":"-","tons":"12430","pilot":"-","route":"品川","port":true},{"time":"07/10 16:30","dir":"出航","berth":"SK00C","ship":"神北丸","length":"-","tons":"12430","pilot":"-","route":"品川","port":true},{"time":"07/10 18:00","dir":"入航","berth":"SK00C","ship":"神珠丸","length":"-","tons":"14052","pilot":"-","route":"品川","port":true},{"time":"07/10 22:30","dir":"出航","berth":"SK00C","ship":"神珠丸","length":"-","tons":"14052","pilot":"-","route":"品川","port":true},{"time":"07/10 18:00","dir":"入航","berth":"SI00C","ship":"神王丸","length":"-","tons":"13620","pilot":"-","route":"品川","port":true},{"time":"07/10 22:30","dir":"出航","berth":"SI00C","ship":"神王丸","length":"-","tons":"13620","pilot":"-","route":"品川","port":true},{"time":"07/09 08:00","dir":"入航","berth":"VP00C","ship":"新大島丸","length":"-","tons":"499","pilot":"-","route":"１０号その２","port":true},{"time":"07/09 18:00","dir":"出航","berth":"VP00C","ship":"新大島丸","length":"-","tons":"499","pilot":"-","route":"１０号その２","port":true},{"time":"07/09 14:30","dir":"入航","berth":"VR00C","ship":"第六東進丸","length":"-","tons":"497","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 18:00","dir":"出航","berth":"VR00C","ship":"第六東進丸","length":"-","tons":"497","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 05:30","dir":"入航","berth":"VI00C","ship":"ぶぜん","length":"-","tons":"11674","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 21:00","dir":"出航","berth":"VI00C","ship":"ぶぜん","length":"-","tons":"11674","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 09:00","dir":"入航","berth":"VB00C","ship":"しゅれい２","length":"-","tons":"11687","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 19:00","dir":"出航","berth":"VB00C","ship":"しゅれい２","length":"-","tons":"11687","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 22:00","dir":"入航","berth":"VE00C","ship":"むさし丸","length":"-","tons":"13927","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 22:00","dir":"入航","berth":"VW00C","ship":"王徳丸","length":"-","tons":"298","pilot":"-","route":"１０号その２","port":true},{"time":"07/10 09:30","dir":"入航","berth":"YA01C","ship":"GREEN HORIZON","length":"-","tons":"17702","pilot":"-","route":"中防外側","port":true},{"time":"07/10 16:00","dir":"入航","berth":"YB02C","ship":"SITC OSAKA","length":"-","tons":"9566","pilot":"-","route":"中防外側","port":true},{"time":"07/10 18:30","dir":"入航","berth":"YA01C","ship":"CONFIDENCE","length":"-","tons":"9972","pilot":"-","route":"中防外側","port":true},{"time":"07/10 18:30","dir":"入航","berth":"YA01C","ship":"COSCO KIKU","length":"-","tons":"8917","pilot":"-","route":"中防外側","port":true}];
+
+  // 気象・海象の収録スナップショット（data.json が読めない時のフォールバック用）
+  const ENV_SNAPSHOT = {"place":"品川・大井・青海ふ頭周辺","weather":{"text":"晴れ時々くもり","max":"31","min":"22","pop":"10"},"sun":{"rise":"04:33","set":"19:00"},"tide":{"high":[{"t":"12:05","cm":150},{"t":"23:09","cm":177}],"low":[{"t":"05:49","cm":70},{"t":"17:14","cm":120}],"name":"長潮"},"wind":{"jugouchi":{"dir":"南南西","spd":"4","t":"00:40"},"umihotaru":{"dir":"南西","spd":"2","t":"00:25"}},"radar":"https://weathernews.jp/onebox/radar/tokyo/13103/"};
+
+  const $ = s => document.querySelector(s);
+  const dec = s => (s||'').replace(/&gt;/g,'>').replace(/&lt;/g,'<').replace(/&amp;/g,'&');
+  const hm = t => { const m=/(\d{1,2}):(\d{2})/.exec(t||''); return m? (+m[1])*60+(+m[2]) : 0; };
+  const hourOf = t => { const m=/(\d{1,2}):(\d{2})/.exec(t||''); return m? +m[1] : 0; };
+  const clock = t => { const m=/(\d{1,2}):(\d{2})/.exec(t||''); return m? m[1].padStart(2,'0')+':'+m[2] : '--:--'; };
+  const pad = n => String(n).padStart(2,'0');
+
+  // time-of-day hue for the left accent bar & hour divider
+  // 1時間ごとの空の色（固定）。深夜→未明→日の出→朝→日中→午後→夕焼け→宵→夜
+  const SKY = [
+    '#12224F','#152451','#182755','#1E2E60','#2C3E7E','#5B579C','#B06E86','#E99A6B',
+    '#F0C27A','#9FCDE8','#6FB6E6','#4AA4E0','#2E97DB','#3D9DDD','#57A9E0','#79B8E5',
+    '#A7C9E2','#EBB667','#E98E50','#D66B45','#9A5F8C','#53507F','#2E3A6C','#1B2A5A'
+  ];
+  function hourColor(h){ h=(h|0); if(h<0)h=0; if(h>23)h=23; return SKY[h]; }
+  const DIRC = {'入航':'in','出航':'out','シフト':'shift'};
+  const DIRSHORT = {'入航':'入','出航':'出','シフト':'シ'};
+
+  // 全角英数→半角、空白除去、大文字化（船名の同一判定・除外判定に使用）
+  const zen2han = s => (s||'').replace(/[Ａ-Ｚａ-ｚ０-９]/g, c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0));
+  const normShip = s => zen2han(s).replace(/\s+/g,'').toUpperCase();
+
+  // 船名を MarineTraffic 検索用にローマ字化（かなは確実、漢字は主要語を近似変換）
+  const ROMA_KANA = {
+    'キャ':'kya','キュ':'kyu','キョ':'kyo','シャ':'sha','シュ':'shu','ショ':'sho','チャ':'cha','チュ':'chu','チョ':'cho',
+    'ニャ':'nya','ニュ':'nyu','ニョ':'nyo','ヒャ':'hya','ヒュ':'hyu','ヒョ':'hyo','ミャ':'mya','ミュ':'myu','ミョ':'myo',
+    'リャ':'rya','リュ':'ryu','リョ':'ryo','ギャ':'gya','ギュ':'gyu','ギョ':'gyo','ジャ':'ja','ジュ':'ju','ジョ':'jo',
+    'ビャ':'bya','ビュ':'byu','ビョ':'byo','ピャ':'pya','ピュ':'pyu','ピョ':'pyo',
+    'ファ':'fa','フィ':'fi','フェ':'fe','フォ':'fo','ウィ':'wi','ウェ':'we','ウォ':'wo','ヴァ':'va','ヴィ':'vi','ヴェ':'ve','ヴォ':'vo',
+    'ティ':'ti','ディ':'di','トゥ':'tu','ドゥ':'du','チェ':'che','シェ':'she','ジェ':'je',
+    'ア':'a','イ':'i','ウ':'u','エ':'e','オ':'o','カ':'ka','キ':'ki','ク':'ku','ケ':'ke','コ':'ko',
+    'サ':'sa','シ':'shi','ス':'su','セ':'se','ソ':'so','タ':'ta','チ':'chi','ツ':'tsu','テ':'te','ト':'to',
+    'ナ':'na','ニ':'ni','ヌ':'nu','ネ':'ne','ノ':'no','ハ':'ha','ヒ':'hi','フ':'fu','ヘ':'he','ホ':'ho',
+    'マ':'ma','ミ':'mi','ム':'mu','メ':'me','モ':'mo','ヤ':'ya','ユ':'yu','ヨ':'yo',
+    'ラ':'ra','リ':'ri','ル':'ru','レ':'re','ロ':'ro','ワ':'wa','ヲ':'o','ン':'n',
+    'ガ':'ga','ギ':'gi','グ':'gu','ゲ':'ge','ゴ':'go','ザ':'za','ジ':'ji','ズ':'zu','ゼ':'ze','ゾ':'zo',
+    'ダ':'da','ヂ':'ji','ヅ':'zu','デ':'de','ド':'do','バ':'ba','ビ':'bi','ブ':'bu','ベ':'be','ボ':'bo',
+    'パ':'pa','ピ':'pi','プ':'pu','ペ':'pe','ポ':'po','ヴ':'vu','ァ':'a','ィ':'i','ゥ':'u','ェ':'e','ォ':'o'
+  };
+  const ROMA_KANJI = {
+    '丸':'maru','第':'dai','号':'go','船':'sen','押':'oshi','栄':'ei','豊':'ho','神':'shin','明':'mei','王':'o',
+    '永':'ei','幸':'ko','福':'fuku','勝':'katsu','大':'dai','新':'shin','東':'to','西':'sei','南':'nan','北':'hoku',
+    '海':'kai','山':'san','川':'kawa','光':'ko','力':'riki','天':'ten','竜':'ryu','龍':'ryu','洋':'yo','隆':'ryu',
+    '興':'ko','春':'haru','夏':'natsu','秋':'aki','冬':'fuyu','日':'nichi','月':'getsu','星':'sei','雲':'un','宝':'takara',
+    '進':'shin','和':'wa','平':'hei','安':'an','高':'taka','住':'sumi','友':'tomo','泉':'sen','珠':'ju','善':'zen',
+    '一':'ichi','二':'ni','三':'san','四':'yon','五':'go','六':'roku','七':'nana','八':'hachi','九':'kyu','十':'ju'
+  };
+  function toRomaji(input){
+    let s=(input||'').replace(/[ぁ-ゖ]/g,c=>String.fromCharCode(c.charCodeAt(0)+0x60)); // ひらがな→カタカナ
+    s=zen2han(s); // 全角英数→半角
+    let out='',i=0;
+    while(i<s.length){
+      const two=s.substr(i,2), one=s[i];
+      if(one==='ッ'){ const r=ROMA_KANA[s.substr(i+1,2)]||ROMA_KANA[s[i+1]]||''; if(r && !'aeiou'.includes(r[0]) && /[a-z]/i.test(r[0])) out+=r[0]; i++; continue; }
+      if(one==='ー'){ const m=out.match(/[aeiou]$/i); if(m) out+=m[0]; i++; continue; }
+      if(ROMA_KANA[two]){ out+=ROMA_KANA[two]; i+=2; continue; }
+      if(ROMA_KANA[one]){ out+=ROMA_KANA[one]; i++; continue; }
+      if(ROMA_KANJI[one]){ out+=ROMA_KANJI[one]; i++; continue; }
+      out+=one; i++;
+    }
+    return out.toUpperCase().replace(/\s+/g,' ').trim();
+  }
+
+  // 船名→識別番号(MMSI または IMO) 対応表。番号で検索すると一意に該当船へ。ここに追記すれば直リンク化できます
+  // ※内航RORO・定期フェリー中心（判明分のみ）。神明丸/神永丸/神泉丸/ひまわり5・7/さんふらわあ 等は要追加
+  const SHIP_MMSI_RAW = {
+    // オーシャン東九フェリー
+    'フェリーびざん':'431007129','フェリーしまんと':'431007575','フェリーどうご':'431007905','フェリーりつりん':'431008355',
+    // 東海汽船
+    'さるびあ丸':'431692000',
+    // マルエーフェリー（琉球エキスプレス）※7はIMO
+    '琉球エキスプレス3':'431007155','琉球エキスプレス7':'9958418',
+    // NX海運（ひまわり）内航RORO
+    'ひまわりとうきょう':'431200647','ひまわり8':'431009876','ひまわり9':'431010248',
+    // 栗林商船（神シリーズ）
+    '神王丸':'431014492','神加丸':'431005364'
+  };
+  const SHIP_MMSI = {};
+  Object.keys(SHIP_MMSI_RAW).forEach(k=>{ SHIP_MMSI[normShip(k)] = SHIP_MMSI_RAW[k]; });
+  // MarineTraffic検索キーワード：対応表にあればMMSI（一意）、無ければローマ字化した船名
+  function mtKeyword(ship){ return SHIP_MMSI[normShip(ship)] || toRomaji(ship); }
+
+  // ===== 表示対象外リスト（ここを編集すれば除外内容を変更できます） =====
+  // 船名（全角/半角・スペースは無視して一致判定）／「押船」を含む船は自動で除外
+  const EXCLUDE_SHIPS = new Set(
+    ['ひまわり５','竜王','第５栄豊丸','パシフィック ファルコン','パシフィック ブリーズ',
+     'シンフォニー モデルナ','フェリーりつりん','フェリーびざん','ひまわりとうきょう','橘丸']
+    .map(normShip));
+  // バース（完全一致）
+  const EXCLUDE_BERTHS = new Set(
+    ['P','KK','中防東','NA','建材','建材(11号地)','LOB','LLB','LE','O','VAC','C','LLE','LLD','LLC','LLF','LM1','LM2','M']);
+  // ふ頭（係船＝東京港港湾情報システムの航路）完全一致
+  const EXCLUDE_FU = new Set(['大井建材','辰巳']);
+  function isExcluded(ship, berth, route){
+    const sk=normShip(ship);
+    if(sk.indexOf('押船')>=0) return true;
+    if(EXCLUDE_SHIPS.has(sk)) return true;
+    const bk=(berth||'').trim().replace(/（/g,'(').replace(/）/g,')');
+    if(EXCLUDE_BERTHS.has(bk)) return true;
+    return EXCLUDE_FU.has((route||'').trim());
+  }
+  // バース表示の置換（客船埠頭 → AP 等）
+  const BERTH_ABBR = {'客船埠頭':'AP'};
+
+  // 港湾システムの「ふ頭」名を狭い航路チップ用に短縮
+  const FU_ABBR = {
+    '大井コンテナ(TPT)':'大井C','大井コンテナ（TPT）':'大井C','大井水産・食品':'大井水','大井建材':'大井建',
+    '若洲建材':'若洲','中防外側':'中防外','中防内側':'中防内','１０号その２':'10号2','10号その2':'10号2'
+  };
+  function abbrFu(n){
+    if(FU_ABBR[n]) return FU_ABBR[n];
+    n=(n||'').replace(/[０-９]/g,d=>String.fromCharCode(d.charCodeAt(0)-0xFEE0));
+    n=n.replace(/コンテナ.*/,'C').replace(/・.*$/,'').replace(/建材/,'建').replace(/(外|内)側$/,'$1').replace(/その/,'');
+    return n.length>4 ? n.slice(0,4) : n;
+  }
+
+  let ROUTE='all', DATA=[], UPDATED='';
+
+  function normalize(raw){
+    const arr = raw.filter(r=> !isExcluded(r.ship, r.berth, r.route)).map(r=>({
+      time:r.time, min:hm(r.time), hour:hourOf(r.time), t:clock(r.time),
+      dir:r.dir, dc:DIRC[r.dir]||'shift',
+      berth:dec(r.berth).replace(/\s*=?>\s*/,' → ').replace(/\s+/g,' ').trim(),
+      ship:dec(r.ship), length:r.length||'', tons:r.tons||'',
+      pilot:(r.pilot==='有'), route:r.route, port:!!r.port,
+      ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
+    })).sort((a,b)=> a.ds-b.ds || (a.route<b.route?-1:1));
+    // 港湾システムの消え残り対策：港湾行のみ「現在時刻−1時間」より前を削除（東/西は対象外）
+    const d=new Date(); const cutoff = d.getHours()*60 + d.getMinutes() - 60;
+    return arr.filter(r=> !r.port || r.ds >= cutoff);
+  }
+
+  function nowMin(){ const d=new Date(); return d.getHours()*60+d.getMinutes(); }
+
+  function render(){
+    const list=$('#list'); list.innerHTML='';
+    let rows=DATA.filter(r=> ROUTE==='all' ? true : (ROUTE==='port' ? r.port : r.route===ROUTE));
+    if(!rows.length){ list.innerHTML='<div class="empty">該当する予定はありません</div>'; return; }
+    let prevDate=null, prevHour=null;
+    const frag=document.createDocumentFragment();
+    rows.forEach((r)=>{
+      const dstr=(r.time||'').slice(0,5); // MM/DD
+      if(dstr!==prevDate){
+        frag.appendChild(makeDateHdr(dstr));   // 日付の区切り（見出し行）
+        prevDate=dstr; prevHour=null;
+      } else if(prevHour!==null && r.hour!==prevHour){
+        const hb=document.createElement('div'); hb.className='hourbreak'; frag.appendChild(hb); // 1時間ごとの太字罫線
+      }
+      prevHour=r.hour;
+      const hc=hourColor(r.hour);
+      const el=document.createElement('div');
+      el.className='row d-'+r.dc;
+      el.style.setProperty('--hc',hc);
+      const isPort=r.port;
+      const rr = r.route==='東'?'e':(r.route==='西'?'w':'p');
+      const routeLabel = isPort? abbrFu(r.route) : r.route;
+      const big = parseInt(r.length,10) >= 300;   // 長さ300m以上は強調
+      const lenDisp = (r.length==='-'||r.length==='')?'-':r.length+'m';
+      const tonDisp = (r.tons==='-'||r.tons==='')?'-':r.tons+'t';
+      const berthDisp = BERTH_ABBR[(r.berth||'').trim()] || r.berth;
+      el.innerHTML=
+        `<div class="c-time">${r.t}</div>`+
+        `<div class="c-dir"><span class="pill ${r.dc}">${DIRSHORT[r.dir]||r.dir}</span></div>`+
+        `<div class="c-berth${berthDisp.length<=5?'':(berthDisp.length<=7?' bs':' bxs')}">${escapeHtml(berthDisp)}</div>`+
+        `<div class="c-ship${big?' big':''}">`+
+          `<div class="ship-nm"><a class="mt-link" href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${encodeURIComponent(mtKeyword(r.ship))}" target="_blank" rel="noopener">${escapeHtml(r.ship)}</a></div>`+
+          `<div class="ship-meta"><b>${lenDisp}</b>　<b>${tonDisp}</b></div>`+
+        `</div>`+
+        `<div class="c-pilot">${r.pilot?'<span class="pbadge yes">P</span>':'<span class="pbadge no">−</span>'}</div>`+
+        `<div class="c-route"><span class="route ${rr}${isPort?' port':''}"${isPort?` title="${escapeHtml(r.route)}"`:''}>${escapeHtml(routeLabel)}</span></div>`;
+      frag.appendChild(el);
+    });
+    list.appendChild(frag);
+  }
+  const fmt = n => { const v=parseInt(n,10); return isNaN(v)? (n||'') : v.toLocaleString('en-US'); };
+  const escapeHtml = s => s.replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c]));
+
+  // ---- 現況パネル ----
+  function wxIcon(t){ t=t||'';
+    if(/雪/.test(t)) return '❄️'; if(/雷/.test(t)) return '⛈️';
+    const rain=/雨/.test(t), sun=/晴/.test(t), cloud=/曇|くもり/.test(t);
+    if(rain&&(sun||cloud)) return '🌦️'; if(rain) return '🌧️';
+    if(sun&&cloud) return '⛅'; if(cloud) return '☁️'; if(sun) return '☀️'; return '🌊';
+  }
+  function tideCls(n){ n=n||''; if(/大潮/.test(n)) return 'tn-o'; if(/小潮/.test(n)) return 'tn-b'; if(/中潮/.test(n)) return 'tn-n'; return 'tn-d'; }
+
+  const WD=['Sunday','Monday','Tuesday','Wednesday','Thursday','Friday','Saturday'];
+  // MM/DD の当日からの日数差（年跨ぎ考慮）。日付＋時刻の昇順ソートに使う
+  function dayOffset(mmdd){
+    const p=(mmdd||'').split('/'); if(p.length<2) return 0;
+    const mm=+p[0], dd=+p[1]; const now=new Date(); let yr=now.getFullYear();
+    if(now.getMonth()===11 && mm===1) yr++;
+    const dt=new Date(yr,mm-1,dd), today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    return Math.round((dt-today)/86400000);
+  }
+  // スケジュールの日付見出し（例: 07/08 Wednesday / 翌日 07/09 Thursday）
+  function makeDateHdr(mmdd){
+    const p=(mmdd||'').split('/'); const mm=+p[0], dd=+p[1];
+    const now=new Date();
+    let yr=now.getFullYear();
+    if(now.getMonth()===11 && mm===1) yr++;        // 年末→年始の跨ぎ
+    const dt=new Date(yr, mm-1, dd);
+    const wd=WD[dt.getDay()]||'';
+    const today=new Date(now.getFullYear(),now.getMonth(),now.getDate());
+    const diff=Math.round((dt-today)/86400000);
+    const rel = diff===1?'翌日':diff===2?'翌々日':(diff>2?`${diff}日後`:'');
+    const el=document.createElement('div'); el.className='datehdr';
+    el.innerHTML=`${rel?`<span class="rel">${rel}</span>`:''}<span class="dmd">${mmdd}</span> <span class="dwd">${wd}</span>`;
+    return el;
+  }
+  function renderEnv(e){
+    if(!e){ $('#env').innerHTML=''; return; }
+    const w=e.weather||{}, s=e.sun||{}, td=e.tide||{}, wd=e.wind||{};
+    const tideSpan = arr => (arr||[]).map(x=>`<span class="env-val"><b>${x.t}</b> <span class="cm">${x.cm}</span><span class="u">㎝</span></span>`).join('<span class="env-sep">/</span>') || '<span class="env-val">--</span>';
+    const windOne = o => o&&(o.spd!=null)? `<span class="env-val"><span class="wdir">${o.dir||''}</span> <b>${o.spd}</b><span class="u">m/s</span></span>` : '<span class="env-val">--</span>';
+    $('#env').innerHTML =
+     `<div class="env-card">
+        <div class="env-row wx">
+          <div class="env-ico">${wxIcon(w.text)}</div>
+          <div style="flex:1;min-width:0;">
+            <div class="wx-text">${w.text||'--'}</div>
+            <div class="wx-sub"><span class="hi">${w.max??'--'}°</span><span class="env-sep">/</span><span class="lo">${w.min??'--'}°</span><span class="env-sep">•</span><span class="wx-pfx">降水</span> <span class="pop">${w.pop??'--'}%</span></div>
+          </div>
+          ${e.radar? `<a class="radar-btn" href="${e.radar}" target="_blank" rel="noopener"><span class="ri">☔</span>雨雲<br>レーダー</a>`:''}
+        </div>
+        <div class="env-row">
+          <div class="env-ico">🌅</div>
+          <div class="env-flow">
+            <span class="env-pair"><span class="env-lbl">日の出</span><span class="env-val">${s.rise||'--:--'}</span></span>
+            <span class="env-pair"><span class="env-lbl">日の入</span><span class="env-val">${s.set||'--:--'}</span></span>
+          </div>
+        </div>
+        <div class="env-row">
+          <div class="env-ico">🌊</div>
+          <div class="env-flow">
+            <span class="env-pair"><span class="env-lbl tide-hi">満潮</span>${tideSpan(td.high)}</span>
+            <span class="env-pair"><span class="env-lbl tide-lo">干潮</span>${tideSpan(td.low)}</span>
+          </div>
+          ${td.name? `<span class="tide-name ${tideCls(td.name)}">${td.name}</span>`:''}
+        </div>
+        <div class="env-row">
+          <div class="env-ico">🧭</div>
+          <div class="env-flow">
+            <span class="env-pair"><span class="env-lbl">十号地</span>${windOne(wd.jugouchi)}</span>
+            <span class="env-pair"><span class="env-lbl">海ほたる</span>${windOne(wd.umihotaru)}</span>
+          </div>
+        </div>
+      </div>`;
+  }
+
+  // controls
+  document.querySelectorAll('.seg button').forEach(b=>b.addEventListener('click',()=>{
+    document.querySelectorAll('.seg button').forEach(x=>x.setAttribute('aria-pressed', x===b));
+    ROUTE=b.dataset.route; render();
+  }));
+
+
+  // header height -> sticky offsets
+  function setH(){ const h=document.querySelector('.hd').offsetHeight; document.documentElement.style.setProperty('--hdH', (h)+'px'); }
+
+  // load: try live data.json, fall back to embedded
+  // 一部でエラーが出ても白画面にしない：各処理をtry/catchで隔離
+  function checkStale(fetchedAt, live){
+    const bar=$('#staleBar'); if(!bar) return;
+    let show=false, txt='';
+    if(live && fetchedAt){
+      const t=Date.parse(fetchedAt);
+      if(!isNaN(t)){
+        const min=(Date.now()-t)/60000;
+        if(min>120){ show=true; const h=Math.floor(min/60), m=Math.floor(min%60); txt=(h>0?h+'時間':'')+m+'分前'; }
+      }
+    }
+    if(show){ bar.textContent='⚠ データが更新されていません（最終取得 '+txt+'）。表示は直近の内容です。'; bar.hidden=false; }
+    else { bar.hidden=true; }
+  }
+  function boot(data, updated, env, fetchedAt, live){
+    try{ DATA=normalize(data||[]); }catch(e){ DATA=[]; }
+    UPDATED=updated||'';
+    try{ $('#upd').textContent=UPDATED||'—'; const _um=$('#updMini'); if(_um) _um.textContent=UPDATED||'—'; }catch(e){}
+    try{ renderEnv(env||ENV_SNAPSHOT); }catch(e){}
+    try{ render(); }catch(e){ const l=$('#list'); if(l) l.innerHTML='<div class="empty">表示の生成に失敗しました。右上の ⚓ ボタンで再読み込みしてください。</div>'; }
+    try{ setH(); }catch(e){}
+    try{ checkStale(fetchedAt, live); }catch(e){}
+  }
+  function loadData(){
+    return fetch('data.json?t='+Date.now(),{cache:'no-store'}).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+      .then(j=> boot(j.rows||j, j.updated, j.env, j.fetchedAt, true))
+      .catch(()=> boot(EMBEDDED, '（収録データ）', ENV_SNAPSHOT, null, false));
+  }
+  const _rb=document.getElementById('refreshBtn');
+  if(_rb) _rb.addEventListener('click',()=>{ _rb.classList.add('spin'); loadData().finally(()=> setTimeout(()=>_rb.classList.remove('spin'),500)); });
+  loadData();
+  window.addEventListener('resize', setH);
+
+  // radar sweep
+  (function(){
+    const c=document.querySelector('.radar'); if(!c) return;
+    const ctx=c.getContext('2d'); const W=88,H=88,cx=44,cy=44,R=40;
+    const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
+    const css=getComputedStyle(document.documentElement);
+    function col(){ return getComputedStyle(document.querySelector('.app')).getPropertyValue('--accent').trim()||'#38D6D0'; }
+    const blips=[[0.55,1.9],[0.8,3.6],[0.4,5.1],[0.7,0.6]];
+    let a=0;
+    function frame(){
+      const ac=col();
+      ctx.clearRect(0,0,W,H);
+      ctx.strokeStyle='rgba(120,150,175,.28)'; ctx.lineWidth=1;
+      [0.5,0.78,1].forEach(f=>{ctx.beginPath();ctx.arc(cx,cy,R*f,0,7);ctx.stroke();});
+      ctx.beginPath();ctx.moveTo(cx-R,cy);ctx.lineTo(cx+R,cy);ctx.moveTo(cx,cy-R);ctx.lineTo(cx,cy+R);ctx.stroke();
+      // sweep
+      const g=ctx.createConicGradient? null:null;
+      ctx.save(); ctx.beginPath(); ctx.moveTo(cx,cy);
+      ctx.arc(cx,cy,R,a-0.9,a); ctx.closePath();
+      const grd=ctx.createRadialGradient(cx,cy,0,cx,cy,R);
+      grd.addColorStop(0, hexA(ac,.0)); grd.addColorStop(1, hexA(ac,.33));
+      ctx.fillStyle=grd; ctx.fill(); ctx.restore();
+      ctx.strokeStyle=hexA(ac,.9); ctx.lineWidth=1.4;
+      ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R);ctx.stroke();
+      // blips
+      blips.forEach(([rr,ang])=>{ const bx=cx+Math.cos(ang)*R*rr, by=cy+Math.sin(ang)*R*rr;
+        let d=a-ang; d=((d%(Math.PI*2))+Math.PI*2)%(Math.PI*2); const fade=Math.max(0,1-d/2.2);
+        ctx.fillStyle=hexA(ac,.15+fade*.85); ctx.beginPath(); ctx.arc(bx,by,1.7+fade*1.3,0,7); ctx.fill(); });
+      if(!reduce){ a+=0.03; requestAnimationFrame(frame); }
+    }
+    function hexA(h,al){ h=h.replace('#',''); if(h.length===3)h=h.split('').map(x=>x+x).join('');
+      const r=parseInt(h.slice(0,2),16),g=parseInt(h.slice(2,4),16),b=parseInt(h.slice(4,6),16);
+      if(isNaN(r)) return `rgba(56,214,208,${al})`; return `rgba(${r},${g},${b},${al})`; }
+    frame();
+  })();
+</script>
+
+</body>
+</html>
