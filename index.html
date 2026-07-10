@@ -3,47 +3,47 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="theme-color" content="#0A1420" media="(prefers-color-scheme: dark)">
-<meta name="theme-color" content="#E9EFF5" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#07131F" media="(prefers-color-scheme: dark)">
+<meta name="theme-color" content="#E0ECF6" media="(prefers-color-scheme: light)">
 <meta name="description" content="東京湾（東航路・西航路）の入出航予定と気象・海象をスマホでまとめて閲覧">
 <title>東京湾 入出航予定</title>
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ctext y='.9em' font-size='90'%3E%E2%9A%93%3C/text%3E%3C/svg%3E">
-<style>html,body{margin:0;background:#0A1420;}@media(prefers-color-scheme:light){html,body{background:#E9EFF5;}}</style>
+<style>html,body{margin:0;background:#07131F;}@media(prefers-color-scheme:light){html,body{background:#E0ECF6;}}</style>
 </head>
 <body><style>
   :root{
-    --bg:#0A1420; --bg2:#0F1E30; --panel:#0d1c2e; --alt:#0e2135;
-    --line:#22394f; --line2:#2d4a66;
-    --text:#E6EEF6; --dim:#93A8BC; --faint:#6a8299;
-    --accent:#38D6D0; --accent-ink:#062024;
-    --in:#33C98B; --out:#F2A83B; --shift:#8E9BFF;
-    --pilot:#38D6D0;
-    --shadow:0 1px 0 rgba(255,255,255,.03), 0 8px 24px -12px rgba(0,0,0,.6);
+    --bg:#07131F; --bg2:#0C1E32; --panel:#0C1E32; --alt:#0A1B2D;
+    --line:#264866; --line2:#356390;
+    --text:#EAF3FB; --dim:#9DB6CE; --faint:#6D8299;
+    --accent:#12D8E3; --accent-ink:#04222A;
+    --in:#1AD07C; --out:#FF9E12; --shift:#A585FF;
+    --pilot:#12D8E3; --emerald:#18D6A2;
+    --shadow:0 1px 0 rgba(255,255,255,.04), 0 10px 26px -12px rgba(0,0,0,.7);
     --mono:ui-monospace,"SF Mono",Menlo,Consolas,"Roboto Mono",monospace;
     --jp:"Hiragino Kaku Gothic ProN","Yu Gothic",YuGothic,"Noto Sans JP",Meiryo,system-ui,sans-serif;
   }
   @media (prefers-color-scheme: light){
     :root{
-      --bg:#E9EFF5; --bg2:#FFFFFF; --panel:#FFFFFF; --alt:#F1F6FB;
-      --line:#D6E1EC; --line2:#C3D3E1;
-      --text:#0E2233; --dim:#55708A; --faint:#7c93a8;
-      --accent:#0C8B95; --accent-ink:#ffffff;
-      --in:#0E9C67; --out:#C67C13; --shift:#5560CC;
-      --pilot:#0C8B95;
-      --shadow:0 1px 0 rgba(255,255,255,.6), 0 6px 18px -10px rgba(24,60,90,.25);
+      --bg:#E0ECF6; --bg2:#FFFFFF; --panel:#FFFFFF; --alt:#ECF4FB;
+      --line:#BED2E4; --line2:#A3BED6;
+      --text:#052434; --dim:#456885; --faint:#748FA6;
+      --accent:#0290A4; --accent-ink:#ffffff;
+      --in:#059A57; --out:#DD7A00; --shift:#6A34C9;
+      --pilot:#0290A4; --emerald:#08A87A;
+      --shadow:0 1px 0 rgba(255,255,255,.7), 0 8px 20px -10px rgba(16,52,84,.32);
     }
   }
   :root[data-theme="dark"]{
-    --bg:#0A1420; --bg2:#0F1E30; --panel:#0d1c2e; --alt:#0e2135;
-    --line:#22394f; --line2:#2d4a66; --text:#E6EEF6; --dim:#93A8BC; --faint:#6a8299;
-    --accent:#38D6D0; --accent-ink:#062024; --in:#33C98B; --out:#F2A83B; --shift:#8E9BFF; --pilot:#38D6D0;
-    --shadow:0 1px 0 rgba(255,255,255,.03), 0 8px 24px -12px rgba(0,0,0,.6);
+    --bg:#07131F; --bg2:#0C1E32; --panel:#0C1E32; --alt:#0A1B2D;
+    --line:#264866; --line2:#356390; --text:#EAF3FB; --dim:#9DB6CE; --faint:#6D8299;
+    --accent:#12D8E3; --accent-ink:#04222A; --in:#1AD07C; --out:#FF9E12; --shift:#A585FF; --pilot:#12D8E3; --emerald:#18D6A2;
+    --shadow:0 1px 0 rgba(255,255,255,.04), 0 10px 26px -12px rgba(0,0,0,.7);
   }
   :root[data-theme="light"]{
-    --bg:#E9EFF5; --bg2:#FFFFFF; --panel:#FFFFFF; --alt:#F1F6FB;
-    --line:#D6E1EC; --line2:#C3D3E1; --text:#0E2233; --dim:#55708A; --faint:#7c93a8;
-    --accent:#0C8B95; --accent-ink:#ffffff; --in:#0E9C67; --out:#C67C13; --shift:#5560CC; --pilot:#0C8B95;
-    --shadow:0 1px 0 rgba(255,255,255,.6), 0 6px 18px -10px rgba(24,60,90,.25);
+    --bg:#E0ECF6; --bg2:#FFFFFF; --panel:#FFFFFF; --alt:#ECF4FB;
+    --line:#BED2E4; --line2:#A3BED6; --text:#052434; --dim:#456885; --faint:#748FA6;
+    --accent:#0290A4; --accent-ink:#ffffff; --in:#059A57; --out:#DD7A00; --shift:#6A34C9; --pilot:#0290A4; --emerald:#08A87A;
+    --shadow:0 1px 0 rgba(255,255,255,.7), 0 8px 20px -10px rgba(16,52,84,.32);
   }
 
   *{box-sizing:border-box;}
@@ -57,38 +57,51 @@
     min-height:100vh;
     max-width:520px; margin:0 auto;
     -webkit-font-smoothing:antialiased;
+    /* 試作：ページ全体をうっすら立体的に（浮いたシートのような影） */
+    position:relative;
+    box-shadow:0 0 46px -12px rgba(0,0,0,.55);
+    border-inline:1px solid color-mix(in srgb, var(--text) 8%, transparent);
   }
 
   /* ---------- header ---------- */
   .hd{
     position:sticky; top:0; z-index:30;
-    /* 上下=濃いグリーン → 中央=薄いグリーン の縦グラデーション（アクセント色ベース） */
+    /* 夜のネイビーのパイプ風縦グラデ（深く青みのある紺。上下端=濃い→中央=白強め） */
     background:linear-gradient(180deg,
-      color-mix(in srgb, var(--accent) 40%, var(--bg)) 0%,
-      color-mix(in srgb, var(--accent) 8%, var(--bg)) 50%,
-      color-mix(in srgb, var(--accent) 40%, var(--bg)) 100%);
-    border-bottom:1px solid var(--line);
+      color-mix(in srgb, #0A1972 97%, var(--bg)) 0%,
+      color-mix(in srgb, #0A1972 42%, var(--bg)) 28%,
+      color-mix(in srgb, #0A1972 8%, var(--bg2)) 42%,
+      color-mix(in srgb, #0A1972 8%, var(--bg2)) 58%,
+      color-mix(in srgb, #0A1972 42%, var(--bg)) 72%,
+      color-mix(in srgb, #0A1972 97%, var(--bg)) 100%);
+    border-top:2px solid color-mix(in srgb, #0A1972 98%, var(--bg));
+    border-bottom:2px solid color-mix(in srgb, #0A1972 92%, var(--line));
     padding:10px 14px 8px;
-    box-shadow:var(--shadow);
+    box-shadow:0 3px 12px -4px color-mix(in srgb, #0A1972 80%, transparent), inset 0 1px 0 rgba(255,255,255,.12);
   }
   .hd-top{display:flex; align-items:center; gap:11px;}
-  .radar{width:44px; height:44px; flex:0 0 auto; border-radius:50%;}
+  .radar{width:44px; height:44px; flex:0 0 auto; border-radius:50%;
+    background:radial-gradient(circle at 50% 42%, rgba(201,209,221,.62) 0%, rgba(176,186,201,.5) 82%);
+    box-shadow:0 1px 3px -1px rgba(0,0,0,.2), inset 0 0 0 1px rgba(255,255,255,.28);}
   .brand{flex:1; min-width:0;}
   .eyebrow{
     font-family:var(--mono); font-size:9.5px; letter-spacing:.24em;
-    color:var(--accent); text-transform:uppercase; font-weight:600;
-    display:flex; align-items:center; gap:6px;
+    color:#C7D1DD; text-transform:uppercase; font-weight:700;
+    display:flex; align-items:center; gap:6px; margin-top:-8px;
+    text-shadow:0 1px 2px rgba(0,0,0,.35);
   }
-  .eyebrow::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,color-mix(in srgb,var(--accent) 50%,transparent),transparent);}
-  .title{font-size:19px; font-weight:800; letter-spacing:.02em; margin:1px 0 0; line-height:1.15;}
-  .refresh{flex:0 0 auto; width:33px; height:33px; border-radius:9px; border:1px solid var(--line); background:var(--bg); color:var(--accent); font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0;}
+  .eyebrow::after{content:""; height:1px; flex:1; background:linear-gradient(90deg,rgba(199,209,221,.55),transparent);}
+  .title{font-size:19px; font-weight:800; letter-spacing:.02em; margin:1px 0 0; line-height:1.15;
+    text-shadow:0 1px 1px rgba(255,255,255,.4), 0 2px 4px rgba(0,0,0,.28);}
+  .refresh{flex:0 0 auto; width:33px; height:33px; border-radius:9px; border:1px solid rgba(255,255,255,.35); background:linear-gradient(180deg, #EDF1F6, #BFC9D8); color:#16233A; font-size:18px; line-height:1; display:flex; align-items:center; justify-content:center; cursor:pointer; padding:0; box-shadow:0 1px 5px -1px rgba(0,0,0,.4);}
   .refresh:active{transform:translateY(1px);}
   .refresh:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
   .refresh .ricon{display:inline-block;}
   .refresh.spin .ricon{animation:rspin .9s ease-in-out infinite;}
   @keyframes rspin{to{transform:rotate(360deg);}}
   .hd-actions{flex:0 0 auto; display:flex; flex-direction:column; align-items:center; gap:3px;}
-  .upd-mini{font-family:var(--mono); font-size:8.5px; color:var(--faint); white-space:nowrap; line-height:1; letter-spacing:.02em;}
+  .upd-mini{font-family:var(--mono); font-size:8.5px; font-weight:700; color:#CBD5E1; white-space:nowrap; line-height:1; letter-spacing:.02em;
+    text-shadow:0 1px 1px rgba(255,255,255,.28), 0 1px 3px rgba(0,0,0,.55);}
   .clock{
     text-align:right; font-family:var(--mono); line-height:1.15;
   }
@@ -102,7 +115,7 @@
     font-family:var(--jp); font-size:12.5px; font-weight:700; padding:6px 4px; border-radius:7px;
     cursor:pointer; letter-spacing:.02em; transition:.15s;
   }
-  .seg button[aria-pressed="true"]{background:var(--accent); color:var(--accent-ink); box-shadow:0 1px 6px -1px color-mix(in srgb,var(--accent) 55%, transparent);}
+  .seg button[aria-pressed="true"]{background:linear-gradient(180deg,#DEE4EC 0%,#ABB8C9 55%,#8492A6 100%); color:#233245; box-shadow:0 1px 6px -1px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.6);}
   .seg button:focus-visible{outline:2px solid var(--accent); outline-offset:2px;}
   .filterbar{padding:16px 12px 6px;}
   .filterbar .seg{padding:3px;}
@@ -143,8 +156,9 @@
   .wx-sub .pop{color:var(--accent); font-weight:800;}
   .wx-sub .wx-pfx{font-size:11px; font-weight:600;}
   .radar-btn{margin-left:auto; flex:0 0 auto; display:flex; align-items:center; gap:5px; text-decoration:none;
-    font-family:var(--jp); font-weight:800; font-size:11px; line-height:1.05; color:var(--accent-ink);
-    background:var(--accent); padding:8px 11px; border-radius:10px; box-shadow:0 1px 9px -2px color-mix(in srgb,var(--accent) 60%,transparent);}
+    font-family:var(--jp); font-weight:800; font-size:11px; line-height:1.05; color:#243247;
+    background:linear-gradient(180deg,#DEE4EC 0%,#AEBACB 52%,#8492A6 100%); padding:9px 12px; border-radius:10px;
+    border:0; box-shadow:0 2px 8px -2px rgba(0,0,0,.45), inset 0 1px 0 rgba(255,255,255,.6);}
   .radar-btn .ri{font-size:14px;}
   .radar-btn:active{transform:translateY(1px);}
   /* 日出入・風・潮 行の値並び */
@@ -171,12 +185,20 @@
     display:grid; grid-template-columns:var(--grid);
     gap:5px; padding:5px 12px 5px 15px; align-items:center;
     background:color-mix(in srgb,var(--bg) 92%, var(--accent) 3%);
-    border-bottom:1px solid var(--line);
-    font-family:var(--mono); font-size:8.5px; letter-spacing:.12em; text-transform:uppercase; color:var(--faint);
+    border-bottom:0;
+    box-shadow:0 5px 9px -7px rgba(0,0,0,.4);
+    font-family:var(--mono); font-size:10px; font-weight:700; letter-spacing:.04em; text-transform:uppercase;
+    color:color-mix(in srgb, var(--text) 64%, transparent);
+    text-shadow:0 1px 1px rgba(255,255,255,.4), 0 1px 2px rgba(0,0,0,.2);
   }
+  /* 列見出しの下線＝入出航の1時間区切りと同じメタル罫線 */
+  .cols::after{content:""; position:absolute; left:0; right:0; bottom:0; height:5px;
+    background:linear-gradient(180deg,#C4CFDC 0%,#93A1B3 55%,#6F7E92 100%);
+    box-shadow:0 1px 3px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.55);}
   .cols .r{text-align:right;}
   .cols .c{text-align:center;}
-  .cols .pilotcol,.cols .routecol{font-size:7px; letter-spacing:0;}
+  .cols .pilotcol{font-size:7.5px; letter-spacing:0;}
+  .cols .routecol{font-size:9px; letter-spacing:0;}
 
   :root{--grid:42px 26px 48px minmax(0,1fr) 40px 28px;}
 
@@ -197,32 +219,57 @@
   .row{
     display:grid; grid-template-columns:var(--grid); gap:5px; align-items:center;
     padding:9px 12px 9px 15px; margin:0;
-    border-bottom:1px solid color-mix(in srgb, var(--text) 16%, transparent);
+    border-bottom:1px solid color-mix(in srgb, var(--text) 18%, transparent);
+    box-shadow:inset 0 1px 0 rgba(255,255,255,.16), inset 0 -2px 3px -2px rgba(0,0,0,.30);
     position:relative;
   }
   /* 左バー = 時間帯（時刻）／背景 = 入航・出航・シフトの区分 */
   .row::before{content:""; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--hc);}
-  .row.d-in{background:color-mix(in srgb, var(--in) 13%, var(--bg));}
-  .row.d-out{background:color-mix(in srgb, var(--out) 13%, var(--bg));}
-  .row.d-shift{background:color-mix(in srgb, var(--shift) 15%, var(--bg));}
+  /* 1行ごとに縦グラデ（上下端=濃い → 中央は白強め。船名・長さ・トン数付近がほぼ白） */
+  .row.d-in{background:linear-gradient(180deg,
+    color-mix(in srgb, var(--in) 60%, var(--bg)) 0%,
+    color-mix(in srgb, var(--in) 24%, var(--bg)) 32%,
+    color-mix(in srgb, var(--in) 2%, var(--bg2)) 47%,
+    color-mix(in srgb, var(--in) 2%, var(--bg2)) 53%,
+    color-mix(in srgb, var(--in) 24%, var(--bg)) 68%,
+    color-mix(in srgb, var(--in) 60%, var(--bg)) 100%);}
+  .row.d-out{background:linear-gradient(180deg,
+    color-mix(in srgb, var(--out) 60%, var(--bg)) 0%,
+    color-mix(in srgb, var(--out) 24%, var(--bg)) 32%,
+    color-mix(in srgb, var(--out) 2%, var(--bg2)) 47%,
+    color-mix(in srgb, var(--out) 2%, var(--bg2)) 53%,
+    color-mix(in srgb, var(--out) 24%, var(--bg)) 68%,
+    color-mix(in srgb, var(--out) 60%, var(--bg)) 100%);}
+  .row.d-shift{background:linear-gradient(180deg,
+    color-mix(in srgb, var(--shift) 60%, var(--bg)) 0%,
+    color-mix(in srgb, var(--shift) 24%, var(--bg)) 32%,
+    color-mix(in srgb, var(--shift) 2%, var(--bg2)) 47%,
+    color-mix(in srgb, var(--shift) 2%, var(--bg2)) 53%,
+    color-mix(in srgb, var(--shift) 24%, var(--bg)) 68%,
+    color-mix(in srgb, var(--shift) 60%, var(--bg)) 100%);}
 
   /* 1時間ごとの区切り＝太字罫線 */
-  .hourbreak{height:0; border-top:3px solid color-mix(in srgb, var(--accent) 55%, var(--line2)); margin:0;}
+  /* 1時間ごとの区切り＝太いシルバー罫線（ぱっと見て分かる） */
+  .hourbreak{height:5px; border:0; margin:0; background:linear-gradient(180deg,#C4CFDC 0%,#93A1B3 55%,#6F7E92 100%);
+    box-shadow:0 1px 3px rgba(0,0,0,.4), inset 0 1px 0 rgba(255,255,255,.55);}
   /* スケジュールの日付見出し */
   .datehdr{display:flex; align-items:baseline; gap:9px; padding:11px 14px 8px; font-family:var(--mono); font-weight:800; letter-spacing:.03em; background:color-mix(in srgb,var(--accent) 9%, var(--bg)); border-top:2px solid color-mix(in srgb,var(--accent) 50%,var(--line2)); border-bottom:1px solid var(--line);}
   .datehdr .dmd{font-size:16px; color:var(--text); font-variant-numeric:tabular-nums;}
-  .datehdr .dwd{font-size:13px; color:var(--accent); letter-spacing:.06em;}
+  .datehdr .dwd{font-size:13px; letter-spacing:.06em; font-weight:800;
+    background:linear-gradient(180deg,#8A97AA 0%,#4A5567 55%,#2C3646 100%); -webkit-background-clip:text; background-clip:text; color:transparent;
+    filter:drop-shadow(0 1px 1px rgba(255,255,255,.4));}
   .datehdr .rel{font-family:var(--jp); font-size:11.5px; color:var(--out); font-weight:800; padding:2px 8px; border-radius:7px; background:color-mix(in srgb,var(--out) 15%,transparent);}
 
   .c-time{font-family:var(--mono); font-size:14px; font-weight:700; letter-spacing:.01em; font-variant-numeric:tabular-nums;}
   .c-dir{display:flex;}
   .pill{
-    font-size:11px; font-weight:800; padding:2px 0; width:100%; text-align:center;
-    border-radius:6px; letter-spacing:.02em; line-height:1.5;
+    font-size:11px; font-weight:900; padding:3px 0; width:100%; text-align:center;
+    border-radius:6px; letter-spacing:.02em; line-height:1.4; color:var(--accent-ink);
+    box-shadow:0 1px 4px -1px rgba(0,0,0,.25);
   }
-  .pill.in{color:var(--in); background:color-mix(in srgb,var(--in) 16%, transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--in) 40%,transparent);}
-  .pill.out{color:var(--out); background:color-mix(in srgb,var(--out) 16%, transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--out) 40%,transparent);}
-  .pill.shift{color:var(--shift); background:color-mix(in srgb,var(--shift) 16%, transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--shift) 40%,transparent);}
+  .pill.in{background:linear-gradient(180deg, color-mix(in srgb,var(--in) 84%, #fff), var(--in));}
+  .pill.out{background:linear-gradient(180deg, color-mix(in srgb,var(--out) 84%, #fff), var(--out));}
+  .pill.shift{background:linear-gradient(180deg, color-mix(in srgb,var(--shift) 84%, #fff), var(--shift));}
 
   /* バース = 時刻と同じ濃さ・大きさ。必ず1行（長いシフトバースのみ自動縮小） */
   .c-berth{font-family:var(--mono); font-size:14px; font-weight:700; color:var(--text); letter-spacing:.01em; white-space:nowrap; line-height:1.22; overflow:hidden;}
@@ -235,24 +282,21 @@
   .ship-meta{font-family:var(--mono); font-size:11px; color:var(--dim); margin-top:2px; font-variant-numeric:tabular-nums; letter-spacing:.01em;}
   .ship-meta b{font-weight:700; color:var(--text);}
   .c-route{display:flex; justify-content:center;}
-  .route{font-family:var(--mono); font-size:11px; font-weight:800; padding:2px 6px; border-radius:5px; letter-spacing:.04em; line-height:1.35;}
-  .route.e{color:#7fd0ff; background:color-mix(in srgb,#7fd0ff 15%,transparent);}
-  .route.w{color:#ffc98a; background:color-mix(in srgb,#ffc98a 15%,transparent);}
-  .route.p{color:var(--dim); background:color-mix(in srgb,var(--dim) 16%,transparent);}
-  .route.port{font-size:8px; font-weight:700; padding:1px 3px; letter-spacing:0; line-height:1.12; white-space:normal; word-break:break-all; max-width:100%; text-align:center;}
-  @media (prefers-color-scheme:light){.route.e{color:#1f6fa8;background:#e3f0fa;} .route.w{color:#a5680d;background:#faf0df;}}
-  :root[data-theme="light"] .route.e{color:#1f6fa8;background:#e3f0fa;}
-  :root[data-theme="light"] .route.w{color:#a5680d;background:#faf0df;}
+  .route{font-family:var(--mono); font-size:11px; font-weight:800; padding:2px 6px; border-radius:5px; letter-spacing:.04em; line-height:1.35; color:#fff; box-shadow:0 1px 4px -1px rgba(0,0,0,.28);}
+  .route.e{background:linear-gradient(180deg,#3AA0E6,#1E7FC4);}
+  .route.w{background:linear-gradient(180deg,#E29A22,#B8730C);}
+  .route.p{background:linear-gradient(180deg,#6C8AA2,#4E6C84);}
+  .route.port{font-size:8px; font-weight:800; padding:1px 3px; letter-spacing:0; line-height:1.12; white-space:normal; word-break:break-all; max-width:100%; text-align:center;}
 
   .c-num{font-family:var(--mono); font-size:12.5px; font-weight:500; text-align:right; font-variant-numeric:tabular-nums; color:var(--text);}
   /* 長さ300m以上：船名・長さ・トン数を紫の極太字で強調 */
-  .c-ship.big .ship-nm,.c-ship.big .ship-meta,.c-ship.big .ship-meta b{font-weight:900; color:#8B5CF6;}
-  @media (prefers-color-scheme:dark){ .c-ship.big .ship-nm,.c-ship.big .ship-meta,.c-ship.big .ship-meta b{color:#B79CFF;} }
-  :root[data-theme="light"] .c-ship.big .ship-nm,:root[data-theme="light"] .c-ship.big .ship-meta,:root[data-theme="light"] .c-ship.big .ship-meta b{color:#7C3AED;}
-  :root[data-theme="dark"] .c-ship.big .ship-nm,:root[data-theme="dark"] .c-ship.big .ship-meta,:root[data-theme="dark"] .c-ship.big .ship-meta b{color:#B79CFF;}
+  .c-ship.big .ship-nm,.c-ship.big .ship-meta,.c-ship.big .ship-meta b{font-weight:900; color:#F050C6;}
+  @media (prefers-color-scheme:light){ .c-ship.big .ship-nm,.c-ship.big .ship-meta,.c-ship.big .ship-meta b{color:#A50F79;} }
+  :root[data-theme="light"] .c-ship.big .ship-nm,:root[data-theme="light"] .c-ship.big .ship-meta,:root[data-theme="light"] .c-ship.big .ship-meta b{color:#A50F79;}
+  :root[data-theme="dark"] .c-ship.big .ship-nm,:root[data-theme="dark"] .c-ship.big .ship-meta,:root[data-theme="dark"] .c-ship.big .ship-meta b{color:#F050C6;}
   .c-pilot{display:flex; justify-content:center;}
   .pbadge{width:20px;height:20px;border-radius:6px;display:flex;align-items:center;justify-content:center;font-family:var(--mono);font-size:11px;font-weight:800;}
-  .pbadge.yes{color:var(--pilot); background:color-mix(in srgb,var(--pilot) 18%,transparent); box-shadow:inset 0 0 0 1px color-mix(in srgb,var(--pilot) 55%,transparent);}
+  .pbadge.yes{color:var(--accent-ink); background:linear-gradient(180deg, color-mix(in srgb,var(--pilot) 82%,#fff), var(--pilot)); box-shadow:0 1px 4px -1px rgba(0,0,0,.28);}
   .pbadge.no{color:var(--faint); font-weight:500; font-size:12px;}
 
   /* now marker */
@@ -626,13 +670,13 @@
     const ctx=c.getContext('2d'); const W=88,H=88,cx=44,cy=44,R=40;
     const reduce=window.matchMedia('(prefers-reduced-motion:reduce)').matches;
     const css=getComputedStyle(document.documentElement);
-    function col(){ return getComputedStyle(document.querySelector('.app')).getPropertyValue('--accent').trim()||'#38D6D0'; }
+    function col(){ return '#93A2B5'; } /* レーダー：白シルバー円盤に映える柔らかいシルバー線 */
     const blips=[[0.55,1.9],[0.8,3.6],[0.4,5.1],[0.7,0.6]];
     let a=0;
     function frame(){
       const ac=col();
       ctx.clearRect(0,0,W,H);
-      ctx.strokeStyle='rgba(120,150,175,.28)'; ctx.lineWidth=1;
+      ctx.strokeStyle=hexA(ac,.34); ctx.lineWidth=1;
       [0.5,0.78,1].forEach(f=>{ctx.beginPath();ctx.arc(cx,cy,R*f,0,7);ctx.stroke();});
       ctx.beginPath();ctx.moveTo(cx-R,cy);ctx.lineTo(cx+R,cy);ctx.moveTo(cx,cy-R);ctx.lineTo(cx,cy+R);ctx.stroke();
       // sweep
@@ -640,9 +684,9 @@
       ctx.save(); ctx.beginPath(); ctx.moveTo(cx,cy);
       ctx.arc(cx,cy,R,a-0.9,a); ctx.closePath();
       const grd=ctx.createRadialGradient(cx,cy,0,cx,cy,R);
-      grd.addColorStop(0, hexA(ac,.0)); grd.addColorStop(1, hexA(ac,.33));
+      grd.addColorStop(0, hexA(ac,.0)); grd.addColorStop(1, hexA('#57616F',.6));
       ctx.fillStyle=grd; ctx.fill(); ctx.restore();
-      ctx.strokeStyle=hexA(ac,.9); ctx.lineWidth=1.4;
+      ctx.strokeStyle=hexA('#454F5D',.95); ctx.lineWidth=1.5;
       ctx.beginPath();ctx.moveTo(cx,cy);ctx.lineTo(cx+Math.cos(a)*R,cy+Math.sin(a)*R);ctx.stroke();
       // blips
       blips.forEach(([rr,ang])=>{ const bx=cx+Math.cos(ang)*R*rr, by=cy+Math.sin(ang)*R*rr;
