@@ -111,13 +111,18 @@ function buildWeather(fc) {
     const ss = office.timeSeries[2];
     const sa = ss && (ss.areas.find((a) => a.area.code === "44132") || ss.areas[0]);
     if (sa) {
-      const vals = [];
+      // まず当日の地点気温。無ければ短期予報にある気温（＝夜間は翌日分）を使う
+      let vals = [];
       ss.timeDefines.forEach((t, i) => {
         if (t.slice(0, 10) === ymd) { const v = parseInt(sa.temps[i], 10); if (!isNaN(v)) vals.push(v); }
       });
+      if (!vals.length) vals = sa.temps.map((v) => parseInt(v, 10)).filter((v) => !isNaN(v));
       if (vals.length) { if (!max) max = String(Math.max(...vals)); if (!min) min = String(Math.min(...vals)); }
     }
   }
+  // 夕方以降は当日の最高/最低が配信されないため、直近（翌日）の予報値で補完
+  if (!max) { const i = ta.tempsMax.findIndex((v) => v !== "" && v != null); if (i >= 0) max = ta.tempsMax[i]; }
+  if (!min) { const i = ta.tempsMin.findIndex((v) => v !== "" && v != null); if (i >= 0) min = ta.tempsMin[i]; }
   return { text: text || "--", max: max || "--", min: min || "--", pop: pop == null ? "--" : String(pop) };
 }
 
