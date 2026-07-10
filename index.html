@@ -663,6 +663,12 @@
       .then(j=> boot(j.rows||j, j.updated, j.env, j.fetchedAt, true))
       .catch(()=> boot(EMBEDDED, '（収録データ）', ENV_SNAPSHOT, null, false));
   }
+  // 船名リンクはJSで開く → iOSでMarineTrafficアプリに横取りされず、ブラウザで船ページ/検索が開く
+  document.addEventListener('click', function(e){
+    const a = e.target && e.target.closest && e.target.closest('a.mt-link');
+    if(a && a.href){ e.preventDefault(); window.open(a.href, '_blank', 'noopener'); }
+  });
+
   const _rb=document.getElementById('refreshBtn');
   if(_rb) _rb.addEventListener('click',()=>{ _rb.classList.add('spin'); loadData().finally(()=> setTimeout(()=>_rb.classList.remove('spin'),500)); });
   loadData();
