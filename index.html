@@ -449,8 +449,12 @@
   };
   const SHIP_MMSI = {};
   Object.keys(SHIP_MMSI_RAW).forEach(k=>{ SHIP_MMSI[normShip(k)] = SHIP_MMSI_RAW[k]; });
-  // MarineTraffic検索キーワード：対応表にあればMMSI（一意）、無ければローマ字化した船名
-  function mtKeyword(ship){ return SHIP_MMSI[normShip(ship)] || toRomaji(ship); }
+  // MarineTraffic リンク：対応表があれば「船ページ直リンク」（アプリでも該当船が開く）、無ければローマ字で船名検索
+  function mtHref(ship){
+    const id = SHIP_MMSI[normShip(ship)];
+    if (id) { const key = (String(id).length === 7) ? 'imo' : 'mmsi'; return 'https://www.marinetraffic.com/en/ais/details/ships/' + key + ':' + id; }
+    return 'https://www.marinetraffic.com/en/ais/index/search/all/keyword:' + encodeURIComponent(toRomaji(ship));
+  }
 
   // ===== 表示対象外リスト（ここを編集すれば除外内容を変更できます） =====
   // 船名（全角/半角・スペースは無視して一致判定）／「押船」を含む船は自動で除外
@@ -535,7 +539,7 @@
         `<div class="c-dir"><span class="pill ${r.dc}">${DIRSHORT[r.dir]||r.dir}</span></div>`+
         `<div class="c-berth${berthDisp.length<=5?'':(berthDisp.length<=7?' bs':' bxs')}">${escapeHtml(berthDisp)}</div>`+
         `<div class="c-ship${big?' big':''}">`+
-          `<div class="ship-nm"><a class="mt-link" href="https://www.marinetraffic.com/en/ais/index/search/all/keyword:${encodeURIComponent(mtKeyword(r.ship))}" target="_blank" rel="noopener">${escapeHtml(r.ship)}</a></div>`+
+          `<div class="ship-nm"><a class="mt-link" href="${mtHref(r.ship)}" target="_blank" rel="noopener">${escapeHtml(r.ship)}</a></div>`+
           `<div class="ship-meta"><b>${lenDisp}</b>　<b>${tonDisp}</b></div>`+
         `</div>`+
         `<div class="c-pilot">${r.pilot?'<span class="pbadge yes">P</span>':'<span class="pbadge no">−</span>'}</div>`+
