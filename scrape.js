@@ -63,6 +63,7 @@ function parseTable(html, route) {
 async function fetchText(url) {
   const res = await fetch(url, {
     headers: { "User-Agent": "Mozilla/5.0 (TokyoBaySchedule/1.0)" },
+    signal: AbortSignal.timeout(20000), // 20秒でタイムアウト（ハング防止）
   });
   if (!res.ok) throw new Error(`HTTP ${res.status} for ${url}`);
   const buf = Buffer.from(await res.arrayBuffer());
@@ -242,11 +243,12 @@ async function fetchPortRows() {
   const dec = (buf) => new TextDecoder("shift_jis").decode(buf);
   const UA = { "User-Agent": "Mozilla/5.0 (TokyoBaySchedule/1.0)" };
 
-  let res = await fetch(base + "keisen", { headers: { ...UA, Cookie: cookieHeader() } });
+  const TO = () => AbortSignal.timeout(20000);
+  let res = await fetch(base + "keisen", { headers: { ...UA, Cookie: cookieHeader() }, signal: TO() });
   store(res); await res.arrayBuffer();
   res = await fetch(base + "keisen_search", {
     method: "POST", headers: { ...UA, Cookie: cookieHeader(), "Content-Type": "application/x-www-form-urlencoded" },
-    body: "KeiCd=1&FuKbn=all",
+    body: "KeiCd=1&FuKbn=all", signal: TO(),
   });
   store(res);
   const searchHtml = dec(Buffer.from(await res.arrayBuffer()));
@@ -261,7 +263,7 @@ async function fetchPortRows() {
   params.set("KeiCd", "1"); params.set("FuKbn", "all");
   res = await fetch(base + "keisen_result", {
     method: "POST", headers: { ...UA, Cookie: cookieHeader(), "Content-Type": "application/x-www-form-urlencoded" },
-    body: params.toString(),
+    body: params.toString(), signal: TO(),
   });
   store(res);
   const html = dec(Buffer.from(await res.arrayBuffer()));
