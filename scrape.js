@@ -244,9 +244,20 @@ function kanjiNumToArabic(run) {
   }
   return String(total + cur);
 }
+// アルファベットのローマ数字（VII 等・単独の語のみ）を算用数字へ
+function asciiRomanToArabic(tok) {
+  const val = { I: 1, V: 5, X: 10, L: 50, C: 100, D: 500, M: 1000 };
+  let total = 0, prev = 0;
+  for (let i = tok.length - 1; i >= 0; i--) {
+    const v = val[tok[i]];
+    if (v < prev) total -= v; else { total += v; prev = v; }
+  }
+  return String(total);
+}
 const canonNum = (s) =>
   (s || "")
-    .replace(/[Ⅰ-ⅿ]/g, (c) => ROMAN_NUM[c] || c)      // ローマ数字→算用数字（Ⅶ→7）
+    .replace(/[Ⅰ-ⅿ]/g, (c) => ROMAN_NUM[c] || c)             // Unicodeローマ数字→算用数字（Ⅶ→7）
+    .replace(/\b[IVXLCDM]+\b/g, (m) => asciiRomanToArabic(m))  // アルファベットのローマ数字→算用数字（VII→7）
     .replace(/[〇零一二三四五六七八九十]+/g, kanjiNumToArabic); // 漢数字→算用数字（七→7、十二→12）
 const shipKey = (s) =>
   canonNum(s)
