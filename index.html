@@ -516,7 +516,7 @@
     const arr = raw.filter(r=> !isExcluded(r.ship, r.berth, r.route)).map(r=>({
       time:r.time, min:hm(r.time), hour:hourOf(r.time), t:clock(r.time),
       dir:r.dir, dc:DIRC[r.dir]||'shift',
-      berth:dec(r.berth).replace(/\s*=?>\s*/,' → ').replace(/\s+/g,' ').trim(),
+      berth:dec(r.berth).replace(/\s*=?>\s*/,'→').replace(/\s+/g,' ').trim(),  // シフトの矢印は詰めて表記（例 X4→X5）＝見切れ防止
       ship:dec(r.ship), length:r.length||'', tons:r.tons||'',
       pilot:(r.pilot==='有'), route:r.route, port:!!r.port,
       ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
