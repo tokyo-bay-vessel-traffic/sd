@@ -484,9 +484,9 @@
     .map(normShip));
   // バース（完全一致）
   const EXCLUDE_BERTHS = new Set(
-    ['P','KK','中防東','NA','建材','建材(11号地)','LOB','LLB','LE','O','VAC','C','LLE','LLD','LLC','LLF','LM1','LM2','M']);
+    ['P','KK','中防東','NA','LOB','LLB','LE','VAC','C','LLE','LLD','LLC','LLF','LM1','LM2','M']);
   // ふ頭（係船＝東京港港湾情報システムの航路）完全一致
-  const EXCLUDE_FU = new Set(['大井建材','辰巳']);
+  const EXCLUDE_FU = new Set(['辰巳']);
   function isExcluded(ship, berth, route){
     const sk=normShip(ship);
     if(sk.indexOf('押船')>=0) return true;

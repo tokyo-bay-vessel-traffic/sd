@@ -230,8 +230,26 @@ async function buildEnv() {
 // ふ頭=航路 / 希望バース=バース / 着岸=入航 / 離岸=出航 / 総トン数=トン数
 // 当日の日付で検索し、当日のイベントのみ抽出。長さ・水先人は無いので "-"。
 // 全角英数→半角、空白除去、大文字化（東/西と港湾で同一船を突き合わせるため）
-const shipKey = (s) =>
+// 数字の表記ゆれを吸収して同一船を突き合わせる（例：7＝Ⅶ＝七、12＝Ⅻ＝十二）
+const ROMAN_NUM = {
+  "Ⅰ":"1","Ⅱ":"2","Ⅲ":"3","Ⅳ":"4","Ⅴ":"5","Ⅵ":"6","Ⅶ":"7","Ⅷ":"8","Ⅸ":"9","Ⅹ":"10","Ⅺ":"11","Ⅻ":"12",
+  "ⅰ":"1","ⅱ":"2","ⅲ":"3","ⅳ":"4","ⅴ":"5","ⅵ":"6","ⅶ":"7","ⅷ":"8","ⅸ":"9","ⅹ":"10","ⅺ":"11","ⅻ":"12",
+};
+const KANJI_DIG = { "〇":0,"零":0,"一":1,"二":2,"三":3,"四":4,"五":5,"六":6,"七":7,"八":8,"九":9 };
+function kanjiNumToArabic(run) {
+  let total = 0, cur = 0;
+  for (const ch of run) {
+    if (ch in KANJI_DIG) cur = cur * 10 + KANJI_DIG[ch];
+    else if (ch === "十") { total += (cur || 1) * 10; cur = 0; }
+  }
+  return String(total + cur);
+}
+const canonNum = (s) =>
   (s || "")
+    .replace(/[Ⅰ-ⅿ]/g, (c) => ROMAN_NUM[c] || c)      // ローマ数字→算用数字（Ⅶ→7）
+    .replace(/[〇零一二三四五六七八九十]+/g, kanjiNumToArabic); // 漢数字→算用数字（七→7、十二→12）
+const shipKey = (s) =>
+  canonNum(s)
     .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xFEE0))
     .replace(/\s+/g, "")
     .toUpperCase();
@@ -282,9 +300,9 @@ async function fetchPortRows() {
     const c = [...tr[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => clean(x[1]));
     if (c.length < 7 || c[0] === "ふ頭") continue;
     const fu = c[0], berth = c[1], arr = c[2], dep = c[3], ship = c[4], kind = c[5] || "";
-    // 表示対象外の船種（客船／その他の船舶／はしけ船（CFT））※「貨客船」等は対象外＝表示する
+    // 表示対象外の船種（客船／その他の船舶）※はしけ船（CFT）・貨客船 等は表示する
     const knorm = kind.replace(/（/g, "(").replace(/）/g, ")");
-    if (knorm === "客船" || knorm === "その他の船舶" || knorm === "はしけ船(CFT)") continue;
+    if (knorm === "客船" || knorm === "その他の船舶") continue;
     const tons = (c[6] || "").replace(/,/g, "").replace(/\.\d+$/, "");
     const rowBase = { berth, ship, length: "-", tons, pilot: "-", route: fu, port: true };
     if (onDay(arr)) out.push({ time: arr, dir: "入航", ...rowBase });
