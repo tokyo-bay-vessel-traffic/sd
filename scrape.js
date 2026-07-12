@@ -311,9 +311,9 @@ async function fetchPortRows() {
     const c = [...tr[1].matchAll(/<t[hd][^>]*>([\s\S]*?)<\/t[hd]>/gi)].map((x) => clean(x[1]));
     if (c.length < 7 || c[0] === "ふ頭") continue;
     const fu = c[0], berth = c[1], arr = c[2], dep = c[3], ship = c[4], kind = c[5] || "";
-    // 表示対象外の船種（客船／その他の船舶）※はしけ船（CFT）・貨客船 等は表示する
+    // 表示対象外の船種（客船／その他の船舶／曳船／押船）※はしけ船（CFT）・貨客船 等は表示する
     const knorm = kind.replace(/（/g, "(").replace(/）/g, ")");
-    if (knorm === "客船" || knorm === "その他の船舶") continue;
+    if (knorm === "客船" || knorm === "その他の船舶" || knorm === "曳船" || knorm === "押船") continue;
     const tons = (c[6] || "").replace(/,/g, "").replace(/\.\d+$/, "");
     const rowBase = { berth, ship, length: "-", tons, pilot: "-", route: fu, port: true };
     if (onDay(arr)) out.push({ time: arr, dir: "入航", ...rowBase });
