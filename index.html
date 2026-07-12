@@ -83,6 +83,8 @@
     padding:10px 14px 8px;
     box-shadow:0 3px 12px -4px color-mix(in srgb, #0A1972 80%, transparent), inset 0 1px 0 rgba(255,255,255,.12);
   }
+  /* iOSでホーム画面から「アプリ」として全画面起動した時だけ、ステータスバー(時刻/電池)と重ならないよう上に余白を足す */
+  html.standalone .hd{ padding-top: calc(10px + max(env(safe-area-inset-top), 20px)); }
   .hd-top{display:flex; align-items:center; gap:11px;}
   .radar{width:44px; height:44px; flex:0 0 auto; border-radius:50%;
     background:radial-gradient(circle at 50% 42%, rgba(201,209,221,.62) 0%, rgba(176,186,201,.5) 82%);
@@ -654,6 +656,9 @@
     ROUTE=b.dataset.route; render();
   }));
 
+
+  // iOSのホーム画面から全画面「アプリ」起動した時は、ヘッダーにステータスバー分の余白を足す（重なり防止）
+  if(window.navigator.standalone===true) document.documentElement.classList.add('standalone');
 
   // header height -> sticky offsets
   function setH(){ const h=document.querySelector('.hd').offsetHeight; document.documentElement.style.setProperty('--hdH', (h)+'px'); }
