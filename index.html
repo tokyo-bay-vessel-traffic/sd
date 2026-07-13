@@ -70,21 +70,27 @@
   /* ---------- header ---------- */
   .hd{
     position:sticky; top:0; z-index:30;
-    /* 夜のネイビーのパイプ風縦グラデ（深く青みのある紺。上下端=濃い→中央=白強め） */
-    background:linear-gradient(180deg,
-      color-mix(in srgb, #0A1972 97%, var(--bg)) 0%,
-      color-mix(in srgb, #0A1972 42%, var(--bg)) 28%,
-      color-mix(in srgb, #0A1972 8%, var(--bg2)) 42%,
-      color-mix(in srgb, #0A1972 8%, var(--bg2)) 58%,
-      color-mix(in srgb, #0A1972 42%, var(--bg)) 72%,
-      color-mix(in srgb, #0A1972 97%, var(--bg)) 100%);
+    --safe:0px;   /* iOS全画面時のステータスバー余白（下のstandalone指定で設定）。0なら通常表示 */
+    /* 夜のネイビーのパイプ風縦グラデ。濃紺を広め・中央の明るい帯は狭め（タイトル可読性は確保）。
+       余白(--safe)の分だけグラデを下にずらし、上端の余白は濃紺の単色で埋める→全画面でもWEBと同じ比率で表示 */
+    background:
+      linear-gradient(180deg,
+        color-mix(in srgb, #0A1972 97%, var(--bg)) 0%,
+        color-mix(in srgb, #0A1972 58%, var(--bg)) 31%,
+        color-mix(in srgb, #0A1972 8%, var(--bg2)) 45%,
+        color-mix(in srgb, #0A1972 8%, var(--bg2)) 55%,
+        color-mix(in srgb, #0A1972 58%, var(--bg)) 69%,
+        color-mix(in srgb, #0A1972 97%, var(--bg)) 100%)
+        0 var(--safe) / 100% calc(100% - var(--safe)) no-repeat,
+      color-mix(in srgb, #0A1972 97%, var(--bg));
     border-top:2px solid color-mix(in srgb, #0A1972 98%, var(--bg));
     border-bottom:2px solid color-mix(in srgb, #0A1972 92%, var(--line));
     padding:10px 14px 8px;
     box-shadow:0 3px 12px -4px color-mix(in srgb, #0A1972 80%, transparent), inset 0 1px 0 rgba(255,255,255,.12);
   }
-  /* iOSでホーム画面から「アプリ」として全画面起動した時だけ、ステータスバー(時刻/電池)と重ならないよう上に余白を足す */
-  html.standalone .hd{ padding-top: calc(10px + max(env(safe-area-inset-top), 20px)); }
+  /* iOSでホーム画面から「アプリ」として全画面起動した時だけ、ステータスバー(時刻/電池)と重ならないよう上に余白を足す。
+     --safe をグラデにも渡し、余白部分は濃紺の単色で埋める（グラデ本体はWEBと同じ比率のまま） */
+  html.standalone .hd{ --safe: max(env(safe-area-inset-top), 20px); padding-top: calc(10px + var(--safe)); }
   .hd-top{display:flex; align-items:center; gap:11px;}
   .radar{width:44px; height:44px; flex:0 0 auto; border-radius:50%;
     background:radial-gradient(circle at 50% 42%, rgba(201,209,221,.62) 0%, rgba(176,186,201,.5) 82%);
