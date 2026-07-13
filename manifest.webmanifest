@@ -1,0 +1,17 @@
+{
+  "name": "東京湾 入出航予定",
+  "short_name": "東京湾入出航",
+  "description": "東京湾（東航路・西航路）の入出航予定と気象・海象をスマホでまとめて閲覧",
+  "lang": "ja",
+  "dir": "ltr",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#07131F",
+  "theme_color": "#0A1972",
+  "icons": [
+    { "src": "icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any maskable" },
+    { "src": "icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any maskable" }
+  ]
+}
