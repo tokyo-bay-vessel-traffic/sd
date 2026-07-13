@@ -403,7 +403,13 @@
 
   // 全角英数→半角、空白除去、大文字化（船名の同一判定・除外判定に使用）
   const zen2han = s => (s||'').replace(/[Ａ-Ｚａ-ｚ０-９]/g, c=>String.fromCharCode(c.charCodeAt(0)-0xFEE0));
-  const normShip = s => zen2han(s).replace(/\s+/g,'').toUpperCase();
+  // 数字の表記ゆれ吸収（7＝Ⅶ＝VII＝七、12＝十二）：ローマ数字/漢数字→算用数字（船名の同一判定・MMSIリンク照合に使用）
+  const _ROMAN_NUM={'Ⅰ':'1','Ⅱ':'2','Ⅲ':'3','Ⅳ':'4','Ⅴ':'5','Ⅵ':'6','Ⅶ':'7','Ⅷ':'8','Ⅸ':'9','Ⅹ':'10','Ⅺ':'11','Ⅻ':'12','ⅰ':'1','ⅱ':'2','ⅲ':'3','ⅳ':'4','ⅴ':'5','ⅵ':'6','ⅶ':'7','ⅷ':'8','ⅸ':'9','ⅹ':'10','ⅺ':'11','ⅻ':'12'};
+  const _KDIG={'〇':0,'零':0,'一':1,'二':2,'三':3,'四':4,'五':5,'六':6,'七':7,'八':8,'九':9};
+  const _kanjiNum=run=>{let t=0,c=0;for(const ch of run){if(ch in _KDIG)c=c*10+_KDIG[ch];else if(ch==='十'){t+=(c||1)*10;c=0;}}return String(t+c);};
+  const _asciiRoman=tok=>{const v={I:1,V:5,X:10,L:50,C:100,D:500,M:1000};let t=0,p=0;for(let i=tok.length-1;i>=0;i--){const x=v[tok[i]];if(x<p)t-=x;else{t+=x;p=x;}}return String(t);};
+  const canonNumJp = s => (s||'').replace(/[Ⅰ-ⅿ]/g,c=>_ROMAN_NUM[c]||c).replace(/\b[IVXLCDM]+\b/g,m=>_asciiRoman(m)).replace(/[〇零一二三四五六七八九十]+/g,_kanjiNum);
+  const normShip = s => canonNumJp(zen2han(s).toUpperCase()).replace(/\s+/g,'');
 
   // 船名を VesselFinder 検索用にローマ字化（かなは確実、漢字は主要語を近似変換）
   const ROMA_KANA = {
@@ -518,6 +524,19 @@
     'YM TIPTOP':'636019986','YM CONTINENT':'636019893','YM CREDENTIAL':'636019894','YM COOPERATION':'636019900','YM CERTAINTY':'636019897','YM CONSTANCY':'636019899',
     'YM CONTINUITY':'563234400','YM UBIQUITY':'416467000','YM UNANIMITY':'416466000','YM UNICORN':'416464000','YM MASCULINITY':'636015183','YM MODESTY':'636016242',
     'YM INAUGURATION':'416487000','YM ESSENCE':'416491000','YM ETERNITY':'636013699',
+    // DONGJIN（Dongjin Shipping）
+    'DONGJIN VOYAGER':'440716000','DONGJIN FIDES':'441261000','DONGJIN VENUS':'441805000','DONGJIN CONFIDENT':'441424000','DONGJIN ENTERPRISE':'440346000','DONGJIN FORTUNE':'441236000',
+    'DONGJIN CONTINENTAL':'441283000','DONGJIN AUBE':'440389000',
+    // Interasia Lines（INTERASIA）
+    'INTERASIA ADVANCE':'563005400','INTERASIA CATALYST':'563675000','INTERASIA HORIZON':'563961000','INTERASIA PROGRESS':'563053700','INTERASIA MOMENTUM':'563110800','INTERASIA MOTIVATION':'564440000',
+    'INTERASIA INSPIRATION':'477133700','INTERASIA RESILIENCE':'563144200','INTERASIA ENGAGE':'563169200','INTERASIA ENHANCE':'563169900','INTERASIA ELEVATE':'563173400','INTERASIA VISION':'563115100',
+    'INTERASIA PURSUIT':'563114100','INTERASIA ACCELERATE':'256636000','INTERASIA AMPLIFY':'256637000','INTERASIA TRANSCEND':'563243500','INTERASIA TENACITY':'563242900','INTERASIA TRIBUTE':'563250900',
+    'INTERASIA TRIUMPH':'563257700','INTERASIA AMBITION':'563328200',
+    // MSC（Mediterranean Shipping）※船名の数字ゆれは照合側で吸収
+    'MSC ALMA VII':'636022116','MSC NAGOYA V':'370320000','MSC YOKOHAMA':'636020498','MSC RIFAYA':'636017685','MSC JAPAN III':'371443000','MSC TOKYO':'636020497',
+    'MSC MADHU B':'255806031','MSC ALTAIR':'636015604','MSC KATRINA':'373404000','MSC MAUREEN':'355216000','MSC EVEREST VIII':'636021393','MSC AZOV':'229620000',
+    // 個別指定の追加
+    'PANCON SUCCESS':'441875000','TY INCHEON':'441127000','VICTORY STAR':'477940300','ATLANTIC BRIDGE':'563152700',
   };
   const SHIP_MMSI = {};
   Object.keys(SHIP_MMSI_RAW).forEach(k=>{ SHIP_MMSI[normShip(k)] = SHIP_MMSI_RAW[k]; });
