@@ -362,8 +362,13 @@ async function fetchPortRows() {
     console.error("気象・海象の取得に失敗:", e.message);
   }
 
-  const payload = { updated: updated || "", fetchedAt: new Date().toISOString(), env, rows };
+  // 客船ディナークルーズ等（東/西航路にも出るが表示対象外）をデータ側でも確実に除外
+  // ＝クライアントのEXCLUDE_SHIPSに加えて、data.json自体から落とす（端末の古いキャッシュ対策）
+  const HIDE_SHIPS = new Set(["シンフォニーモデルナ", "シンフォニークラシカ"].map(shipKey));
+  const rowsOut = rows.filter((r) => !HIDE_SHIPS.has(shipKey(r.ship)));
+
+  const payload = { updated: updated || "", fetchedAt: new Date().toISOString(), env, rows: rowsOut };
   const outPath = path.join(__dirname, "data.json");
   fs.writeFileSync(outPath, JSON.stringify(payload), "utf-8");
-  console.log(`data.json を書き出しました（合計 ${rows.length}件, 最終更新 ${updated || "不明"}）`);
+  console.log(`data.json を書き出しました（合計 ${rowsOut.length}件, 最終更新 ${updated || "不明"}）`);
 })();
