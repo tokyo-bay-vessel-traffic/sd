@@ -13,7 +13,7 @@ permissions:
 # 実行の重複を防ぐ（前の実行が長引いても詰まらない・push競合を防ぐ）
 concurrency:
   group: update-schedule
-  cancel-in-progress: true
+  cancel-in-progress: false
 
 jobs:
   update:
