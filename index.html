@@ -865,8 +865,16 @@
     try{ setH(); }catch(e){}
     try{ checkStale(fetchedAt, live); }catch(e){}
   }
+  // data.json は raw.githubusercontent から直接取得する。
+  // GitHub Pages のビルドが5分毎のコミットに追いつかず頻繁にキャンセルされ、
+  // Pages 経由だと公開データが20分以上古くなるため、Pages を迂回する。
+  const DATA_RAW = 'https://raw.githubusercontent.com/tokyo-bay-vessel-traffic/sd/main/data.json';
+  function fetchJson(u){
+    return fetch(u+'?t='+Date.now(),{cache:'no-store'}).then(r=>{ if(!r.ok) throw 0; return r.json(); });
+  }
   function loadData(){
-    return fetch('data.json?t='+Date.now(),{cache:'no-store'}).then(r=>{ if(!r.ok) throw 0; return r.json(); })
+    return fetchJson(DATA_RAW)
+      .catch(()=> fetchJson('data.json'))   // raw が落ちた時の保険（Pages経由・鮮度は落ちる）
       .then(j=> boot(j.rows||j, j.updated, j.env, j.fetchedAt, true))
       .catch(()=> boot(EMBEDDED, '（収録データ）', ENV_SNAPSHOT, null, false));
   }
