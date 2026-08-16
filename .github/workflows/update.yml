@@ -33,7 +33,7 @@ jobs:
         run: |
           git config user.name "schedule-bot"
           git config user.email "actions@users.noreply.github.com"
-          git add data.json
+          git add data.json unregistered.json
           if git diff --staged --quiet; then
             echo "更新なし"
             exit 0
