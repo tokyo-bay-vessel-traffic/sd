@@ -1,0 +1,50 @@
+name: update-schedule
+
+# data.json を自動更新する。外部cron（cron-job.org）からの workflow_dispatch を主トリガーにする。
+on:
+  schedule:
+    - cron: "*/20 * * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    timeout-minutes: 8
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "20"
+
+      - name: スケジュール取得
+        run: node scrape.js
+
+      - name: 変更があればコミット（衝突に強い方式）
+        run: |
+          git config user.name "schedule-bot"
+          git config user.email "actions@users.noreply.github.com"
+          BRANCH="${GITHUB_REF_NAME:-main}"
+          git add data.json unregistered.json
+          if git diff --staged --quiet; then
+            echo "更新なし"
+            exit 0
+          fi
+          git commit -m "chore: update schedule data"
+          for i in 1 2 3 4 5; do
+            if git push origin "HEAD:$BRANCH"; then
+              echo "pushed"
+              exit 0
+            fi
+            echo "push rejected -> リモート最新の上に data.json を乗せ直す (retry $i)"
+            git fetch origin "$BRANCH"
+            git reset --soft "origin/$BRANCH"
+            git add data.json unregistered.json
+            git commit -m "chore: update schedule data" || true
+            sleep 2
+          done
+          echo "push failed after retries"
+          exit 1

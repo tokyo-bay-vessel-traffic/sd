@@ -269,7 +269,9 @@ const shipKey = (s) =>
     .replace(/\s+/g, "")
     .toUpperCase();
 
+const portForeign = []; // 未登録船リスト用：港湾システムの外国籍・非除外船を収集
 async function fetchPortRows() {
+  portForeign.length = 0;
   const base = "https://www.kouwan2.metro.tokyo.jp/app/";
   const jar = {};
   const cookieHeader = () => Object.entries(jar).map(([k, v]) => `${k}=${v}`).join("; ");
@@ -296,8 +298,10 @@ async function fetchPortRows() {
   const tomo = new Date(now.getTime() + 86400000);
   const y1 = String(now.getUTCFullYear()), m1 = pad2(now.getUTCMonth() + 1), d1 = pad2(now.getUTCDate());
   const y2 = String(tomo.getUTCFullYear()), m2 = pad2(tomo.getUTCMonth() + 1), d2 = pad2(tomo.getUTCDate());
+  const wk = new Date(now.getTime() + 7 * 86400000);
+  const y3 = String(wk.getUTCFullYear()), m3 = pad2(wk.getUTCMonth() + 1), d3 = pad2(wk.getUTCDate());
   params.set("Sty", y1); params.set("Stm", m1); params.set("Std", d1);      // 当日
-  params.set("Ety", y2); params.set("Etm", m2); params.set("Etd", d2);      // 翌日
+  params.set("Ety", y3); params.set("Etm", m3); params.set("Etd", d3);      // 未登録船リスト用に1週間先まで取得
   params.set("KeiCd", "1"); params.set("FuKbn", "all");
   res = await fetch(base + "keisen_result", {
     method: "POST", headers: { ...UA, Cookie: cookieHeader(), "Content-Type": "application/x-www-form-urlencoded" },
@@ -319,6 +323,8 @@ async function fetchPortRows() {
     // ※港湾システムの船種は「曳船・押船」で1語のため、部分一致で確実に除外する
     const knorm = kind.replace(/（/g, "(").replace(/）/g, ")");
     if (knorm === "客船" || knorm === "その他の船舶" || knorm.indexOf("曳船") >= 0 || knorm.indexOf("押船") >= 0) continue;
+    const flag = (c[7] || "").trim();
+    if (flag && flag !== "JAPAN") portForeign.push({ name: ship, kind: knorm, flag, date: (arr || "").slice(0, 5) });
     const tons = (c[6] || "").replace(/,/g, "").replace(/\.\d+$/, "");
     const rowBase = { berth, ship, length: "-", tons, pilot: "-", route: fu, port: true };
     if (onDay(arr)) out.push({ time: arr, dir: "入航", ...rowBase });
@@ -353,6 +359,29 @@ async function fetchPortRows() {
     const merged = portRows.filter((r) => !kaihoShips.has(shipKey(r.ship))); // 東/西を優先
     rows.push(...merged);
     console.log(`港湾システム: ${portRows.length}件取得 → 重複除外後 ${merged.length}件を追加`);
+    // === 未登録の外航船を自動リスト化（unregistered.json）===
+    try {
+      const idx = fs.readFileSync(path.join(__dirname, "index.html"), "utf-8");
+      const mm = idx.match(/const SHIP_MMSI_RAW = \{([\s\S]*?)\};/);
+      const reg = new Set();
+      if (mm) for (const g of mm[1].matchAll(/'([^']+)'\s*:\s*'[0-9]+'/g)) reg.add(shipKey(g[1]));
+      const seen = new Set(), unreg = [];
+      for (const f of portForeign) {
+        const k = shipKey(f.name);
+        if (reg.has(k) || seen.has(k)) continue;
+        seen.add(k);
+        unreg.push(f);
+      }
+      unreg.sort((a, b) => a.name.localeCompare(b.name));
+      fs.writeFileSync(
+        path.join(__dirname, "unregistered.json"),
+        JSON.stringify({ generatedAt: new Date().toISOString(), count: unreg.length, ships: unreg }, null, 2),
+        "utf-8"
+      );
+      console.log(`未登録の外航船: ${unreg.length}件 → unregistered.json`);
+    } catch (e) {
+      console.error("未登録船リスト生成に失敗:", e.message);
+    }
   } catch (e) {
     console.error("港湾システムの取得に失敗:", e.message);
   }
