@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-17T01:30:33.753Z",
+  "generatedAt": "2026-08-17T01:45:24.915Z",
   "count": 2,
   "ships": [
     {
       "name": "PRIME",
       "kind": "フルコンテナ船",
       "flag": "VIET NAM",
-      "date": "08/18"
+      "date": "08/20"
     },
     {
       "name": "VANCOUVER",
