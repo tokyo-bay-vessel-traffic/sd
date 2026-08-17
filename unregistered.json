@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-08-17T05:30:35.551Z",
-  "count": 5,
+  "generatedAt": "2026-08-17T05:45:25.945Z",
+  "count": 6,
   "ships": [
+    {
+      "name": "IRENES RAINBOW",
+      "kind": "フルコンテナ船",
+      "flag": "CYPRUS",
+      "date": "08/19"
+    },
     {
       "name": "NAVIOS CYAN",
       "kind": "フルコンテナ船",
