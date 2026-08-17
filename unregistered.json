@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-17T04:30:32.231Z",
-  "count": 4,
+  "generatedAt": "2026-08-17T04:45:24.193Z",
+  "count": 5,
   "ships": [
     {
       "name": "NAVIOS CYAN",
@@ -25,6 +25,12 @@
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "08/24"
+    },
+    {
+      "name": "YM IMPROVEMENT",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/18"
     }
   ]
 }
