@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-18T01:15:26.144Z",
-  "count": 6,
+  "generatedAt": "2026-08-18T01:30:33.169Z",
+  "count": 7,
   "ships": [
     {
       "name": "IRENES RAINBOW",
@@ -25,6 +25,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "08/19"
+    },
+    {
+      "name": "SITC FENGHE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "08/25"
     },
     {
       "name": "VANCOUVER",
