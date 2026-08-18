@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-18T03:15:27.346Z",
-  "count": 7,
+  "generatedAt": "2026-08-18T03:30:34.052Z",
+  "count": 8,
   "ships": [
     {
       "name": "IRENES RAINBOW",
@@ -19,6 +19,12 @@
       "kind": "フルコンテナ船",
       "flag": "VIET NAM",
       "date": "08/21"
+    },
+    {
+      "name": "SEASPAN RIO DE JANEIRO",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "08/19"
     },
     {
       "name": "SITC BRAVE",
