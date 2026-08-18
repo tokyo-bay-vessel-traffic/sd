@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-18T23:15:26.361Z",
-  "count": 6,
+  "generatedAt": "2026-08-18T23:30:36.288Z",
+  "count": 7,
   "ships": [
     {
       "name": "JIN AO",
@@ -31,6 +31,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "08/25"
+    },
+    {
+      "name": "SUVA CHIEF",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "08/21"
     },
     {
       "name": "VANCOUVER",
