@@ -1,24 +1,12 @@
 {
-  "generatedAt": "2026-08-18T14:45:29.270Z",
-  "count": 9,
+  "generatedAt": "2026-08-18T15:00:26.608Z",
+  "count": 6,
   "ships": [
-    {
-      "name": "IRENES RAINBOW",
-      "kind": "フルコンテナ船",
-      "flag": "CYPRUS",
-      "date": "08/18"
-    },
     {
       "name": "JIN AO",
       "kind": "一般貨物船",
       "flag": "VANUATU",
       "date": "08/19"
-    },
-    {
-      "name": "NAVIOS CYAN",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "08/18"
     },
     {
       "name": "PRIME",
@@ -49,12 +37,6 @@
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "08/24"
-    },
-    {
-      "name": "YM IMPROVEMENT",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "08/18"
     }
   ]
 }
