@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-08-18T05:21:01.145Z",
-  "count": 8,
+  "generatedAt": "2026-08-18T05:30:34.426Z",
+  "count": 9,
   "ships": [
     {
       "name": "IRENES RAINBOW",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "08/18"
+    },
+    {
+      "name": "JIN AO",
+      "kind": "一般貨物船",
+      "flag": "VANUATU",
+      "date": "08/19"
     },
     {
       "name": "NAVIOS CYAN",
@@ -18,7 +24,7 @@
       "name": "PRIME",
       "kind": "フルコンテナ船",
       "flag": "VIET NAM",
-      "date": "08/21"
+      "date": "08/23"
     },
     {
       "name": "SEASPAN RIO DE JANEIRO",
@@ -30,7 +36,7 @@
       "name": "SITC BRAVE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
-      "date": "08/19"
+      "date": "08/21"
     },
     {
       "name": "SITC FENGHE",
