@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-19T14:45:26.905Z",
-  "count": 14,
+  "generatedAt": "2026-08-19T15:00:44.557Z",
+  "count": 13,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -15,16 +15,16 @@
       "date": "08/20"
     },
     {
-      "name": "JIN AO",
-      "kind": "一般貨物船",
-      "flag": "VANUATU",
-      "date": "08/19"
-    },
-    {
       "name": "LI DA WANG",
       "kind": "フルコンテナ船",
       "flag": "MARSHALL ISLANDS",
       "date": "08/21"
+    },
+    {
+      "name": "MILD ORCHID",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "08/27"
     },
     {
       "name": "MSC LORENA",
@@ -49,12 +49,6 @@
       "kind": "フルコンテナ船",
       "flag": "VIET NAM",
       "date": "08/23"
-    },
-    {
-      "name": "SEASPAN RIO DE JANEIRO",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "08/19"
     },
     {
       "name": "SITC BRAVE",
