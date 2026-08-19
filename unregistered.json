@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-19T02:15:26.719Z",
-  "count": 8,
+  "generatedAt": "2026-08-19T02:30:32.179Z",
+  "count": 10,
   "ships": [
     {
       "name": "EVER SIGMA",
@@ -13,6 +13,18 @@
       "kind": "一般貨物船",
       "flag": "VANUATU",
       "date": "08/19"
+    },
+    {
+      "name": "LI DA WANG",
+      "kind": "フルコンテナ船",
+      "flag": "MARSHALL ISLANDS",
+      "date": "08/20"
+    },
+    {
+      "name": "NYK FUJI",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "08/22"
     },
     {
       "name": "PRIME",
