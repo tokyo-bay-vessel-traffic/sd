@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-19T05:19:25.050Z",
-  "count": 12,
+  "generatedAt": "2026-08-19T05:30:33.946Z",
+  "count": 13,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -24,7 +24,13 @@
       "name": "LI DA WANG",
       "kind": "フルコンテナ船",
       "flag": "MARSHALL ISLANDS",
-      "date": "08/20"
+      "date": "08/21"
+    },
+    {
+      "name": "MSC LORENA",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "08/25"
     },
     {
       "name": "NYK FUJI",
