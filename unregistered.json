@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-08-19T01:15:26.769Z",
-  "count": 7,
+  "generatedAt": "2026-08-19T01:30:33.851Z",
+  "count": 8,
   "ships": [
+    {
+      "name": "EVER SIGMA",
+      "kind": "フルコンテナ船",
+      "flag": "UNITED KINGDOM",
+      "date": "08/20"
+    },
     {
       "name": "JIN AO",
       "kind": "一般貨物船",
