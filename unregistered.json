@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-08-19T04:18:55.130Z",
-  "count": 10,
+  "generatedAt": "2026-08-19T04:30:33.707Z",
+  "count": 12,
   "ships": [
+    {
+      "name": "ARIES MIZUKI",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "08/24"
+    },
     {
       "name": "EVER SIGMA",
       "kind": "フルコンテナ船",
@@ -61,6 +67,12 @@
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "08/24"
+    },
+    {
+      "name": "VOLANS",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/20"
     }
   ]
 }
