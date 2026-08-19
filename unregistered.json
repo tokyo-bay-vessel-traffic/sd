@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-19T06:18:09.448Z",
-  "count": 13,
+  "generatedAt": "2026-08-19T06:30:35.580Z",
+  "count": 14,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -34,6 +34,12 @@
     },
     {
       "name": "NYK FUJI",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "08/22"
+    },
+    {
+      "name": "ONE DIAMOND",
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "08/22"
