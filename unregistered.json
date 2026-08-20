@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-08-20T05:16:31.850Z",
-  "count": 14,
+  "generatedAt": "2026-08-20T05:30:36.167Z",
+  "count": 15,
   "ships": [
     {
       "name": "ARIES MIZUKI",
       "kind": "一般貨物船",
       "flag": "PANAMA",
       "date": "08/24"
+    },
+    {
+      "name": "CMA CGM VALPARAISO",
+      "kind": "フルコンテナ船",
+      "flag": "MALTA",
+      "date": "08/23"
     },
     {
       "name": "EVER SIGMA",
