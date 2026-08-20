@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-20T01:15:26.644Z",
-  "count": 13,
+  "generatedAt": "2026-08-20T01:30:34.452Z",
+  "count": 14,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -13,6 +13,12 @@
       "kind": "フルコンテナ船",
       "flag": "UNITED KINGDOM",
       "date": "08/20"
+    },
+    {
+      "name": "INESSA",
+      "kind": "フルコンテナ船",
+      "flag": "MARSHALL ISLANDS",
+      "date": "08/21"
     },
     {
       "name": "LI DA WANG",
