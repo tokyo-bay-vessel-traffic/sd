@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-20T06:18:01.078Z",
-  "count": 15,
+  "generatedAt": "2026-08-20T06:30:35.806Z",
+  "count": 16,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -13,6 +13,12 @@
       "kind": "フルコンテナ船",
       "flag": "MALTA",
       "date": "08/23"
+    },
+    {
+      "name": "EASLINE YANTAI",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "08/22"
     },
     {
       "name": "EVER SIGMA",
