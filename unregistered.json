@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-08-21T07:27:20.114Z",
+  "generatedAt": "2026-08-21T07:30:34.064Z",
   "count": 18,
   "ships": [
     {
@@ -54,7 +54,7 @@
       "name": "MSC TAMPA V",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
-      "date": "08/24"
+      "date": "08/23"
     },
     {
       "name": "NYK FUJI",
@@ -102,7 +102,7 @@
       "name": "VANCOUVER",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
-      "date": "08/24"
+      "date": "08/25"
     },
     {
       "name": "YM PLUM",
