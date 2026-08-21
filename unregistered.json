@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-21T01:15:29.034Z",
-  "count": 14,
+  "generatedAt": "2026-08-21T01:30:32.820Z",
+  "count": 15,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -43,6 +43,12 @@
       "kind": "フルコンテナ船",
       "flag": "PANAMA",
       "date": "08/25"
+    },
+    {
+      "name": "MSC TAMPA V",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/24"
     },
     {
       "name": "NYK FUJI",
