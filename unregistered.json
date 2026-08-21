@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-21T06:15:26.434Z",
-  "count": 17,
+  "generatedAt": "2026-08-21T06:30:35.178Z",
+  "count": 18,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -13,6 +13,12 @@
       "kind": "フルコンテナ船",
       "flag": "MALTA",
       "date": "08/23"
+    },
+    {
+      "name": "CONFIDENT",
+      "kind": "一般貨物船",
+      "flag": "BERAU",
+      "date": "08/24"
     },
     {
       "name": "EASLINE YANTAI",
