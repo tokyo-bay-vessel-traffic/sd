@@ -1,5 +1,18 @@
 {
-  "generatedAt": "2026-08-21T14:50:32.577Z",
-  "count": 0,
-  "ships": []
+  "generatedAt": "2026-08-21T15:00:44.811Z",
+  "count": 2,
+  "ships": [
+    {
+      "name": "CONTI CONQUEST",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/29"
+    },
+    {
+      "name": "MOL ENDOWMENT",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "08/29"
+    }
+  ]
 }
