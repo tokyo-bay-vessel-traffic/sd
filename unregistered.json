@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-21T02:15:26.059Z",
-  "count": 15,
+  "generatedAt": "2026-08-21T02:30:33.262Z",
+  "count": 16,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -79,6 +79,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "08/25"
+    },
+    {
+      "name": "SMOOTH WIND",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/23"
     },
     {
       "name": "SUVA CHIEF",
