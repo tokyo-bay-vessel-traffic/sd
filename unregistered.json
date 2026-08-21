@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-21T05:28:44.803Z",
-  "count": 16,
+  "generatedAt": "2026-08-21T05:30:37.062Z",
+  "count": 17,
   "ships": [
     {
       "name": "ARIES MIZUKI",
@@ -96,6 +96,12 @@
       "name": "VANCOUVER",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
+      "date": "08/24"
+    },
+    {
+      "name": "YM PLUM",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "08/24"
     }
   ]
