@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-08-24T07:30:33.007Z",
+  "generatedAt": "2026-08-24T07:33:15.811Z",
   "count": 1,
   "ships": [
     {
       "name": "SITC JIADE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
-      "date": "08/25"
+      "date": "08/26"
     }
   ]
 }
