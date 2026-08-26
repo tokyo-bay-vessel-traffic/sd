@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-08-26T04:15:26.060Z",
-  "count": 3,
+  "generatedAt": "2026-08-26T04:30:34.660Z",
+  "count": 4,
   "ships": [
+    {
+      "name": "ARICA BRIDGE",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/29"
+    },
     {
       "name": "EVER SHINE",
       "kind": "フルコンテナ船",
