@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-08-26T02:20:35.541Z",
-  "count": 2,
+  "generatedAt": "2026-08-26T02:30:34.157Z",
+  "count": 3,
   "ships": [
     {
       "name": "EVER SHINE",
       "kind": "フルコンテナ船",
       "flag": "UNITED KINGDOM",
       "date": "08/30"
+    },
+    {
+      "name": "NAVIOS CYAN",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "08/27"
     },
     {
       "name": "NORD HAKATA",
