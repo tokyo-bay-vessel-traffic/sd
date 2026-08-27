@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-27T05:15:26.438Z",
-  "count": 4,
+  "generatedAt": "2026-08-27T05:30:33.621Z",
+  "count": 5,
   "ships": [
     {
       "name": "ARICA BRIDGE",
@@ -13,6 +13,12 @@
       "kind": "フルコンテナ船",
       "flag": "UNITED KINGDOM",
       "date": "08/30"
+    },
+    {
+      "name": "MSC GENERAL IV",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/03"
     },
     {
       "name": "NAVIOS CYAN",
