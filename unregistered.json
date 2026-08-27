@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-27T23:15:29.766Z",
-  "count": 4,
+  "generatedAt": "2026-08-27T23:30:33.542Z",
+  "count": 5,
   "ships": [
     {
       "name": "ARICA BRIDGE",
@@ -25,6 +25,12 @@
       "kind": "フルコンテナ船",
       "flag": "KOREA, REPUBLIC OF",
       "date": "09/04"
+    },
+    {
+      "name": "SITC SHUNHE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "09/02"
     }
   ]
 }
