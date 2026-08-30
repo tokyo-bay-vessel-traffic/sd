@@ -1,24 +1,12 @@
 {
-  "generatedAt": "2026-08-30T14:45:26.096Z",
-  "count": 8,
+  "generatedAt": "2026-08-30T15:00:41.669Z",
+  "count": 5,
   "ships": [
     {
       "name": "ARICA BRIDGE",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "08/31"
-    },
-    {
-      "name": "EVER SHINE",
-      "kind": "フルコンテナ船",
-      "flag": "UNITED KINGDOM",
-      "date": "08/30"
-    },
-    {
-      "name": "M.ATLAS",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "08/30"
     },
     {
       "name": "MSC GENERAL IV",
@@ -31,12 +19,6 @@
       "kind": "フルコンテナ船",
       "flag": "KOREA, REPUBLIC OF",
       "date": "09/04"
-    },
-    {
-      "name": "SHUN LONG",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "08/30"
     },
     {
       "name": "SITC SHENGDE",
