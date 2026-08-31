@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-08-31T08:45:25.735Z",
-  "count": 7,
+  "generatedAt": "2026-08-31T09:00:44.174Z",
+  "count": 6,
   "ships": [
     {
       "name": "ARICA BRIDGE",
@@ -13,12 +13,6 @@
       "kind": "一般貨物船",
       "flag": "MARSHALL ISLANDS",
       "date": "09/01"
-    },
-    {
-      "name": "M.ATLAS",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "08/31"
     },
     {
       "name": "MSC GENERAL IV",
