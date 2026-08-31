@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-08-31T14:45:35.464Z",
+  "generatedAt": "2026-08-31T15:00:45.642Z",
   "count": 6,
   "ships": [
-    {
-      "name": "ARICA BRIDGE",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "08/31"
-    },
     {
       "name": "BRAVE HAWK",
       "kind": "一般貨物船",
       "flag": "MARSHALL ISLANDS",
       "date": "09/01"
+    },
+    {
+      "name": "COSMIC ACE",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "09/08"
     },
     {
       "name": "MSC GENERAL IV",
