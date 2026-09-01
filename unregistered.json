@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-01T01:15:26.667Z",
-  "count": 6,
+  "generatedAt": "2026-09-01T01:30:36.120Z",
+  "count": 7,
   "ships": [
     {
       "name": "BRAVE HAWK",
@@ -36,6 +36,12 @@
       "name": "SITC SHUNHE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
+      "date": "09/02"
+    },
+    {
+      "name": "STEPHANIA K",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "09/02"
     }
   ]
