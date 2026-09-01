@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-09-01T23:30:34.631Z",
-  "count": 8,
+  "generatedAt": "2026-09-01T23:39:27.049Z",
+  "count": 9,
   "ships": [
+    {
+      "name": "BANGKOK BRIDGE",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "09/05"
+    },
     {
       "name": "COSMIC ACE",
       "kind": "一般貨物船",
