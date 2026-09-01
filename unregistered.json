@@ -1,13 +1,7 @@
 {
-  "generatedAt": "2026-09-01T14:45:31.759Z",
-  "count": 9,
+  "generatedAt": "2026-09-01T15:00:46.287Z",
+  "count": 8,
   "ships": [
-    {
-      "name": "BRAVE HAWK",
-      "kind": "一般貨物船",
-      "flag": "MARSHALL ISLANDS",
-      "date": "09/01"
-    },
     {
       "name": "COSMIC ACE",
       "kind": "一般貨物船",
