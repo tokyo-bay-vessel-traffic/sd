@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-01T04:15:25.903Z",
-  "count": 7,
+  "generatedAt": "2026-09-01T04:30:34.258Z",
+  "count": 9,
   "ships": [
     {
       "name": "BRAVE HAWK",
@@ -21,10 +21,22 @@
       "date": "09/03"
     },
     {
+      "name": "OSG BOSSTEC",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "09/02"
+    },
+    {
       "name": "POS YOKOHAMA",
       "kind": "フルコンテナ船",
       "flag": "KOREA, REPUBLIC OF",
       "date": "09/04"
+    },
+    {
+      "name": "SETTLER",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "09/06"
     },
     {
       "name": "SITC SHENGDE",
