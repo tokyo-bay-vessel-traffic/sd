@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-02T14:45:31.106Z",
-  "count": 10,
+  "generatedAt": "2026-09-02T15:00:47.873Z",
+  "count": 8,
   "ships": [
     {
       "name": "BANGKOK BRIDGE",
@@ -27,12 +27,6 @@
       "date": "09/05"
     },
     {
-      "name": "OSG BOSSTEC",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "09/02"
-    },
-    {
       "name": "POS YOKOHAMA",
       "kind": "フルコンテナ船",
       "flag": "KOREA, REPUBLIC OF",
@@ -55,12 +49,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "09/05"
-    },
-    {
-      "name": "STEPHANIA K",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "09/02"
     }
   ]
 }
