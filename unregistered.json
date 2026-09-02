@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-02T23:15:26.617Z",
-  "count": 8,
+  "generatedAt": "2026-09-02T23:30:31.689Z",
+  "count": 9,
   "ships": [
     {
       "name": "BANGKOK BRIDGE",
@@ -25,6 +25,12 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "09/05"
+    },
+    {
+      "name": "NEW MINGZHOU 60",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "09/07"
     },
     {
       "name": "POS YOKOHAMA",
