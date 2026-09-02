@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-02T06:30:34.962Z",
+  "generatedAt": "2026-09-02T06:45:32.460Z",
   "count": 10,
   "ships": [
     {
@@ -24,7 +24,7 @@
       "name": "MSC GENERAL IV",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
-      "date": "09/03"
+      "date": "09/05"
     },
     {
       "name": "OSG BOSSTEC",
