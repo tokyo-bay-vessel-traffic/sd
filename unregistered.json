@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-09-02T02:30:33.372Z",
-  "count": 9,
+  "generatedAt": "2026-09-02T02:45:27.743Z",
+  "count": 10,
   "ships": [
     {
       "name": "BANGKOK BRIDGE",
       "kind": "フルコンテナ船",
       "flag": "PANAMA",
       "date": "09/05"
+    },
+    {
+      "name": "BF GIANT",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/03"
     },
     {
       "name": "COSMIC ACE",
