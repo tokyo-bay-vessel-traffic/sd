@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-03T05:15:25.350Z",
-  "count": 9,
+  "generatedAt": "2026-09-03T05:30:36.312Z",
+  "count": 10,
   "ships": [
     {
       "name": "BANGKOK BRIDGE",
@@ -55,6 +55,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "09/05"
+    },
+    {
+      "name": "YM IMMENSE",
+      "kind": "フルコンテナ船",
+      "flag": "TAIWAN, PROVINCE OF CHINA",
+      "date": "09/04"
     }
   ]
 }
