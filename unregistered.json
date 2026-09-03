@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-03T06:15:26.486Z",
-  "count": 10,
+  "generatedAt": "2026-09-03T06:30:37.953Z",
+  "count": 12,
   "ships": [
     {
       "name": "BANGKOK BRIDGE",
@@ -21,10 +21,22 @@
       "date": "09/08"
     },
     {
+      "name": "JINHUA 16",
+      "kind": "一般貨物船",
+      "flag": "GUINEA-BISSAU",
+      "date": "09/04"
+    },
+    {
       "name": "MSC GENERAL IV",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "09/05"
+    },
+    {
+      "name": "MSC LYSE V",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/06"
     },
     {
       "name": "NEW MINGZHOU 60",
@@ -36,7 +48,7 @@
       "name": "POS YOKOHAMA",
       "kind": "フルコンテナ船",
       "flag": "KOREA, REPUBLIC OF",
-      "date": "09/04"
+      "date": "09/05"
     },
     {
       "name": "SETTLER",
