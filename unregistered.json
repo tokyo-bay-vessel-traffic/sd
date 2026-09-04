@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-04T06:15:25.098Z",
+  "generatedAt": "2026-09-04T06:30:33.412Z",
   "count": 11,
   "ships": [
     {
@@ -36,7 +36,7 @@
       "name": "NEW MINGZHOU 60",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
-      "date": "09/07"
+      "date": "09/09"
     },
     {
       "name": "POS YOKOHAMA",
