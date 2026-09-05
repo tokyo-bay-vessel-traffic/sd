@@ -238,6 +238,8 @@
   }
   /* 左バー = 時間帯（時刻）／背景 = 入航・出航・シフトの区分 */
   .row::before{content:""; position:absolute; left:0; top:0; bottom:0; width:8px; background:var(--hc);}
+  /* 外航コンテナ船で東/西航路データに未掲載（港湾システムのみ＝未確定）の行は左バーを灰色に */
+  .row.fc-uncf::before{background:var(--faint);}
   /* 1行ごとに縦グラデ（上下端=濃い → 中央は白強め。船名・長さ・トン数付近がほぼ白） */
   .row.d-in{background:linear-gradient(180deg,
     color-mix(in srgb, var(--in) 60%, var(--bg)) 0%,
@@ -4003,7 +4005,7 @@
       dir:r.dir, dc:DIRC[r.dir]||'shift',
       berth:dec(r.berth).replace(/\s*=?>\s*/,'→').replace(/\s+/g,' ').trim(),  // シフトの矢印は詰めて表記（例 X4→X5）＝見切れ防止
       ship:dec(r.ship), length:r.length||'', tons:r.tons||'',
-      pilot:(r.pilot==='有'), route:r.route, port:!!r.port,
+      pilot:(r.pilot==='有'), route:r.route, port:!!r.port, fc:!!r.foreignContainer,
       ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
     })).sort((a,b)=> a.ds-b.ds || (a.route<b.route?-1:1));
     // 港湾システムの消え残り対策：港湾行のみ「現在時刻−1時間」より前を削除（東/西は対象外）
@@ -4030,7 +4032,7 @@
       prevHour=r.hour;
       const hc=hourColor(r.hour);
       const el=document.createElement('div');
-      el.className='row d-'+r.dc;
+      el.className='row d-'+r.dc+(r.fc?' fc-uncf':'');
       el.style.setProperty('--hc',hc);
       const isPort=r.port;
       const rr = r.route==='東'?'e':(r.route==='西'?'w':'p');
