@@ -326,9 +326,9 @@ async function fetchPortRows() {
     const flag = (c[7] || "").trim();
     if (flag && flag !== "JAPAN") portForeign.push({ name: ship, kind: knorm, flag, date: (arr || "").slice(0, 5) });
     const tons = (c[6] || "").replace(/,/g, "").replace(/\.\d+$/, "");
-    // 外航コンテナ船（東/西航路データに載らず港湾システムのみに残る＝未確定）はクライアント側で目印用に使う
-    const foreignContainer = !!flag && flag !== "JAPAN" && /コンテナ/.test(knorm);
-    const rowBase = { berth, ship, length: "-", tons, pilot: "-", route: fu, port: true, foreignContainer };
+    // 外航船（船種問わず）＝東/西航路データに載らず港湾システムのみに残る行は未確定としてクライアント側で薄い灰色表示にする
+    const foreign = !!flag && flag !== "JAPAN";
+    const rowBase = { berth, ship, length: "-", tons, pilot: "-", route: fu, port: true, foreign };
     if (onDay(arr)) out.push({ time: arr, dir: "入航", ...rowBase });
     if (onDay(dep)) out.push({ time: dep, dir: "出航", ...rowBase });
   }
