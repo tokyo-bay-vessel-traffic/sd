@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-09-08T06:15:24.379Z",
-  "count": 3,
+  "generatedAt": "2026-09-08T06:30:31.527Z",
+  "count": 4,
   "ships": [
+    {
+      "name": "ASIAN NAGA",
+      "kind": "ＲＯＲＯ船",
+      "flag": "PANAMA",
+      "date": "09/14"
+    },
     {
       "name": "ERASMUS NINJA",
       "kind": "フルコンテナ船",
