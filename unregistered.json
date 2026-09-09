@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-09T14:45:26.913Z",
-  "count": 5,
+  "generatedAt": "2026-09-09T15:00:48.422Z",
+  "count": 3,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -9,22 +9,10 @@
       "date": "09/14"
     },
     {
-      "name": "IRENES SOUTHERN",
-      "kind": "フルコンテナ船",
-      "flag": "CYPRUS",
-      "date": "09/09"
-    },
-    {
       "name": "NYK FUTAGO",
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "09/12"
-    },
-    {
-      "name": "PACIFIC QINGDAO",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/09"
     },
     {
       "name": "YM WEALTH",
