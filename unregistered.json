@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-10T04:15:24.902Z",
-  "count": 5,
+  "generatedAt": "2026-09-10T04:30:31.063Z",
+  "count": 7,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -9,10 +9,22 @@
       "date": "09/14"
     },
     {
+      "name": "CA SAIGON",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "09/11"
+    },
+    {
       "name": "GSL KITHIRA",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "09/11"
+    },
+    {
+      "name": "KOTA NAZAR",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "09/16"
     },
     {
       "name": "NYK FUTAGO",
