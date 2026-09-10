@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-10T02:15:44.448Z",
-  "count": 3,
+  "generatedAt": "2026-09-10T02:30:37.426Z",
+  "count": 4,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -13,6 +13,12 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "09/12"
+    },
+    {
+      "name": "XIN MING ZHOU 106",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
+      "date": "09/13"
     },
     {
       "name": "YM WEALTH",
