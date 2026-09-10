@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-09-10T03:15:27.003Z",
-  "count": 4,
+  "generatedAt": "2026-09-10T03:30:30.356Z",
+  "count": 5,
   "ships": [
     {
       "name": "ASIAN NAGA",
       "kind": "ＲＯＲＯ船",
       "flag": "PANAMA",
       "date": "09/14"
+    },
+    {
+      "name": "GSL KITHIRA",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/11"
     },
     {
       "name": "NYK FUTAGO",
