@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-10T14:45:25.832Z",
-  "count": 7,
+  "generatedAt": "2026-09-10T15:01:11.165Z",
+  "count": 6,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -37,12 +37,6 @@
       "kind": "フルコンテナ船",
       "flag": "CHINA",
       "date": "09/13"
-    },
-    {
-      "name": "YM WEALTH",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "09/10"
     }
   ]
 }
