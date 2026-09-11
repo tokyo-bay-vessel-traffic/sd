@@ -1,24 +1,12 @@
 {
-  "generatedAt": "2026-09-11T14:45:27.827Z",
-  "count": 8,
+  "generatedAt": "2026-09-11T15:00:47.404Z",
+  "count": 6,
   "ships": [
     {
       "name": "ASIAN NAGA",
       "kind": "ＲＯＲＯ船",
       "flag": "PANAMA",
       "date": "09/14"
-    },
-    {
-      "name": "CA SAIGON",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "09/11"
-    },
-    {
-      "name": "GSL KITHIRA",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "09/11"
     },
     {
       "name": "IRENES RAINBOW",
