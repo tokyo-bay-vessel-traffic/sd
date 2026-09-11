@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-11T03:15:25.238Z",
-  "count": 7,
+  "generatedAt": "2026-09-11T03:30:35.222Z",
+  "count": 8,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -19,6 +19,12 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "09/11"
+    },
+    {
+      "name": "IRENES RAINBOW",
+      "kind": "フルコンテナ船",
+      "flag": "CYPRUS",
+      "date": "09/14"
     },
     {
       "name": "KOTA NAZAR",
