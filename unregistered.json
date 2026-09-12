@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-12T14:45:26.152Z",
-  "count": 6,
+  "generatedAt": "2026-09-12T15:00:45.384Z",
+  "count": 5,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -19,12 +19,6 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "09/16"
-    },
-    {
-      "name": "NYK FUTAGO",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/12"
     },
     {
       "name": "POS HOCHIMINH",
