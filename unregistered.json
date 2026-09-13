@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-13T14:45:29.191Z",
-  "count": 5,
+  "generatedAt": "2026-09-13T15:00:47.457Z",
+  "count": 4,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -19,12 +19,6 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "09/16"
-    },
-    {
-      "name": "POS HOCHIMINH",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "09/13"
     },
     {
       "name": "XIN MING ZHOU 106",
