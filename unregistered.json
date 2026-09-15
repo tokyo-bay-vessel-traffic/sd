@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-15T05:15:26.218Z",
-  "count": 4,
+  "generatedAt": "2026-09-15T05:30:32.523Z",
+  "count": 5,
   "ships": [
     {
       "name": "HF FORTUNE",
@@ -25,6 +25,12 @@
       "kind": "フルコンテナ船",
       "flag": "PANAMA",
       "date": "09/19"
+    },
+    {
+      "name": "SEASPAN RIO DE JANEIRO",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "09/18"
     }
   ]
 }
