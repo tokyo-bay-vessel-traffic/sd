@@ -1,36 +1,5 @@
 {
-  "generatedAt": "2026-09-15T12:00:44.856Z",
-  "count": 5,
-  "ships": [
-    {
-      "name": "HF FORTUNE",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "09/22"
-    },
-    {
-      "name": "KOTA NAZAR",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/17"
-    },
-    {
-      "name": "MSC TAVVISHI VI",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "09/17"
-    },
-    {
-      "name": "NYK CONSTELLATION",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "09/19"
-    },
-    {
-      "name": "SEASPAN RIO DE JANEIRO",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/18"
-    }
-  ]
+  "generatedAt": "2026-09-15T12:15:28.977Z",
+  "count": 0,
+  "ships": []
 }
