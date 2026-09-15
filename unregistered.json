@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-15T02:15:25.347Z",
-  "count": 2,
+  "generatedAt": "2026-09-15T02:30:31.804Z",
+  "count": 4,
   "ships": [
     {
       "name": "HF FORTUNE",
@@ -13,6 +13,18 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "09/16"
+    },
+    {
+      "name": "MSC TAVVISHI VI",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/17"
+    },
+    {
+      "name": "NYK CONSTELLATION",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "09/19"
     }
   ]
 }
