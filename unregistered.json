@@ -1,11 +1,17 @@
 {
-  "generatedAt": "2026-09-16T06:16:01.025Z",
-  "count": 1,
+  "generatedAt": "2026-09-16T06:30:33.161Z",
+  "count": 2,
   "ships": [
     {
       "name": "JING YUAN",
       "kind": "一般貨物船",
       "flag": "PANAMA",
+      "date": "09/17"
+    },
+    {
+      "name": "YM IMPROVEMENT",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "09/17"
     }
   ]
