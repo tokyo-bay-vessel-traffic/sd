@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-09-17T02:15:25.656Z",
-  "count": 3,
+  "generatedAt": "2026-09-17T02:30:32.566Z",
+  "count": 4,
   "ships": [
     {
       "name": "JING YUAN",
       "kind": "一般貨物船",
       "flag": "PANAMA",
       "date": "09/17"
+    },
+    {
+      "name": "NYK FUSHIMI",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "09/18"
     },
     {
       "name": "RUBY TOWER",
