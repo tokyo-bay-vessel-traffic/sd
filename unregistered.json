@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-09-18T08:15:25.331Z",
-  "count": 6,
+  "generatedAt": "2026-09-18T08:30:34.327Z",
+  "count": 7,
   "ships": [
     {
       "name": "ARICA BRIDGE",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "09/24"
+    },
+    {
+      "name": "EVER EAGLE",
+      "kind": "フルコンテナ船",
+      "flag": "UNITED KINGDOM",
+      "date": "09/25"
     },
     {
       "name": "FU ZHI",
