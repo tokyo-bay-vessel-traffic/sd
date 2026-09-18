@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-18T14:45:28.366Z",
-  "count": 7,
+  "generatedAt": "2026-09-18T15:00:46.414Z",
+  "count": 6,
   "ships": [
     {
       "name": "ARICA BRIDGE",
@@ -19,12 +19,6 @@
       "kind": "一般貨物船",
       "flag": "PANAMA",
       "date": "09/23"
-    },
-    {
-      "name": "NYK FUSHIMI",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/18"
     },
     {
       "name": "ONE ATLAS",
