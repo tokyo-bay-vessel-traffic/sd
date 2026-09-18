@@ -1,7 +1,13 @@
 {
-  "generatedAt": "2026-09-18T01:15:25.045Z",
-  "count": 2,
+  "generatedAt": "2026-09-18T01:29:20.195Z",
+  "count": 3,
   "ships": [
+    {
+      "name": "ARICA BRIDGE",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/24"
+    },
     {
       "name": "NYK FUSHIMI",
       "kind": "フルコンテナ船",
