@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-19T14:45:24.977Z",
-  "count": 6,
+  "generatedAt": "2026-09-19T15:00:40.568Z",
+  "count": 7,
   "ships": [
     {
       "name": "ARICA BRIDGE",
@@ -31,6 +31,12 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "09/22"
+    },
+    {
+      "name": "RUBY TOWER",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/27"
     },
     {
       "name": "SITC RENDE",
