@@ -1,54 +1,5 @@
 {
-  "generatedAt": "2026-09-21T02:00:39.629Z",
-  "count": 8,
-  "ships": [
-    {
-      "name": "ARICA BRIDGE",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "09/24"
-    },
-    {
-      "name": "EVER EAGLE",
-      "kind": "フルコンテナ船",
-      "flag": "UNITED KINGDOM",
-      "date": "09/25"
-    },
-    {
-      "name": "FU ZHI",
-      "kind": "一般貨物船",
-      "flag": "PANAMA",
-      "date": "09/23"
-    },
-    {
-      "name": "KEN SHIN",
-      "kind": "一般貨物船",
-      "flag": "PANAMA",
-      "date": "09/28"
-    },
-    {
-      "name": "ONE ATLAS",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/24"
-    },
-    {
-      "name": "PACIFIC QINGDAO",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "09/22"
-    },
-    {
-      "name": "RUBY TOWER",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "09/27"
-    },
-    {
-      "name": "SITC RENDE",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "09/24"
-    }
-  ]
+  "generatedAt": "2026-09-21T02:16:00.990Z",
+  "count": 0,
+  "ships": []
 }
