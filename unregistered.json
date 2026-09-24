@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-24T08:15:29.948Z",
-  "count": 4,
+  "generatedAt": "2026-09-24T08:30:36.314Z",
+  "count": 5,
   "ships": [
     {
       "name": "ASIATIC QUEST",
@@ -19,6 +19,12 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "09/26"
+    },
+    {
+      "name": "SITC SHUNDE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "09/28"
     },
     {
       "name": "SITC YIHE",
