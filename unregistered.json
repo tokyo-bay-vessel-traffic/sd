@@ -1,5 +1,18 @@
 {
-  "generatedAt": "2026-09-24T01:15:25.527Z",
-  "count": 0,
-  "ships": []
+  "generatedAt": "2026-09-24T01:30:32.520Z",
+  "count": 2,
+  "ships": [
+    {
+      "name": "INTRA BHUM",
+      "kind": "フルコンテナ船",
+      "flag": "THAILAND",
+      "date": "10/01"
+    },
+    {
+      "name": "SITC YIHE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "09/29"
+    }
+  ]
 }
