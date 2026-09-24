@@ -1,12 +1,24 @@
 {
-  "generatedAt": "2026-09-24T05:15:25.403Z",
-  "count": 2,
+  "generatedAt": "2026-09-24T05:30:31.769Z",
+  "count": 4,
   "ships": [
+    {
+      "name": "ASIATIC QUEST",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "10/01"
+    },
     {
       "name": "INTRA BHUM",
       "kind": "フルコンテナ船",
       "flag": "THAILAND",
       "date": "10/01"
+    },
+    {
+      "name": "MSC LOS ANGELES",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/26"
     },
     {
       "name": "SITC YIHE",
