@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-09-25T02:15:26.644Z",
-  "count": 5,
+  "generatedAt": "2026-09-25T02:30:31.100Z",
+  "count": 6,
   "ships": [
     {
       "name": "ASIATIC QUEST",
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "10/01"
+    },
+    {
+      "name": "BOX ENDEAVOUR",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/26"
     },
     {
       "name": "INTRA BHUM",
