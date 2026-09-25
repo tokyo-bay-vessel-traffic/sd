@@ -1,6 +1,6 @@
 {
-  "generatedAt": "2026-09-25T05:22:17.160Z",
-  "count": 6,
+  "generatedAt": "2026-09-25T05:30:34.404Z",
+  "count": 8,
   "ships": [
     {
       "name": "ASIATIC QUEST",
@@ -21,6 +21,12 @@
       "date": "10/01"
     },
     {
+      "name": "JING HUI",
+      "kind": "一般貨物船",
+      "flag": "JAMAICA",
+      "date": "09/28"
+    },
+    {
       "name": "MSC LOS ANGELES",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
@@ -37,6 +43,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "09/29"
+    },
+    {
+      "name": "STEPHANIA K",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "09/28"
     }
   ]
 }
