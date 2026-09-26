@@ -32,6 +32,9 @@ function extractUpdated(html) {
   return `${String(mo).padStart(2, "0")}/${String(d).padStart(2, "0")} ${String(h).padStart(2, "0")}:${mi}`;
 }
 
+// 未登録船リスト用：東/西航路の船名→船籍（表示用の data.json には入れない）
+const routeFlag = new Map();
+
 function parseTable(html, route) {
   const table = html.match(/<table[^>]*generalTB[\s\S]*?<\/table>/i);
   if (!table) return [];
@@ -46,6 +49,7 @@ function parseTable(html, route) {
     if (cells.length < 9) continue;
     if (/取消|取り消|中止|欠航|延期/.test(cells.join(" "))) continue;
     // 列: 0日時 1入出航 2バース 3船名 4長さ 5トン数 6喫水 7水先人 8船籍
+    if (cells[8]) routeFlag.set(cells[3], cells[8]);
     out.push({
       time: cells[0],
       dir: cells[1],
@@ -269,6 +273,25 @@ const shipKey = (s) =>
     .replace(/\s+/g, "")
     .toUpperCase();
 
+// 船籍欄が日本かどうか。元サイトの表記ゆれ（JAPAN / Japan / ＪＡＰＡＮ / 日本 等）に耐えるよう正規化して判定。
+// ※ここを完全一致にすると表記変更時に全日本船が「外航」扱いになるため緩めてある
+const isJapanFlag = (f) => {
+  const n = (f || "").normalize("NFKC").replace(/\s+/g, "").toUpperCase();
+  return n === "JAPAN" || n === "JPN" || n === "日本";
+};
+
+// "MM/DD HH:MM" を時刻(ms)に変換。同じ船の同じ入出航イベントを日付跨ぎでも照合するために使う
+function parseMD(t) {
+  const m = /^(\d{1,2})\/(\d{1,2})\s+(\d{1,2}):(\d{2})/.exec(t || "");
+  if (!m) return null;
+  const now = jstNow();
+  let yr = now.getUTCFullYear();
+  const mo = +m[1];
+  if (now.getUTCMonth() === 11 && mo === 1) yr++;       // 12月に 01/xx を見たら翌年
+  else if (now.getUTCMonth() === 0 && mo === 12) yr--;  // 1月に 12/xx を見たら前年
+  return Date.UTC(yr, mo - 1, +m[2], +m[3], +m[4]);
+}
+
 const portForeign = []; // 未登録船リスト用：港湾システムの外国籍・非除外船を収集
 async function fetchPortRows() {
   portForeign.length = 0;
@@ -324,10 +347,10 @@ async function fetchPortRows() {
     const knorm = kind.replace(/（/g, "(").replace(/）/g, ")");
     if (knorm === "客船" || knorm === "その他の船舶" || knorm.indexOf("曳船") >= 0 || knorm.indexOf("押船") >= 0) continue;
     const flag = (c[7] || "").trim();
-    if (flag && flag !== "JAPAN") portForeign.push({ name: ship, kind: knorm, flag, date: (arr || "").slice(0, 5) });
+    if (flag && !isJapanFlag(flag)) portForeign.push({ name: ship, kind: knorm, flag, date: (arr || "").slice(0, 5) });
     const tons = (c[6] || "").replace(/,/g, "").replace(/\.\d+$/, "");
     // 外航船（船種問わず）＝東/西航路データに載らず港湾システムのみに残る行は未確定としてクライアント側で薄い灰色表示にする
-    const foreign = !!flag && flag !== "JAPAN";
+    const foreign = !!flag && !isJapanFlag(flag);
     const rowBase = { berth, ship, length: "-", tons, pilot: "-", route: fu, port: true, foreign };
     if (onDay(arr)) out.push({ time: arr, dir: "入航", ...rowBase });
     if (onDay(dep)) out.push({ time: dep, dir: "出航", ...rowBase });
@@ -355,37 +378,101 @@ async function fetchPortRows() {
   }
 
   // 東京港港湾情報システム（失敗しても予定表は出力する）
+  let portOk = false;
   try {
     const portRows = await fetchPortRows();
-    const kaihoShips = new Set(rows.map((r) => shipKey(r.ship)));
-    const merged = portRows.filter((r) => !kaihoShips.has(shipKey(r.ship))); // 東/西を優先
+    // 東/西を優先（同じ船の同じ入出航イベントは港湾行を捨てる）。
+    // ※船名だけで判定すると「今日 東/西に載っている船の“翌日”の港湾行」まで消えてしまうため、
+    //   船名＋入出航の別＋予定時刻の近さで同一イベントを判定する。
+    // 窓は実測に基づく非対称（港湾時刻 − 航路時刻）。入航は「航路通過→着岸」で港湾が後、出航は「離岸→航路通過」で港湾が先。
+    // 広げすぎると別の寄港を誤って同一視して港湾行が消えるため、実測分布（入航 0〜+2h／出航 −2〜0h）に余裕を持たせた範囲に留める。
+    const HOUR = 3600 * 1000;
+    const WIN = { "入航": [-3 * HOUR, 6 * HOUR], "出航": [-6 * HOUR, 3 * HOUR] };
+    let badTime = 0;
+    const kaihoEvents = new Map(); // "船名キー|入出航" → 予定時刻(ms)の配列
+    for (const r of rows) {
+      const t = parseMD(r.time);
+      if (t === null) { badTime++; continue; }
+      const k = shipKey(r.ship) + "|" + r.dir;
+      if (!kaihoEvents.has(k)) kaihoEvents.set(k, []);
+      kaihoEvents.get(k).push(t);
+    }
+    // 候補（港湾行 × 窓内の航路イベント）を差の小さい順に確定させ、1つの航路イベントが複数の港湾行を吸収しないようにする（1対1割当）
+    const pairs = [];
+    portRows.forEach((r, idx) => {
+      const t = parseMD(r.time);
+      if (t === null) { badTime++; return; }
+      const w = WIN[r.dir];
+      const list = kaihoEvents.get(shipKey(r.ship) + "|" + r.dir);
+      if (!w || !list) return; // 東/西に同名・同方向が無い（シフト等）→ そのまま表示
+      const k = shipKey(r.ship) + "|" + r.dir;
+      list.forEach((x, i) => {
+        const d = t - x;
+        if (d >= w[0] && d <= w[1]) pairs.push({ idx, slot: k + "#" + i, ad: Math.abs(d) });
+      });
+    });
+    pairs.sort((a, b) => a.ad - b.ad);
+    const usedSlot = new Set(), dropIdx = new Set();
+    for (const p of pairs) {
+      if (usedSlot.has(p.slot) || dropIdx.has(p.idx)) continue;
+      usedSlot.add(p.slot);
+      dropIdx.add(p.idx);
+    }
+    const merged = portRows.filter((_, idx) => !dropIdx.has(idx));
+    if (badTime > 0) console.error(`警告: 時刻書式を解釈できない行が ${badTime} 件ありました（重複除外が甘くなり二重表示の可能性）`);
     rows.push(...merged);
     console.log(`港湾システム: ${portRows.length}件取得 → 重複除外後 ${merged.length}件を追加`);
-    // === 未登録の外航船を自動リスト化（unregistered.json）===
-    try {
-      const idx = fs.readFileSync(path.join(__dirname, "index.html"), "utf-8");
-      const mm = idx.match(/const SHIP_MMSI_RAW = \{([\s\S]*?)\};/);
-      const reg = new Set();
-      if (mm) for (const g of mm[1].matchAll(/'([^']+)'\s*:\s*'[0-9]+'/g)) reg.add(shipKey(g[1]));
-      const seen = new Set(), unreg = [];
-      for (const f of portForeign) {
-        const k = shipKey(f.name);
-        if (reg.has(k) || seen.has(k)) continue;
-        seen.add(k);
-        unreg.push(f);
-      }
-      unreg.sort((a, b) => a.name.localeCompare(b.name));
-      fs.writeFileSync(
-        path.join(__dirname, "unregistered.json"),
-        JSON.stringify({ generatedAt: new Date().toISOString(), count: unreg.length, ships: unreg }, null, 2),
-        "utf-8"
-      );
-      console.log(`未登録の外航船: ${unreg.length}件 → unregistered.json`);
-    } catch (e) {
-      console.error("未登録船リスト生成に失敗:", e.message);
-    }
+    portOk = true;
   } catch (e) {
     console.error("港湾システムの取得に失敗:", e.message);
+  }
+
+  // === 未登録船を自動リスト化（unregistered.json）===
+  // 対象①港湾システムの外国籍船（1週間先まで）②東/西航路に載っている全ての船（日本船・客船も含む）
+  // ※港湾システムの取得に失敗しても②は必ず出す
+  try {
+    const idx = fs.readFileSync(path.join(__dirname, "index.html"), "utf-8");
+    const mm = idx.match(/const SHIP_MMSI_RAW = \{([\s\S]*?)\};/);
+    const reg = new Set();
+    if (mm) for (const g of mm[1].matchAll(/'([^']+)'\s*:\s*'[0-9]+'/g)) reg.add(shipKey(g[1]));
+    // 安全装置：登録表の読み取りに失敗すると全船が「未登録」扱いになるので、その場合は書き換えず前回のリストを残す
+    if (reg.size < 1000) throw new Error(`登録表(SHIP_MMSI_RAW)の読み取り件数が異常に少ない（${reg.size}件）。index.html の書式変更の可能性`);
+    // 画面に出さない船・行（EXCLUDE_SHIPS・押船/曳船・除外バース・除外ふ頭）はリンク不要なので対象外
+    const listOf = (name) => {
+      const m = idx.match(new RegExp("const " + name + " = new Set\\(\\s*\\[([\\s\\S]*?)\\]"));
+      return m ? [...m[1].matchAll(/'([^']+)'/g)].map((g) => g[1]) : [];
+    };
+    const excl = new Set(listOf("EXCLUDE_SHIPS").map(shipKey));
+    const exBerth = new Set(listOf("EXCLUDE_BERTHS"));
+    const exFu = new Set(listOf("EXCLUDE_FU"));
+    const skip = (name) => excl.has(shipKey(name)) || /押船|曳船/.test(name);
+    const hiddenRow = (r) => {
+      const b = (r.berth || "").trim().replace(/（/g, "(").replace(/）/g, ")");
+      return exBerth.has(b) || exFu.has((r.route || "").trim());
+    };
+    const seen = new Set(), unreg = [];
+    for (const r of rows) {
+      if (r.port) continue; // 東/西航路の行のみ
+      const k = shipKey(r.ship);
+      if (reg.has(k) || seen.has(k) || skip(r.ship) || hiddenRow(r)) continue;
+      seen.add(k);
+      unreg.push({ name: r.ship, kind: `${r.route}航路`, flag: routeFlag.get(r.ship) || "", date: (r.time || "").slice(0, 5) });
+    }
+    for (const f of portForeign) {
+      const k = shipKey(f.name);
+      if (reg.has(k) || seen.has(k) || skip(f.name)) continue;
+      seen.add(k);
+      unreg.push(f);
+    }
+    unreg.sort((a, b) => a.name.localeCompare(b.name));
+    fs.writeFileSync(
+      path.join(__dirname, "unregistered.json"),
+      JSON.stringify({ generatedAt: new Date().toISOString(), portFetched: portOk, count: unreg.length, ships: unreg }, null, 2),
+      "utf-8"
+    );
+    console.log(`未登録船: ${unreg.length}件（東/西航路＋港湾の外国籍）→ unregistered.json`);
+  } catch (e) {
+    console.error("未登録船リスト生成に失敗:", e.message);
   }
 
   // 気象・海象（失敗しても予定表は出力する）
