@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-09-27T05:00:39.765Z",
+  "generatedAt": "2026-09-27T05:15:24.808Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 2,
+  "ships": [
+    {
+      "name": "GOLDEN FLAME",
+      "kind": "東航路",
+      "flag": "PAN",
+      "date": "09/28"
+    },
+    {
+      "name": "VIKING VENUS",
+      "kind": "西航路",
+      "flag": "NOR",
+      "date": "09/28"
+    }
+  ]
 }
