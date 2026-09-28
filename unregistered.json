@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-09-28T14:45:32.074Z",
+  "generatedAt": "2026-09-28T15:00:51.631Z",
   "portFetched": true,
-  "count": 4,
+  "count": 3,
   "ships": [
-    {
-      "name": "GOLDEN FLAME",
-      "kind": "一般貨物船",
-      "flag": "PANAMA",
-      "date": "09/28"
-    },
     {
       "name": "RENOWN",
       "kind": "西航路",
