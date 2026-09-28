@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-09-28T10:30:34.911Z",
+  "generatedAt": "2026-09-28T10:45:26.266Z",
   "portFetched": true,
   "count": 5,
   "ships": [
     {
       "name": "GOLDEN FLAME",
-      "kind": "東航路",
-      "flag": "PAN",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
       "date": "09/28"
     },
     {
