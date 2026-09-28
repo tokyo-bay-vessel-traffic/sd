@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-28T00:16:00.457Z",
+  "generatedAt": "2026-09-28T00:30:34.398Z",
   "portFetched": true,
-  "count": 2,
+  "count": 4,
   "ships": [
     {
       "name": "GOLDEN FLAME",
@@ -10,10 +10,22 @@
       "date": "09/28"
     },
     {
+      "name": "RENOWN",
+      "kind": "フルコンテナ船",
+      "flag": "BAHAMAS",
+      "date": "09/29"
+    },
+    {
       "name": "VIKING VENUS",
       "kind": "西航路",
       "flag": "NOR",
       "date": "09/28"
+    },
+    {
+      "name": "XIN MING ZHOU 96",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
+      "date": "09/29"
     }
   ]
 }
