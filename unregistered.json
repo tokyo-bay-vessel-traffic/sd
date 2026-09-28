@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-28T03:15:24.317Z",
+  "generatedAt": "2026-09-28T03:30:32.828Z",
   "portFetched": true,
-  "count": 4,
+  "count": 5,
   "ships": [
     {
       "name": "GOLDEN FLAME",
@@ -13,6 +13,12 @@
       "name": "RENOWN",
       "kind": "フルコンテナ船",
       "flag": "BAHAMAS",
+      "date": "09/29"
+    },
+    {
+      "name": "RICH GAIN",
+      "kind": "一般貨物船",
+      "flag": "JAMAICA",
       "date": "09/29"
     },
     {
