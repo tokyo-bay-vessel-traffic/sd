@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-28T07:15:26.397Z",
+  "generatedAt": "2026-09-28T07:30:35.486Z",
   "portFetched": true,
   "count": 5,
   "ships": [
@@ -31,7 +31,7 @@
       "name": "XIN MING ZHOU 96",
       "kind": "フルコンテナ船",
       "flag": "CHINA",
-      "date": "09/29"
+      "date": "10/01"
     }
   ]
 }
