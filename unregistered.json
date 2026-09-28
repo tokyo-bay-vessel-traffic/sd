@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-28T11:00:44.082Z",
+  "generatedAt": "2026-09-28T11:15:26.895Z",
   "portFetched": true,
-  "count": 5,
+  "count": 4,
   "ships": [
     {
       "name": "GOLDEN FLAME",
@@ -20,12 +20,6 @@
       "kind": "一般貨物船",
       "flag": "JAMAICA",
       "date": "09/29"
-    },
-    {
-      "name": "VIKING VENUS",
-      "kind": "西航路",
-      "flag": "NOR",
-      "date": "09/28"
     },
     {
       "name": "XIN MING ZHOU 96",
