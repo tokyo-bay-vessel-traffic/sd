@@ -1,25 +1,13 @@
 {
-  "generatedAt": "2026-09-29T14:45:27.946Z",
+  "generatedAt": "2026-09-29T15:00:47.946Z",
   "portFetched": true,
-  "count": 5,
+  "count": 3,
   "ships": [
     {
       "name": "MITSUI OCEAN SAKURA",
       "kind": "西航路",
       "flag": "JPN",
       "date": "09/30"
-    },
-    {
-      "name": "RENOWN",
-      "kind": "フルコンテナ船",
-      "flag": "BAHAMAS",
-      "date": "09/29"
-    },
-    {
-      "name": "RICH GAIN",
-      "kind": "一般貨物船",
-      "flag": "JAMAICA",
-      "date": "09/29"
     },
     {
       "name": "XIN MING ZHOU 96",
