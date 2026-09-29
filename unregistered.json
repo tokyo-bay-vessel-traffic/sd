@@ -1,13 +1,31 @@
 {
-  "generatedAt": "2026-09-29T15:00:47.946Z",
+  "generatedAt": "2026-09-29T15:15:57.667Z",
   "portFetched": true,
-  "count": 3,
+  "count": 8,
   "ships": [
+    {
+      "name": "AZAMARA PURSUIT",
+      "kind": "西航路",
+      "flag": "MHL",
+      "date": "10/01"
+    },
     {
       "name": "MITSUI OCEAN SAKURA",
       "kind": "西航路",
       "flag": "JPN",
       "date": "09/30"
+    },
+    {
+      "name": "NAVIOS CYAN",
+      "kind": "西航路",
+      "flag": "LBR",
+      "date": "10/01"
+    },
+    {
+      "name": "ONE READINESS",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "10/01"
     },
     {
       "name": "XIN MING ZHOU 96",
@@ -16,10 +34,22 @@
       "date": "10/01"
     },
     {
+      "name": "しゅれいＩＩ",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "09/30"
+    },
+    {
       "name": "新潮丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "09/30"
+    },
+    {
+      "name": "第１勇和丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/01"
     }
   ]
 }
