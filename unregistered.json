@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-29T05:15:24.675Z",
+  "generatedAt": "2026-09-29T05:30:34.516Z",
   "portFetched": true,
-  "count": 4,
+  "count": 5,
   "ships": [
     {
       "name": "MITSUI OCEAN SAKURA",
@@ -26,6 +26,12 @@
       "kind": "フルコンテナ船",
       "flag": "CHINA",
       "date": "10/01"
+    },
+    {
+      "name": "新潮丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "09/30"
     }
   ]
 }
