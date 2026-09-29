@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-29T12:30:33.776Z",
+  "generatedAt": "2026-09-29T12:45:28.331Z",
   "portFetched": true,
   "count": 5,
   "ships": [
@@ -11,8 +11,8 @@
     },
     {
       "name": "RENOWN",
-      "kind": "西航路",
-      "flag": "BHS",
+      "kind": "フルコンテナ船",
+      "flag": "BAHAMAS",
       "date": "09/29"
     },
     {
