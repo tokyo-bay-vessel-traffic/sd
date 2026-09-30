@@ -1,25 +1,13 @@
 {
-  "generatedAt": "2026-09-30T15:16:04.039Z",
+  "generatedAt": "2026-09-30T15:30:36.709Z",
   "portFetched": true,
-  "count": 11,
+  "count": 8,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
       "kind": "西航路",
       "flag": "MHL",
       "date": "10/01"
-    },
-    {
-      "name": "ERASMUS NINJA",
-      "kind": "西航路",
-      "flag": "MHL",
-      "date": "10/02"
-    },
-    {
-      "name": "KOWHAI",
-      "kind": "西航路",
-      "flag": "PAN",
-      "date": "10/02"
     },
     {
       "name": "NAVIOS CYAN",
@@ -37,12 +25,6 @@
       "name": "OSG BOSSTEC",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
-      "date": "10/02"
-    },
-    {
-      "name": "SHUN LONG",
-      "kind": "西航路",
-      "flag": "PAN",
       "date": "10/02"
     },
     {
