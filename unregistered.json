@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-30T00:30:39.065Z",
+  "generatedAt": "2026-09-30T00:45:27.631Z",
   "portFetched": true,
-  "count": 4,
+  "count": 7,
   "ships": [
     {
       "name": "MITSUI OCEAN SAKURA",
@@ -10,9 +10,27 @@
       "date": "09/30"
     },
     {
+      "name": "OSG BOSSTEC",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/02"
+    },
+    {
+      "name": "SOC GLORY",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "10/03"
+    },
+    {
       "name": "XIN MING ZHOU 96",
       "kind": "フルコンテナ船",
       "flag": "CHINA",
+      "date": "10/01"
+    },
+    {
+      "name": "YU BANG 228",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
       "date": "10/01"
     },
     {
