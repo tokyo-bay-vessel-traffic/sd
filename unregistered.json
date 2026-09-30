@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-09-30T23:00:41.507Z",
+  "generatedAt": "2026-09-30T23:15:27.035Z",
   "portFetched": true,
-  "count": 8,
+  "count": 7,
   "ships": [
-    {
-      "name": "AZAMARA PURSUIT",
-      "kind": "西航路",
-      "flag": "MHL",
-      "date": "10/01"
-    },
     {
       "name": "NAVIOS CYAN",
       "kind": "西航路",
@@ -46,7 +40,7 @@
       "date": "10/01"
     },
     {
-      "name": "第一勇和丸",
+      "name": "第１勇和丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/01"
