@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-09-30T08:30:34.416Z",
+  "generatedAt": "2026-09-30T08:45:26.926Z",
   "portFetched": true,
-  "count": 10,
+  "count": 9,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
       "kind": "西航路",
       "flag": "MHL",
       "date": "10/01"
-    },
-    {
-      "name": "MITSUI OCEAN SAKURA",
-      "kind": "西航路",
-      "flag": "JPN",
-      "date": "09/30"
     },
     {
       "name": "NAVIOS CYAN",
