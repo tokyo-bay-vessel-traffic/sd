@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-30T10:00:42.364Z",
+  "generatedAt": "2026-09-30T10:15:26.746Z",
   "portFetched": true,
-  "count": 9,
+  "count": 8,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
@@ -44,12 +44,6 @@
       "kind": "一般貨物船",
       "flag": "PANAMA",
       "date": "10/01"
-    },
-    {
-      "name": "しゅれいＩＩ",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "09/30"
     },
     {
       "name": "第１勇和丸",
