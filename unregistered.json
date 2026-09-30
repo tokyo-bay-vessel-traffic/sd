@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-09-30T09:15:44.852Z",
-  "portFetched": false,
-  "count": 5,
+  "generatedAt": "2026-09-30T09:30:35.808Z",
+  "portFetched": true,
+  "count": 9,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
@@ -19,6 +19,30 @@
       "name": "ONE READINESS",
       "kind": "西航路",
       "flag": "SGP",
+      "date": "10/01"
+    },
+    {
+      "name": "OSG BOSSTEC",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/02"
+    },
+    {
+      "name": "SOC GLORY",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "10/03"
+    },
+    {
+      "name": "XIN MING ZHOU 96",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
+      "date": "10/05"
+    },
+    {
+      "name": "YU BANG 228",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
       "date": "10/01"
     },
     {
