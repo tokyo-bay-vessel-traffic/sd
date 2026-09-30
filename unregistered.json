@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-09-30T22:45:27.541Z",
+  "generatedAt": "2026-09-30T23:00:41.507Z",
   "portFetched": true,
   "count": 8,
   "ships": [
@@ -17,8 +17,8 @@
     },
     {
       "name": "ONE READINESS",
-      "kind": "西航路",
-      "flag": "SGP",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
       "date": "10/01"
     },
     {
