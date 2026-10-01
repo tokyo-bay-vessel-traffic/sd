@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-10-01T05:00:41.234Z",
+  "generatedAt": "2026-10-01T05:15:25.999Z",
   "portFetched": true,
-  "count": 8,
+  "count": 9,
   "ships": [
     {
       "name": "ERASMUS NINJA",
-      "kind": "フルコンテナ船",
-      "flag": "MARSHALL ISLANDS",
+      "kind": "西航路",
+      "flag": "MHL",
+      "date": "10/02"
+    },
+    {
+      "name": "KOWHAI",
+      "kind": "西航路",
+      "flag": "PAN",
       "date": "10/02"
     },
     {
@@ -17,14 +23,14 @@
     },
     {
       "name": "ONE READINESS",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "10/01"
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "10/02"
     },
     {
       "name": "OSG BOSSTEC",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
+      "kind": "西航路",
+      "flag": "HKG",
       "date": "10/02"
     },
     {
