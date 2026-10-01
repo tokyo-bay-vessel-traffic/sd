@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-01T04:15:26.323Z",
+  "generatedAt": "2026-10-01T04:30:32.372Z",
   "portFetched": true,
-  "count": 9,
+  "count": 8,
   "ships": [
     {
       "name": "ERASMUS NINJA",
@@ -49,12 +49,6 @@
       "name": "YU BANG 228",
       "kind": "一般貨物船",
       "flag": "PANAMA",
-      "date": "10/01"
-    },
-    {
-      "name": "第１勇和丸",
-      "kind": "東航路",
-      "flag": "JPN",
       "date": "10/01"
     }
   ]
