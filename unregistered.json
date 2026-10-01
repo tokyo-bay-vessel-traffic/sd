@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-01T22:00:43.531Z",
+  "generatedAt": "2026-10-01T22:15:29.393Z",
   "portFetched": true,
-  "count": 8,
+  "count": 7,
   "ships": [
     {
       "name": "ERASMUS NINJA",
@@ -19,12 +19,6 @@
       "name": "NAVIOS CYAN",
       "kind": "西航路",
       "flag": "LBR",
-      "date": "10/02"
-    },
-    {
-      "name": "ONE READINESS",
-      "kind": "西航路",
-      "flag": "SGP",
       "date": "10/02"
     },
     {
