@@ -1434,6 +1434,8 @@
     'ASIATIC QUEST':'563118600','BOX ENDEAVOUR':'636016179','INTRA BHUM':'567483000','JING HUI':'339301610','MSC LOS ANGELES':'636021449','OOCL AUSTRALIA':'477504900','SITC SHUNDE':'477885100','SITC YIHE':'477922400','STEPHANIA K':'636022037',
     // 西航路の未登録船(2026-09-26)
     'WESTERDAM':'244128000',
+    // 未登録船リストより(2026-10-02)。ERASMUS NINJAは旧名時代の別MMSIが残るためIMO登録
+    'ERASMUS NINJA':'9339583','KOWHAI':'353369000','NAVIOS CYAN':'636026213','OSG BOSSTEC':'477079500','SITC JUNDE':'477025600','SOC GLORY':'356567000','XIN MING ZHOU 96':'413337240',
     'MARINE ACE':'431002799',
     '第七宝晴丸':'431401974',
     'HOSEI MARU NO.7':'431401974',
@@ -4010,23 +4012,43 @@
 
   let ROUTE='all', DATA=[], UPDATED='';
 
-  function normalize(raw){
-    // 東/西航路の予定が出ている日付（＝その日付は航路データ発表済み）
-    const ROUTE_DAYS = new Set(raw.filter(r=> !r.port).map(r=> (r.time||'').slice(0,5)));
+  function normalize(raw, fetchedAt){
+    // 東航路・西航路それぞれ、予定が出ている日付
+    const EAST_DAYS = new Set(raw.filter(r=> !r.port && r.route==='東').map(r=> (r.time||'').slice(0,5)));
+    const WEST_DAYS = new Set(raw.filter(r=> !r.port && r.route==='西').map(r=> (r.time||'').slice(0,5)));
+    // その日付の東/西航路が「確定」しているか
+    //  当日以前：常に確定
+    //  翌日分　：「データが前日15時(日本時間)以降に作られた」かつ「その日付に東と西の両方のデータがある」とき確定
+    //  ※15時の判定はスマホの時計ではなく data.json の作成時刻(fetchedAt)で行う（更新が遅れた古いデータで早まって消さないため）
+    //  ※東・西の片方が取れていないと、その航路を通る外航船を誤って消すので両方そろって初めて確定
+    const JST = 9*3600000;
+    const fetchedMs = Date.parse(fetchedAt||'');
+    const routeConfirmed = (mmdd)=>{
+      const off = dayOffset(mmdd);
+      if(off <= 0) return true;
+      if(off !== 1 || isNaN(fetchedMs)) return false;
+      if(!(EAST_DAYS.has(mmdd) && WEST_DAYS.has(mmdd))) return false;
+      const fj = new Date(fetchedMs + JST);               // 作成時刻を日本時間で（UTC欄で読む）
+      const p = mmdd.split('/'); const mm=+p[0], dd=+p[1];
+      let yr = fj.getUTCFullYear();
+      if(fj.getUTCMonth()===11 && mm===1) yr++;           // 12月に 01/xx を見たら翌年
+      return (fetchedMs + JST) >= Date.UTC(yr, mm-1, dd-1, 15, 0);  // 前日15:00（日本時間）以降
+    };
     const arr = raw.filter(r=> !isExcluded(r.ship, r.berth, r.route)).map(r=>({
       time:r.time, min:hm(r.time), hour:hourOf(r.time), t:clock(r.time),
       dir:r.dir, dc:DIRC[r.dir]||'shift',
       berth:dec(r.berth).replace(/\s*=?>\s*/,'→').replace(/\s+/g,' ').trim(),  // シフトの矢印は詰めて表記（例 X4→X5）＝見切れ防止
       ship:dec(r.ship), length:r.length||'', tons:r.tons||'',
       pilot:(r.pilot==='有'), route:r.route, port:!!r.port,
-      // 灰色（未確定）表示＝港湾システム由来の外航船のうち「当日」または「東/西航路が発表済みの日付」のみ。
-      // ※当日を常に含めるのは、海保ページが過ぎた行を落とすため深夜に灰色→黒へ戻るのを防ぐため
-      fo:(!!r.foreign && !!r.port && (dayOffset((r.time||'').slice(0,5))<=0 || ROUTE_DAYS.has((r.time||'').slice(0,5)))),
+      // 港湾システムだけに載っている外航船は、その日付の東/西航路が「確定」していれば非表示（下の filter で除く）。
+      // 確定前は黒のまま表示するので、灰色表示は使わない
+      fo:false,
+      hideFo:(!!r.foreign && !!r.port && routeConfirmed((r.time||'').slice(0,5))),
       ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
     })).sort((a,b)=> a.ds-b.ds || (a.route<b.route?-1:1));
     // 港湾システムの消え残り対策：港湾行のみ「現在時刻−1時間」より前を削除（東/西は対象外）
     const d=new Date(); const cutoff = d.getHours()*60 + d.getMinutes() - 60;
-    return arr.filter(r=> !r.port || r.ds >= cutoff);
+    return arr.filter(r=> (!r.port || r.ds >= cutoff) && !r.hideFo);
   }
 
   function nowMin(){ const d=new Date(); return d.getHours()*60+d.getMinutes(); }
@@ -4176,7 +4198,7 @@
     else { bar.hidden=true; }
   }
   function boot(data, updated, env, fetchedAt, live){
-    try{ DATA=normalize(data||[]); }catch(e){ DATA=[]; }
+    try{ DATA=normalize(data||[], fetchedAt); }catch(e){ DATA=[]; }
     UPDATED=updated||'';
     try{ $('#upd').textContent=UPDATED||'—'; const _um=$('#updMini'); if(_um) _um.textContent=UPDATED||'—'; }catch(e){}
     try{ renderEnv(env||ENV_SNAPSHOT); }catch(e){}
