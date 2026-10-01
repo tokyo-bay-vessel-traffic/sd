@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-01T15:15:33.994Z",
+  "generatedAt": "2026-10-01T15:30:38.541Z",
   "portFetched": true,
-  "count": 13,
+  "count": 8,
   "ships": [
-    {
-      "name": "AZAMARA PURSUIT",
-      "kind": "西航路",
-      "flag": "MHL",
-      "date": "10/03"
-    },
     {
       "name": "ERASMUS NINJA",
       "kind": "西航路",
@@ -17,15 +11,9 @@
     },
     {
       "name": "KOWHAI",
-      "kind": "東航路",
-      "flag": "PAN",
-      "date": "10/03"
-    },
-    {
-      "name": "MSC MANU Ⅳ",
       "kind": "西航路",
-      "flag": "LBR",
-      "date": "10/03"
+      "flag": "PAN",
+      "date": "10/02"
     },
     {
       "name": "NAVIOS CYAN",
@@ -46,12 +34,6 @@
       "date": "10/02"
     },
     {
-      "name": "SILVER MOON",
-      "kind": "西航路",
-      "flag": "BHS",
-      "date": "10/03"
-    },
-    {
       "name": "SITC JUNDE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
@@ -68,18 +50,6 @@
       "kind": "フルコンテナ船",
       "flag": "CHINA",
       "date": "10/05"
-    },
-    {
-      "name": "白鳳丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/03"
-    },
-    {
-      "name": "青雲丸",
-      "kind": "西航路",
-      "flag": "JPN",
-      "date": "10/03"
     }
   ]
 }
