@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-01T02:15:26.329Z",
+  "generatedAt": "2026-10-01T02:30:32.814Z",
   "portFetched": true,
-  "count": 8,
+  "count": 9,
   "ships": [
     {
       "name": "ERASMUS NINJA",
@@ -26,6 +26,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/02"
+    },
+    {
+      "name": "SITC JUNDE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/03"
     },
     {
       "name": "SOC GLORY",
