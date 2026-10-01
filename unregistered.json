@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-01T01:15:31.233Z",
+  "generatedAt": "2026-10-01T01:30:33.995Z",
   "portFetched": true,
-  "count": 7,
+  "count": 8,
   "ships": [
+    {
+      "name": "ERASMUS NINJA",
+      "kind": "フルコンテナ船",
+      "flag": "MARSHALL ISLANDS",
+      "date": "10/02"
+    },
     {
       "name": "NAVIOS CYAN",
       "kind": "西航路",
