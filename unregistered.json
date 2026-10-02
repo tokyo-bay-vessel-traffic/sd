@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-10-02T02:30:33.146Z",
+  "generatedAt": "2026-10-02T02:45:25.948Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "WAN HAI 293",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "10/03"
+    }
+  ]
 }
