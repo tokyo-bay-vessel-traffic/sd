@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-02T15:15:28.934Z",
+  "generatedAt": "2026-10-02T15:30:42.812Z",
   "portFetched": true,
-  "count": 9,
+  "count": 7,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
@@ -14,12 +14,6 @@
       "kind": "東航路",
       "flag": "PAN",
       "date": "10/03"
-    },
-    {
-      "name": "ROYAL PRINCESS",
-      "kind": "西航路",
-      "flag": "GBR",
-      "date": "10/04"
     },
     {
       "name": "SHUN LONG",
@@ -38,12 +32,6 @@
       "kind": "西航路",
       "flag": "SGP",
       "date": "10/03"
-    },
-    {
-      "name": "公龍丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/04"
     },
     {
       "name": "白鳳丸",
