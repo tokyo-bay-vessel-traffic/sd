@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-02T05:30:31.860Z",
+  "generatedAt": "2026-10-02T05:45:25.467Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
@@ -14,6 +14,12 @@
       "kind": "東航路",
       "flag": "PAN",
       "date": "10/03"
+    },
+    {
+      "name": "SHUN LONG",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "10/05"
     },
     {
       "name": "SILVER MOON",
