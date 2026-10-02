@@ -1,12 +1,42 @@
 {
-  "generatedAt": "2026-10-02T05:00:38.714Z",
+  "generatedAt": "2026-10-02T05:15:24.437Z",
   "portFetched": true,
-  "count": 1,
+  "count": 6,
   "ships": [
     {
+      "name": "AZAMARA PURSUIT",
+      "kind": "西航路",
+      "flag": "MHL",
+      "date": "10/03"
+    },
+    {
+      "name": "GOLDEN FLAME",
+      "kind": "東航路",
+      "flag": "PAN",
+      "date": "10/03"
+    },
+    {
+      "name": "SILVER MOON",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/03"
+    },
+    {
       "name": "WAN HAI 293",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "10/03"
+    },
+    {
+      "name": "白鳳丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/03"
+    },
+    {
+      "name": "青雲丸",
+      "kind": "西航路",
+      "flag": "JPN",
       "date": "10/03"
     }
   ]
