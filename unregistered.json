@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-03T06:00:40.617Z",
+  "generatedAt": "2026-10-03T06:15:25.131Z",
   "portFetched": true,
-  "count": 8,
+  "count": 7,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
@@ -44,12 +44,6 @@
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/04"
-    },
-    {
-      "name": "青雲丸",
-      "kind": "西航路",
-      "flag": "JPN",
-      "date": "10/03"
     }
   ]
 }
