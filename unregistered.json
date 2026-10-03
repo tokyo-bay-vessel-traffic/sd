@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-03T01:00:40.260Z",
+  "generatedAt": "2026-10-03T01:15:26.683Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "AZAMARA PURSUIT",
@@ -31,12 +31,6 @@
       "name": "WAN HAI 293",
       "kind": "西航路",
       "flag": "SGP",
-      "date": "10/03"
-    },
-    {
-      "name": "白鳳丸",
-      "kind": "東航路",
-      "flag": "JPN",
       "date": "10/03"
     },
     {
