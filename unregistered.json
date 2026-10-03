@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-03T08:00:39.125Z",
+  "generatedAt": "2026-10-03T08:15:25.533Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
-    {
-      "name": "AZAMARA PURSUIT",
-      "kind": "西航路",
-      "flag": "MHL",
-      "date": "10/03"
-    },
     {
       "name": "GOLDEN FLAME",
       "kind": "東航路",
