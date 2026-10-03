@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-03T11:30:33.341Z",
+  "generatedAt": "2026-10-03T11:45:26.018Z",
   "portFetched": true,
-  "count": 5,
+  "count": 4,
   "ships": [
-    {
-      "name": "GOLDEN FLAME",
-      "kind": "東航路",
-      "flag": "PAN",
-      "date": "10/03"
-    },
     {
       "name": "ROYAL PRINCESS",
       "kind": "西航路",
