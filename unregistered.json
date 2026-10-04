@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-04T05:00:40.775Z",
+  "generatedAt": "2026-10-04T05:15:23.410Z",
   "portFetched": true,
   "count": 2,
   "ships": [
@@ -11,8 +11,8 @@
     },
     {
       "name": "SHUN LONG",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
+      "kind": "西航路",
+      "flag": "PAN",
       "date": "10/05"
     }
   ]
