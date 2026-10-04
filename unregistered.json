@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-04T00:30:36.354Z",
+  "generatedAt": "2026-10-04T00:37:57.639Z",
   "portFetched": true,
-  "count": 3,
+  "count": 2,
   "ships": [
     {
       "name": "ROYAL PRINCESS",
@@ -14,12 +14,6 @@
       "kind": "フルコンテナ船",
       "flag": "PANAMA",
       "date": "10/05"
-    },
-    {
-      "name": "公龍丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/04"
     }
   ]
 }
