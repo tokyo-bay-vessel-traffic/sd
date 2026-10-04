@@ -1,13 +1,31 @@
 {
-  "generatedAt": "2026-10-04T15:00:47.596Z",
+  "generatedAt": "2026-10-04T15:15:24.408Z",
   "portFetched": true,
-  "count": 1,
+  "count": 4,
   "ships": [
+    {
+      "name": "MSC MANU Ⅳ",
+      "kind": "西航路",
+      "flag": "LBR",
+      "date": "10/06"
+    },
     {
       "name": "SHUN LONG",
       "kind": "西航路",
       "flag": "PAN",
       "date": "10/05"
+    },
+    {
+      "name": "THE WORLD",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/06"
+    },
+    {
+      "name": "りゅうせい",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/06"
     }
   ]
 }
