@@ -1,13 +1,25 @@
 {
-  "generatedAt": "2026-10-05T05:15:26.013Z",
+  "generatedAt": "2026-10-05T05:30:32.992Z",
   "portFetched": true,
-  "count": 1,
+  "count": 3,
   "ships": [
     {
       "name": "SHUN LONG",
       "kind": "西航路",
       "flag": "PAN",
       "date": "10/05"
+    },
+    {
+      "name": "THE WORLD",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/06"
+    },
+    {
+      "name": "りゅうせい",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/06"
     }
   ]
 }
