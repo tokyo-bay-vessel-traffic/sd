@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-05T08:30:36.941Z",
+  "generatedAt": "2026-10-05T08:36:01.501Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "CA SAIGON",
@@ -14,12 +14,6 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "10/07"
-    },
-    {
-      "name": "SHUN LONG",
-      "kind": "西航路",
-      "flag": "PAN",
-      "date": "10/05"
     },
     {
       "name": "THE WORLD",
