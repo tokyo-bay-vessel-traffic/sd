@@ -4018,15 +4018,15 @@
     // 東航路・西航路それぞれ、予定が出ている日付
     const EAST_DAYS = new Set(raw.filter(r=> !r.port && r.route==='東').map(r=> (r.time||'').slice(0,5)));
     const WEST_DAYS = new Set(raw.filter(r=> !r.port && r.route==='西').map(r=> (r.time||'').slice(0,5)));
-    // 日付ごとに、東/西航路に載っている船（船名＋トン数）。同名の別船・番号違いの船を取り違えないようトン数も見る
+    // 東/西航路に載っている船（船名＋トン数）。同名の別船・番号違いの船を取り違えないようトン数も見る
+    // ※日付は区別しない：海保のページは時刻が過ぎた便を消していくので、夕方には当日分の航路行が無くなり照合相手を失うため。
+    //   今日・明日どちらの航路に載っていても、同じ船なら（確定日の）港湾行は消す
     // ※画面に出さない航路の行（除外バース等）は使わない（使うと、その船の港湾行まで消えて画面からいなくなるため）
     const tonKey = t => String(parseInt(String(t||'').replace(/,/g,''),10));
-    const ROUTE_SHIPS = new Map();
+    const ROUTE_SHIPS = new Set();
     raw.forEach(r=>{
       if(r.port || isExcluded(r.ship, r.berth, r.route)) return;
-      const d=(r.time||'').slice(0,5);
-      if(!ROUTE_SHIPS.has(d)) ROUTE_SHIPS.set(d,new Set());
-      ROUTE_SHIPS.get(d).add(normShip(r.ship)+'|'+tonKey(r.tons));
+      ROUTE_SHIPS.add(normShip(r.ship)+'|'+tonKey(r.tons));
     });
     // その日付の東/西航路が「確定」しているか
     //  当日以前：常に確定
@@ -4057,7 +4057,7 @@
       fo:false,
       hideFo:(!!r.port && routeConfirmed((r.time||'').slice(0,5)) && (
         !!r.foreign ||                                                  // 外航船：港湾だけに載っていれば消す
-        !!(ROUTE_SHIPS.get((r.time||'').slice(0,5))?.has(normShip(r.ship)+'|'+tonKey(r.tons)))  // 国内船：同じ日付の東/西航路に同じ船(名前＋トン数)が載っていれば、その日の港湾行は全部消す
+        ROUTE_SHIPS.has(normShip(r.ship)+'|'+tonKey(r.tons))  // 国内船：東/西航路（今日・明日）に同じ船(名前＋トン数)が載っていれば港湾行は消す
       )),
       ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
     })).sort((a,b)=> a.ds-b.ds || (a.route<b.route?-1:1));
