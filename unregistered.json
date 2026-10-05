@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-05T15:00:45.373Z",
+  "generatedAt": "2026-10-05T15:15:26.846Z",
   "portFetched": true,
-  "count": 6,
+  "count": 8,
   "ships": [
     {
       "name": "CA SAIGON",
@@ -10,9 +10,21 @@
       "date": "10/09"
     },
     {
-      "name": "MSC MANU IV",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
+      "name": "EVER STRONG",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "10/07"
+    },
+    {
+      "name": "MSC BELLISSIMA",
+      "kind": "西航路",
+      "flag": "MLT",
+      "date": "10/07"
+    },
+    {
+      "name": "MSC MANU Ⅳ",
+      "kind": "西航路",
+      "flag": "LBR",
       "date": "10/07"
     },
     {
