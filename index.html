@@ -3989,6 +3989,10 @@
     ['P','KK','中防東','NA','LOB','LLB','LE','VAC','C','LLE','LLD','LLC','LLF','LM1','LM2','M']);
   // ふ頭（係船＝東京港港湾情報システムの航路）完全一致
   const EXCLUDE_FU = new Set(['辰巳','大井水産・食品']);
+  // 必ず東/西航路に載る定期RORO船（神シリーズ・海シリーズ）。航路が確定した日付では、港湾システム由来の行を出さない
+  // ※同じ名前の小型船・練習船を巻き込まないよう、5,000トン以上のときだけ対象
+  const ROUTE_ONLY_SHIPS = new Set(['神永丸','神王丸','神珠丸','神北丸','神明丸','神加丸','神泉丸','海王丸','天王丸'].map(normShip));
+  const ROUTE_ONLY_MIN_TONS = 5000;
   function isExcluded(ship, berth, route){
     const sk=normShip(ship);
     if(sk.indexOf('押船')>=0 || sk.indexOf('曳船')>=0) return true;
@@ -4057,7 +4061,8 @@
       fo:false,
       hideFo:(!!r.port && routeConfirmed((r.time||'').slice(0,5)) && (
         !!r.foreign ||                                                  // 外航船：港湾だけに載っていれば消す
-        ROUTE_SHIPS.has(normShip(r.ship)+'|'+tonKey(r.tons))  // 国内船：東/西航路（今日・明日）に同じ船(名前＋トン数)が載っていれば港湾行は消す
+        ROUTE_SHIPS.has(normShip(r.ship)+'|'+tonKey(r.tons)) ||  // 国内船：東/西航路（今日・明日）に同じ船(名前＋トン数)が載っていれば港湾行は消す
+        (ROUTE_ONLY_SHIPS.has(normShip(r.ship)) && +tonKey(r.tons) >= ROUTE_ONLY_MIN_TONS)  // 神シリーズ・海シリーズのRORO船：航路に無くても港湾行は消す
       )),
       ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
     })).sort((a,b)=> a.ds-b.ds || (a.route<b.route?-1:1));
