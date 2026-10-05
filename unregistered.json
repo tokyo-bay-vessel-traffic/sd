@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-05T06:30:34.156Z",
+  "generatedAt": "2026-10-05T06:45:26.315Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "CA SAIGON",
@@ -26,6 +26,12 @@
       "kind": "西航路",
       "flag": "BHS",
       "date": "10/06"
+    },
+    {
+      "name": "XIN MING ZHOU 106",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
+      "date": "10/12"
     },
     {
       "name": "りゅうせい",
