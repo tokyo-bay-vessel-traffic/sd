@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-10-05T05:30:32.992Z",
+  "generatedAt": "2026-10-05T05:45:25.677Z",
   "portFetched": true,
-  "count": 3,
+  "count": 6,
   "ships": [
+    {
+      "name": "CA SAIGON",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/09"
+    },
+    {
+      "name": "MSC MANU IV",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "10/07"
+    },
     {
       "name": "SHUN LONG",
       "kind": "西航路",
@@ -17,6 +29,12 @@
     },
     {
       "name": "りゅうせい",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/06"
+    },
+    {
+      "name": "公龍丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/06"
