@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-06T05:15:25.083Z",
+  "generatedAt": "2026-10-06T05:30:33.366Z",
   "portFetched": true,
-  "count": 4,
+  "count": 5,
   "ships": [
     {
       "name": "CA SAIGON",
@@ -11,8 +11,14 @@
     },
     {
       "name": "EVER STRONG",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "10/07"
+    },
+    {
+      "name": "MSC BELLISSIMA",
+      "kind": "西航路",
+      "flag": "MLT",
       "date": "10/07"
     },
     {
