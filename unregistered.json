@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-06T15:00:48.537Z",
+  "generatedAt": "2026-10-06T15:15:29.296Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "VELDA",
+      "kind": "東航路",
+      "flag": "PAN",
+      "date": "10/08"
+    },
     {
       "name": "しゅれいＩＩ",
       "kind": "東航路",
