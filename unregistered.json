@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-06T01:00:48.133Z",
+  "generatedAt": "2026-10-06T01:15:27.636Z",
   "portFetched": true,
-  "count": 6,
+  "count": 5,
   "ships": [
     {
       "name": "CA SAIGON",
@@ -29,12 +29,6 @@
     },
     {
       "name": "りゅうせい",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/06"
-    },
-    {
-      "name": "公龍丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/06"
