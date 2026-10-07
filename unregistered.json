@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-07T10:00:42.339Z",
+  "generatedAt": "2026-10-07T10:15:26.196Z",
   "portFetched": true,
-  "count": 3,
+  "count": 2,
   "ships": [
     {
       "name": "SMC RIZHAO",
@@ -14,12 +14,6 @@
       "kind": "東航路",
       "flag": "PAN",
       "date": "10/08"
-    },
-    {
-      "name": "しゅれいＩＩ",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/07"
     }
   ]
 }
