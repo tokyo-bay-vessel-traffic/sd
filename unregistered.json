@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-07T04:15:26.497Z",
+  "generatedAt": "2026-10-07T04:30:34.054Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "SMC RIZHAO",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "10/08"
+    },
     {
       "name": "しゅれいＩＩ",
       "kind": "東航路",
