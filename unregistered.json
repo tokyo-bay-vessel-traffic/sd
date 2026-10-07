@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-07T14:45:28.168Z",
+  "generatedAt": "2026-10-07T15:00:47.989Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
+    {
+      "name": "SITC XIN",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/15"
+    },
     {
       "name": "SMC RIZHAO",
       "kind": "西航路",
