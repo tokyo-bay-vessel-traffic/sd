@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-08T02:15:28.258Z",
+  "generatedAt": "2026-10-08T02:30:36.699Z",
   "portFetched": true,
-  "count": 3,
+  "count": 4,
   "ships": [
+    {
+      "name": "SITC HENGDE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/13"
+    },
     {
       "name": "SITC XIN",
       "kind": "フルコンテナ船",
