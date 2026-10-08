@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-08T08:15:26.402Z",
+  "generatedAt": "2026-10-08T08:30:34.112Z",
   "portFetched": true,
-  "count": 7,
+  "count": 8,
   "ships": [
     {
       "name": "CARNIVAL LUMINOSA",
@@ -38,6 +38,12 @@
       "kind": "一般貨物船",
       "flag": "PANAMA",
       "date": "10/08"
+    },
+    {
+      "name": "XI CHENG",
+      "kind": "一般貨物船",
+      "flag": "BELIZE",
+      "date": "10/09"
     },
     {
       "name": "青雲丸",
