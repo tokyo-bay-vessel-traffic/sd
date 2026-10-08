@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-10-08T05:00:42.435Z",
+  "generatedAt": "2026-10-08T05:15:25.278Z",
   "portFetched": true,
-  "count": 4,
+  "count": 7,
   "ships": [
+    {
+      "name": "CARNIVAL LUMINOSA",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/09"
+    },
+    {
+      "name": "ELBMASTER",
+      "kind": "西航路",
+      "flag": "ATG",
+      "date": "10/09"
+    },
     {
       "name": "SITC HENGDE",
       "kind": "フルコンテナ船",
@@ -26,6 +38,12 @@
       "kind": "東航路",
       "flag": "PAN",
       "date": "10/08"
+    },
+    {
+      "name": "青雲丸",
+      "kind": "西航路",
+      "flag": "JPN",
+      "date": "10/09"
     }
   ]
 }
