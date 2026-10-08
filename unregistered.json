@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T10:00:43.630Z",
+  "generatedAt": "2026-10-08T10:15:26.675Z",
   "portFetched": true,
   "count": 8,
   "ships": [
@@ -29,8 +29,8 @@
     },
     {
       "name": "SMC RIZHAO",
-      "kind": "西航路",
-      "flag": "PAN",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
       "date": "10/08"
     },
     {
