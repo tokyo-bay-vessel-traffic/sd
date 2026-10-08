@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-08T14:45:29.126Z",
+  "generatedAt": "2026-10-08T15:00:46.937Z",
   "portFetched": true,
-  "count": 8,
+  "count": 7,
   "ships": [
     {
       "name": "CARNIVAL LUMINOSA",
@@ -16,6 +16,12 @@
       "date": "10/09"
     },
     {
+      "name": "NYK VESTA",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "10/16"
+    },
+    {
       "name": "SITC HENGDE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
@@ -26,18 +32,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/15"
-    },
-    {
-      "name": "SMC RIZHAO",
-      "kind": "一般貨物船",
-      "flag": "PANAMA",
-      "date": "10/08"
-    },
-    {
-      "name": "VELDA",
-      "kind": "一般貨物船",
-      "flag": "PANAMA",
-      "date": "10/08"
     },
     {
       "name": "XI CHENG",
