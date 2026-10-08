@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T23:00:46.146Z",
+  "generatedAt": "2026-10-08T23:15:27.014Z",
   "portFetched": true,
   "count": 7,
   "ships": [
@@ -11,8 +11,8 @@
     },
     {
       "name": "ELBMASTER",
-      "kind": "西航路",
-      "flag": "ATG",
+      "kind": "フルコンテナ船",
+      "flag": "ANTIGUA AND BARBUDA",
       "date": "10/09"
     },
     {
