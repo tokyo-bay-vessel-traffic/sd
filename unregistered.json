@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-08T05:30:34.069Z",
+  "generatedAt": "2026-10-08T05:45:24.735Z",
   "portFetched": true,
   "count": 7,
   "ships": [
@@ -35,8 +35,8 @@
     },
     {
       "name": "VELDA",
-      "kind": "東航路",
-      "flag": "PAN",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
       "date": "10/08"
     },
     {
