@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-08T15:15:29.306Z",
+  "generatedAt": "2026-10-08T15:30:36.378Z",
   "portFetched": true,
-  "count": 9,
+  "count": 7,
   "ships": [
     {
       "name": "CARNIVAL LUMINOSA",
@@ -14,12 +14,6 @@
       "kind": "西航路",
       "flag": "ATG",
       "date": "10/09"
-    },
-    {
-      "name": "LUMINARA",
-      "kind": "西航路",
-      "flag": "MLT",
-      "date": "10/10"
     },
     {
       "name": "NYK VESTA",
@@ -44,12 +38,6 @@
       "kind": "一般貨物船",
       "flag": "BELIZE",
       "date": "10/09"
-    },
-    {
-      "name": "第６１進宏丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/10"
     },
     {
       "name": "青雲丸",
