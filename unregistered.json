@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-09T01:30:35.324Z",
+  "generatedAt": "2026-10-09T01:45:32.411Z",
   "portFetched": true,
-  "count": 9,
+  "count": 10,
   "ships": [
     {
       "name": "CARNIVAL LUMINOSA",
@@ -44,6 +44,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/15"
+    },
+    {
+      "name": "SUEZ CANAL",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "10/11"
     },
     {
       "name": "XI CHENG",
