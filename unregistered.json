@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-09T14:45:28.421Z",
+  "generatedAt": "2026-10-09T15:00:51.044Z",
   "portFetched": true,
-  "count": 11,
+  "count": 10,
   "ships": [
     {
       "name": "ELBMASTER",
@@ -56,12 +56,6 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "10/11"
-    },
-    {
-      "name": "XI CHENG",
-      "kind": "一般貨物船",
-      "flag": "BELIZE",
-      "date": "10/09"
     },
     {
       "name": "第６１進宏丸",
