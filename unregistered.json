@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-09T15:00:51.044Z",
+  "generatedAt": "2026-10-09T15:15:30.106Z",
   "portFetched": true,
-  "count": 10,
+  "count": 11,
   "ships": [
     {
       "name": "ELBMASTER",
@@ -53,12 +53,18 @@
     },
     {
       "name": "SUEZ CANAL",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
+      "kind": "西航路",
+      "flag": "LBR",
       "date": "10/11"
     },
     {
       "name": "第６１進宏丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/10"
+    },
+    {
+      "name": "第二十八洞海丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/10"
