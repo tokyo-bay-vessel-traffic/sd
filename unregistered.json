@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-09T15:15:30.106Z",
+  "generatedAt": "2026-10-09T15:30:38.279Z",
   "portFetched": true,
   "count": 11,
   "ships": [
@@ -53,8 +53,8 @@
     },
     {
       "name": "SUEZ CANAL",
-      "kind": "西航路",
-      "flag": "LBR",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "10/11"
     },
     {
