@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-09T12:00:48.271Z",
+  "generatedAt": "2026-10-09T12:15:28.721Z",
   "portFetched": true,
-  "count": 12,
+  "count": 11,
   "ships": [
-    {
-      "name": "CARNIVAL LUMINOSA",
-      "kind": "西航路",
-      "flag": "BHS",
-      "date": "10/09"
-    },
     {
       "name": "ELBMASTER",
       "kind": "西航路",
