@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-09T00:30:35.105Z",
+  "generatedAt": "2026-10-09T00:45:27.564Z",
   "portFetched": true,
-  "count": 7,
+  "count": 9,
   "ships": [
     {
       "name": "CARNIVAL LUMINOSA",
@@ -16,6 +16,12 @@
       "date": "10/09"
     },
     {
+      "name": "IRENES RAINBOW",
+      "kind": "フルコンテナ船",
+      "flag": "CYPRUS",
+      "date": "10/12"
+    },
+    {
       "name": "NYK VESTA",
       "kind": "フルコンテナ船",
       "flag": "PANAMA",
@@ -26,6 +32,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/13"
+    },
+    {
+      "name": "SITC WENDE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/12"
     },
     {
       "name": "SITC XIN",
