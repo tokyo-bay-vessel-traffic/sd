@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-09T21:00:47.041Z",
+  "generatedAt": "2026-10-09T21:15:26.899Z",
   "portFetched": true,
-  "count": 10,
+  "count": 11,
   "ships": [
     {
       "name": "ELBMASTER",
@@ -59,6 +59,12 @@
     },
     {
       "name": "第６１進宏丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/10"
+    },
+    {
+      "name": "第二十八洞海丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/10"
