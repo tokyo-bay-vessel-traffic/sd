@@ -650,6 +650,8 @@
     'GLORY GUANDONG':'477333400','GREEN BRAZIL':'309681000','LOS ANDES BRIDGE':'354118000','NAVIOS VERDE':'538007622','PHEN BASIN':'636023771',
     'QING YUN HE':'413295960','SAN LORENZO':'212724000','SITC BUSAN':'477250600','SITC RENHE':'477906100','SITC RUNDE':'477833900',
     'SMC COLUMBUS':'352005100','SPIL KARTINI':'370442000','SWAN RIVER BRIDGE':'565156000','TIDE SAILOR':'311002315',
+    // 未登録船リスト＋港湾表示の国内船より(2026-10-09)。7桁はIMO（旧番号が残る可能性）
+    'CARNIVAL LUMINOSA':'9398905','ELBMASTER':'1127582','IRENES RAINBOW':'9964132','LUMINARA':'249161000','NYK VESTA':'9312808','POS HOCHIMINH':'353201000','SITC HENGDE':'477887900','SITC WENDE':'477846200','SITC XIN':'477015600','SUEZ CANAL':'9230311','XI CHENG':'8998502','第61進宏丸':'431025593','SHINKO MARU NO.61':'431025593','くろしお丸':'431018251','第十五英裕丸':'431027167','EIYU MARU NO.15':'431027167','ＨＫＬ菊水':'431030176','HKL KIKUSUI':'431030176',
     // 個別追加（ONE CONTRIBUTION/CS BEST/かなざわ）
     'ONE CONTRIBUTION':'431225000','CS BEST':'566006000','かなざわ':'431007657','KANAZAWA':'431007657',
     // 今週(向こう1週間)の外航船（未登録分・第2弾）
@@ -3994,7 +3996,15 @@
   // 必ず東/西航路に載る定期RORO船（神シリーズ・海シリーズ）。航路が確定した日付では、港湾システム由来の行を出さない
   // ※同じ名前の小型船・練習船を巻き込まないよう、5,000トン以上のときだけ対象
   const ROUTE_ONLY_SHIPS = new Set(['神永丸','神王丸','神珠丸','神北丸','神明丸','神加丸','神泉丸','海王丸','天王丸'].map(normShip));
+  // ※さるびあ丸は入れない：航路のバースが「P」（表示しないバース）の日があり、港湾の行まで消すと予定表から完全にいなくなるため
+  // シリーズ船（名前の始まりで判定。新しい船が来ても自動で対象）
+  const ROUTE_ONLY_PREFIXES = ['さんふらわあ','ひまわり','琉球エキスプレス'].map(normShip);
   const ROUTE_ONLY_MIN_TONS = 5000;
+  const isRouteOnlyShip = (ship, tons) => {
+    const k = normShip(ship);
+    if(!(ROUTE_ONLY_SHIPS.has(k) || ROUTE_ONLY_PREFIXES.some(p=> k.startsWith(p)))) return false;
+    return parseInt(String(tons||'').replace(/,/g,''),10) >= ROUTE_ONLY_MIN_TONS;
+  };
   function isExcluded(ship, berth, route){
     const sk=normShip(ship);
     if(sk.indexOf('押船')>=0 || sk.indexOf('曳船')>=0) return true;
@@ -4064,7 +4074,7 @@
       hideFo:(!!r.port && routeConfirmed((r.time||'').slice(0,5)) && (
         !!r.foreign ||                                                  // 外航船：港湾だけに載っていれば消す
         ROUTE_SHIPS.has(normShip(r.ship)+'|'+tonKey(r.tons)) ||  // 国内船：東/西航路（今日・明日）に同じ船(名前＋トン数)が載っていれば港湾行は消す
-        (ROUTE_ONLY_SHIPS.has(normShip(r.ship)) && +tonKey(r.tons) >= ROUTE_ONLY_MIN_TONS)  // 神シリーズ・海シリーズのRORO船：航路に無くても港湾行は消す
+        isRouteOnlyShip(r.ship, r.tons)  // 必ず航路に載る定期船（神・海シリーズ、さんふらわあ、ひまわり、琉球エキスプレス、さるびあ丸）：航路に無くても港湾行は消す
       )),
       ds: dayOffset((r.time||'').slice(0,5))*1440 + hm(r.time)   // 日付＋時刻の通し順
     })).sort((a,b)=> a.ds-b.ds || (a.route<b.route?-1:1));
