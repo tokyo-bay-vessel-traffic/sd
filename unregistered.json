@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-10-10T11:00:46.458Z",
+  "generatedAt": "2026-10-10T11:15:27.542Z",
   "portFetched": true,
-  "count": 9,
+  "count": 8,
   "ships": [
     {
       "name": "IRENES RAINBOW",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "10/12"
-    },
-    {
-      "name": "LUMINARA",
-      "kind": "西航路",
-      "flag": "MLT",
-      "date": "10/10"
     },
     {
       "name": "NYK VESTA",
