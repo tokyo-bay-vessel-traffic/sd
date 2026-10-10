@@ -1,55 +1,6 @@
 {
-  "generatedAt": "2026-10-10T14:45:26.646Z",
+  "generatedAt": "2026-10-10T14:49:35.680Z",
   "portFetched": true,
-  "count": 8,
-  "ships": [
-    {
-      "name": "IRENES RAINBOW",
-      "kind": "フルコンテナ船",
-      "flag": "CYPRUS",
-      "date": "10/12"
-    },
-    {
-      "name": "NYK VESTA",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "10/16"
-    },
-    {
-      "name": "POS HOCHIMINH",
-      "kind": "フルコンテナ船",
-      "flag": "PANAMA",
-      "date": "10/13"
-    },
-    {
-      "name": "SITC HENGDE",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/13"
-    },
-    {
-      "name": "SITC WENDE",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/13"
-    },
-    {
-      "name": "SITC XIN",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/15"
-    },
-    {
-      "name": "SUEZ CANAL",
-      "kind": "西航路",
-      "flag": "LBR",
-      "date": "10/11"
-    },
-    {
-      "name": "第６１進宏丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/11"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
