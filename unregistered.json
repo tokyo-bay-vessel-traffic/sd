@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-10T01:15:27.113Z",
+  "generatedAt": "2026-10-10T01:30:34.985Z",
   "portFetched": true,
-  "count": 10,
+  "count": 9,
   "ships": [
     {
       "name": "ELBMASTER",
@@ -56,12 +56,6 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "10/11"
-    },
-    {
-      "name": "第６１進宏丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/10"
     }
   ]
 }
