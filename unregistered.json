@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-10T10:00:44.930Z",
+  "generatedAt": "2026-10-10T10:15:26.842Z",
   "portFetched": true,
-  "count": 10,
+  "count": 9,
   "ships": [
-    {
-      "name": "ELBMASTER",
-      "kind": "西航路",
-      "flag": "ATG",
-      "date": "10/10"
-    },
     {
       "name": "IRENES RAINBOW",
       "kind": "フルコンテナ船",
