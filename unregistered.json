@@ -1,19 +1,6 @@
 {
-  "generatedAt": "2026-10-11T15:15:27.619Z",
+  "generatedAt": "2026-10-11T15:30:35.878Z",
   "portFetched": true,
-  "count": 2,
-  "ships": [
-    {
-      "name": "KAKARIKI",
-      "kind": "西航路",
-      "flag": "PAN",
-      "date": "10/13"
-    },
-    {
-      "name": "青雲丸",
-      "kind": "西航路",
-      "flag": "JPN",
-      "date": "10/13"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
