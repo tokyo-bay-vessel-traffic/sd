@@ -1,13 +1,6 @@
 {
-  "generatedAt": "2026-10-13T01:00:46.085Z",
+  "generatedAt": "2026-10-13T01:15:32.293Z",
   "portFetched": true,
-  "count": 1,
-  "ships": [
-    {
-      "name": "青雲丸",
-      "kind": "西航路",
-      "flag": "JPN",
-      "date": "10/13"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
