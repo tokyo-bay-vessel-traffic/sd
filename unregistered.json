@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-13T15:00:53.504Z",
+  "generatedAt": "2026-10-13T15:15:32.921Z",
   "portFetched": true,
-  "count": 3,
+  "count": 4,
   "ships": [
     {
       "name": "KAKARIKI",
@@ -13,6 +13,12 @@
       "name": "VIKING ORION",
       "kind": "西航路",
       "flag": "NOR",
+      "date": "10/14"
+    },
+    {
+      "name": "しゅれいＩＩ",
+      "kind": "東航路",
+      "flag": "JPN",
       "date": "10/14"
     },
     {
