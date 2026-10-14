@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-14T22:00:45.629Z",
+  "generatedAt": "2026-10-14T22:15:27.653Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "REMIT",
+      "kind": "東航路",
+      "flag": "BLZ",
+      "date": "10/15"
+    },
     {
       "name": "第十五興徳丸",
       "kind": "東航路",
