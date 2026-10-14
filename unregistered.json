@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-14T10:00:48.393Z",
+  "generatedAt": "2026-10-14T10:15:27.583Z",
   "portFetched": true,
-  "count": 2,
+  "count": 1,
   "ships": [
-    {
-      "name": "しゅれいＩＩ",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/14"
-    },
     {
       "name": "第十五興徳丸",
       "kind": "東航路",
