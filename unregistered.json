@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-15T05:00:45.123Z",
+  "generatedAt": "2026-10-15T05:15:29.853Z",
   "portFetched": true,
   "count": 1,
   "ships": [
     {
       "name": "REMIT",
-      "kind": "一般貨物船",
-      "flag": "BELIZE",
-      "date": "10/15"
+      "kind": "東航路",
+      "flag": "BLZ",
+      "date": "10/16"
     }
   ]
 }
