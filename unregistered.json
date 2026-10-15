@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-15T15:00:52.573Z",
+  "generatedAt": "2026-10-15T15:15:29.465Z",
   "portFetched": true,
-  "count": 5,
+  "count": 8,
   "ships": [
     {
       "name": "GIGA TRANS",
@@ -28,9 +28,27 @@
       "date": "10/16"
     },
     {
+      "name": "SILVER MOON",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/17"
+    },
+    {
       "name": "SITC GUANGDONG",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
+      "date": "10/17"
+    },
+    {
+      "name": "VIKING ORION",
+      "kind": "西航路",
+      "flag": "NOR",
+      "date": "10/17"
+    },
+    {
+      "name": "新潮丸",
+      "kind": "東航路",
+      "flag": "JPN",
       "date": "10/17"
     }
   ]
