@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-15T21:15:29.295Z",
+  "generatedAt": "2026-10-15T21:30:37.550Z",
   "portFetched": true,
-  "count": 5,
+  "count": 4,
   "ships": [
     {
       "name": "GIGA TRANS",
@@ -20,12 +20,6 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "10/22"
-    },
-    {
-      "name": "REMIT",
-      "kind": "東航路",
-      "flag": "BLZ",
-      "date": "10/16"
     },
     {
       "name": "SITC GUANGDONG",
