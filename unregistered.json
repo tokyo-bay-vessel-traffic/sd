@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-15T07:15:27.445Z",
+  "generatedAt": "2026-10-15T07:30:36.730Z",
   "portFetched": true,
-  "count": 4,
+  "count": 5,
   "ships": [
+    {
+      "name": "GIGA TRANS",
+      "kind": "一般貨物船",
+      "flag": "MARSHALL ISLANDS",
+      "date": "10/22"
+    },
     {
       "name": "GSL ARCADIA",
       "kind": "フルコンテナ船",
