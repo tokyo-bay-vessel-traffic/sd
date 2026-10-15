@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-15T06:15:27.873Z",
+  "generatedAt": "2026-10-15T06:30:38.604Z",
   "portFetched": true,
-  "count": 2,
+  "count": 4,
   "ships": [
+    {
+      "name": "GSL ARCADIA",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "10/18"
+    },
     {
       "name": "ONE HANNOVER",
       "kind": "フルコンテナ船",
@@ -14,6 +20,12 @@
       "kind": "東航路",
       "flag": "BLZ",
       "date": "10/16"
+    },
+    {
+      "name": "SITC GUANGDONG",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/17"
     }
   ]
 }
