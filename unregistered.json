@@ -1,31 +1,6 @@
 {
-  "generatedAt": "2026-10-15T23:30:36.210Z",
+  "generatedAt": "2026-10-15T23:45:26.730Z",
   "portFetched": true,
-  "count": 4,
-  "ships": [
-    {
-      "name": "GIGA TRANS",
-      "kind": "一般貨物船",
-      "flag": "MARSHALL ISLANDS",
-      "date": "10/22"
-    },
-    {
-      "name": "GSL ARCADIA",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "10/18"
-    },
-    {
-      "name": "ONE HANNOVER",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "10/22"
-    },
-    {
-      "name": "SITC GUANGDONG",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/17"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
