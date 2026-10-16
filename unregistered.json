@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-10-16T00:15:27.128Z",
+  "generatedAt": "2026-10-16T00:30:38.246Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "CAPE FORTIUS",
+      "kind": "フルコンテナ船",
+      "flag": "CYPRUS",
+      "date": "10/22"
+    }
+  ]
 }
