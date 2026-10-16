@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-16T03:15:27.768Z",
+  "generatedAt": "2026-10-16T03:30:44.603Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -14,6 +14,12 @@
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "10/19"
+    },
+    {
+      "name": "NBOS QIN",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/20"
     }
   ]
 }
