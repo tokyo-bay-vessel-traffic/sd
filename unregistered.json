@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-16T06:24:12.535Z",
+  "generatedAt": "2026-10-16T06:30:37.397Z",
   "portFetched": true,
-  "count": 9,
+  "count": 10,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -32,6 +32,12 @@
       "kind": "西航路",
       "flag": "BHS",
       "date": "10/17"
+    },
+    {
+      "name": "UNITED SAPPHIRE",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "10/19"
     },
     {
       "name": "VIKING ORION",
