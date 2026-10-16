@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2026-10-16T15:00:51.695Z",
+  "generatedAt": "2026-10-16T15:15:28.383Z",
   "portFetched": true,
-  "count": 10,
+  "count": 13,
   "ships": [
     {
       "name": "CAPE FORTIUS",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "10/22"
+    },
+    {
+      "name": "COSTA SERENA",
+      "kind": "西航路",
+      "flag": "ITA",
+      "date": "10/18"
     },
     {
       "name": "IRENES SOUTHERN",
@@ -53,8 +59,8 @@
     },
     {
       "name": "YM IMPROVEMENT",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
+      "kind": "西航路",
+      "flag": "LBR",
       "date": "10/18"
     },
     {
@@ -62,6 +68,18 @@
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/17"
+    },
+    {
+      "name": "第５光運丸/NKSB-1501",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/18"
+    },
+    {
+      "name": "第八ゆたか丸/起重機船東亜8号",
+      "kind": "西航路",
+      "flag": "JPN",
+      "date": "10/18"
     }
   ]
 }
