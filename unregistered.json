@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-16T05:45:27.276Z",
+  "generatedAt": "2026-10-16T06:00:47.019Z",
   "portFetched": true,
-  "count": 5,
+  "count": 9,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -22,6 +22,24 @@
       "date": "10/20"
     },
     {
+      "name": "REMIT",
+      "kind": "東航路",
+      "flag": "BLZ",
+      "date": "10/17"
+    },
+    {
+      "name": "SILVER MOON",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/17"
+    },
+    {
+      "name": "VIKING ORION",
+      "kind": "西航路",
+      "flag": "NOR",
+      "date": "10/17"
+    },
+    {
       "name": "VOLANS",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
@@ -32,6 +50,12 @@
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "10/18"
+    },
+    {
+      "name": "新潮丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/17"
     }
   ]
 }
