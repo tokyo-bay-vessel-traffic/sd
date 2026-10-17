@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-17T23:15:25.430Z",
+  "generatedAt": "2026-10-17T23:24:07.647Z",
   "portFetched": true,
-  "count": 9,
+  "count": 8,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -48,12 +48,6 @@
     {
       "name": "第５光運丸/NKSB-1501",
       "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/18"
-    },
-    {
-      "name": "第八ゆたか丸/起重機船東亜8号",
-      "kind": "西航路",
       "flag": "JPN",
       "date": "10/18"
     }
