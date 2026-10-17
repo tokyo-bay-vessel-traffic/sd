@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-17T08:30:36.675Z",
+  "generatedAt": "2026-10-17T08:45:27.471Z",
   "portFetched": true,
-  "count": 12,
+  "count": 11,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -26,12 +26,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/20"
-    },
-    {
-      "name": "REMIT",
-      "kind": "東航路",
-      "flag": "BLZ",
-      "date": "10/17"
     },
     {
       "name": "SILVER MOON",
