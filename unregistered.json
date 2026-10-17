@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-17T15:15:26.734Z",
+  "generatedAt": "2026-10-17T15:30:34.928Z",
   "portFetched": true,
-  "count": 11,
+  "count": 9,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -17,8 +17,8 @@
     },
     {
       "name": "IRENES SOUTHERN",
-      "kind": "西航路",
-      "flag": "CYP",
+      "kind": "フルコンテナ船",
+      "flag": "CYPRUS",
       "date": "10/19"
     },
     {
@@ -28,15 +28,9 @@
       "date": "10/20"
     },
     {
-      "name": "SEVEN SEAS EXPLORER",
-      "kind": "西航路",
-      "flag": "MHL",
-      "date": "10/19"
-    },
-    {
       "name": "UNITED SAPPHIRE",
-      "kind": "西航路",
-      "flag": "PAN",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
       "date": "10/19"
     },
     {
@@ -50,12 +44,6 @@
       "kind": "西航路",
       "flag": "LBR",
       "date": "10/18"
-    },
-    {
-      "name": "白鳳丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/19"
     },
     {
       "name": "第５光運丸/NKSB-1501",
