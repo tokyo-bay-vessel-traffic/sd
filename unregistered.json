@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-10-18T12:00:44.688Z",
+  "generatedAt": "2026-10-18T12:15:26.750Z",
   "portFetched": true,
-  "count": 9,
+  "count": 8,
   "ships": [
     {
       "name": "CAPE FORTIUS",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "10/22"
-    },
-    {
-      "name": "COSTA SERENA",
-      "kind": "西航路",
-      "flag": "ITA",
-      "date": "10/18"
     },
     {
       "name": "IRENES SOUTHERN",
