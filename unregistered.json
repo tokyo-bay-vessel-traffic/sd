@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-18T14:45:25.907Z",
+  "generatedAt": "2026-10-18T15:00:46.867Z",
   "portFetched": true,
-  "count": 8,
+  "count": 6,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -32,18 +32,6 @@
       "kind": "西航路",
       "flag": "PAN",
       "date": "10/19"
-    },
-    {
-      "name": "VOLANS",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "10/18"
-    },
-    {
-      "name": "YM IMPROVEMENT",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "10/18"
     },
     {
       "name": "白鳳丸",
