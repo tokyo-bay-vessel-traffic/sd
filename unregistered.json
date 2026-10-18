@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-18T00:30:33.938Z",
+  "generatedAt": "2026-10-18T00:45:25.673Z",
   "portFetched": true,
-  "count": 8,
+  "count": 7,
   "ships": [
     {
       "name": "CAPE FORTIUS",
@@ -43,12 +43,6 @@
       "name": "YM IMPROVEMENT",
       "kind": "西航路",
       "flag": "LBR",
-      "date": "10/18"
-    },
-    {
-      "name": "第５光運丸/NKSB-1501",
-      "kind": "西航路",
-      "flag": "JPN",
       "date": "10/18"
     }
   ]
