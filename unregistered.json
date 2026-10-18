@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T00:00:47.545Z",
+  "generatedAt": "2026-10-18T00:15:32.885Z",
   "portFetched": true,
   "count": 8,
   "ships": [
@@ -47,7 +47,7 @@
     },
     {
       "name": "第５光運丸/NKSB-1501",
-      "kind": "東航路",
+      "kind": "西航路",
       "flag": "JPN",
       "date": "10/18"
     }
