@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-18T10:01:39.175Z",
+  "generatedAt": "2026-10-18T10:15:26.539Z",
   "portFetched": true,
   "count": 9,
   "ships": [
@@ -41,14 +41,14 @@
     },
     {
       "name": "VOLANS",
-      "kind": "西航路",
-      "flag": "LBR",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "10/18"
     },
     {
       "name": "YM IMPROVEMENT",
-      "kind": "西航路",
-      "flag": "LBR",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "10/18"
     },
     {
