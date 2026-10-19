@@ -1,10 +1,16 @@
 {
-  "generatedAt": "2026-10-19T05:45:25.769Z",
+  "generatedAt": "2026-10-19T06:00:43.719Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
     {
       "name": "おしょろ丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/20"
+    },
+    {
+      "name": "第２８進宏丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/20"
