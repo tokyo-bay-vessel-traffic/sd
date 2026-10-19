@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-19T06:15:27.872Z",
+  "generatedAt": "2026-10-19T06:30:34.255Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
+    {
+      "name": "M.THOMAS",
+      "kind": "フルコンテナ船",
+      "flag": "PANAMA",
+      "date": "10/20"
+    },
     {
       "name": "おしょろ丸",
       "kind": "東航路",
