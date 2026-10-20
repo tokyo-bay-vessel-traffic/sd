@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-20T23:15:27.479Z",
+  "generatedAt": "2026-10-20T23:30:36.540Z",
   "portFetched": true,
-  "count": 5,
+  "count": 6,
   "ships": [
+    {
+      "name": "EVER SIGMA",
+      "kind": "フルコンテナ船",
+      "flag": "UNITED KINGDOM",
+      "date": "10/22"
+    },
     {
       "name": "HANSA ASIA",
       "kind": "フルコンテナ船",
@@ -19,7 +25,7 @@
       "name": "M. THOMAS",
       "kind": "西航路",
       "flag": "PAN",
-      "date": "10/21"
+      "date": "NT"
     },
     {
       "name": "しゅれいＩＩ",
