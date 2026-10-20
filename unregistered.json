@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-20T02:30:36.833Z",
+  "generatedAt": "2026-10-20T02:45:26.538Z",
   "portFetched": true,
-  "count": 3,
+  "count": 2,
   "ships": [
     {
       "name": "HANSA ASIA",
@@ -13,12 +13,6 @@
       "name": "M.THOMAS",
       "kind": "西航路",
       "flag": "PAN",
-      "date": "10/20"
-    },
-    {
-      "name": "第２８進宏丸",
-      "kind": "東航路",
-      "flag": "JPN",
       "date": "10/20"
     }
   ]
