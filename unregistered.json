@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2026-10-20T06:15:25.931Z",
+  "generatedAt": "2026-10-20T06:30:36.843Z",
   "portFetched": true,
-  "count": 3,
+  "count": 4,
   "ships": [
     {
       "name": "HANSA ASIA",
       "kind": "フルコンテナ船",
       "flag": "MARSHALL ISLANDS",
       "date": "10/22"
+    },
+    {
+      "name": "HF LUCKY",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/27"
     },
     {
       "name": "M.THOMAS",
