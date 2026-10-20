@@ -1,8 +1,20 @@
 {
-  "generatedAt": "2026-10-20T15:00:52.096Z",
+  "generatedAt": "2026-10-20T15:15:30.008Z",
   "portFetched": true,
-  "count": 4,
+  "count": 8,
   "ships": [
+    {
+      "name": "BF GIANT",
+      "kind": "西航路",
+      "flag": "LBR",
+      "date": "10/22"
+    },
+    {
+      "name": "EVER SIGMA",
+      "kind": "西航路",
+      "flag": "GBR",
+      "date": "10/22"
+    },
     {
       "name": "HANSA ASIA",
       "kind": "フルコンテナ船",
@@ -16,13 +28,25 @@
       "date": "10/27"
     },
     {
-      "name": "M.THOMAS",
+      "name": "M. THOMAS",
       "kind": "西航路",
       "flag": "PAN",
       "date": "10/21"
     },
     {
-      "name": "第２８進宏丸",
+      "name": "おしょろ丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/22"
+    },
+    {
+      "name": "しゅれいＩＩ",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/21"
+    },
+    {
+      "name": "第二十八進宏丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/21"
