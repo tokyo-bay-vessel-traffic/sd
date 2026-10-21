@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T10:00:48.337Z",
+  "generatedAt": "2026-10-21T10:15:28.168Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "BF GIANT",
@@ -20,6 +20,12 @@
       "kind": "西航路",
       "flag": "MHL",
       "date": "10/22"
+    },
+    {
+      "name": "HF LUCKY",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/27"
     },
     {
       "name": "M. THOMAS",
