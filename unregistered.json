@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-21T06:30:38.366Z",
+  "generatedAt": "2026-10-21T06:45:26.828Z",
   "portFetched": true,
   "count": 7,
   "ships": [
@@ -29,7 +29,7 @@
     },
     {
       "name": "M. THOMAS",
-      "kind": "西航路",
+      "kind": "東航路",
       "flag": "PAN",
       "date": "NT"
     },
