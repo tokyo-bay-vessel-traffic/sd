@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T19:30:38.782Z",
+  "generatedAt": "2026-10-21T19:45:31.159Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "BF GIANT",
@@ -26,12 +26,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/27"
-    },
-    {
-      "name": "M.THOMAS",
-      "kind": "西航路",
-      "flag": "PAN",
-      "date": "10/22"
     },
     {
       "name": "SITC WEIHAI",
