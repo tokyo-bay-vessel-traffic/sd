@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-21T11:00:52.069Z",
+  "generatedAt": "2026-10-21T11:15:28.533Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "BF GIANT",
@@ -38,12 +38,6 @@
       "kind": "東航路",
       "flag": "JPN",
       "date": "10/22"
-    },
-    {
-      "name": "しゅれいＩＩ",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/21"
     }
   ]
 }
