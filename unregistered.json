@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-21T04:30:35.500Z",
+  "generatedAt": "2026-10-21T04:45:26.752Z",
   "portFetched": true,
-  "count": 5,
+  "count": 6,
   "ships": [
+    {
+      "name": "BF GIANT",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "10/22"
+    },
     {
       "name": "EVER SIGMA",
       "kind": "フルコンテナ船",
