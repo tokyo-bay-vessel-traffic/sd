@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T02:15:26.118Z",
+  "generatedAt": "2026-10-22T02:30:36.314Z",
   "portFetched": true,
   "count": 6,
   "ships": [
@@ -17,8 +17,8 @@
     },
     {
       "name": "HANSA ASIA",
-      "kind": "西航路",
-      "flag": "MHL",
+      "kind": "フルコンテナ船",
+      "flag": "MARSHALL ISLANDS",
       "date": "10/22"
     },
     {
