@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-22T05:00:45.940Z",
+  "generatedAt": "2026-10-22T05:15:27.324Z",
   "portFetched": true,
-  "count": 6,
+  "count": 5,
   "ships": [
     {
       "name": "BF GIANT",
@@ -17,9 +17,9 @@
     },
     {
       "name": "HANSA ASIA",
-      "kind": "フルコンテナ船",
-      "flag": "MARSHALL ISLANDS",
-      "date": "10/22"
+      "kind": "西航路",
+      "flag": "MHL",
+      "date": "10/23"
     },
     {
       "name": "HF LUCKY",
@@ -32,12 +32,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/29"
-    },
-    {
-      "name": "おしょろ丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "10/22"
     }
   ]
 }
