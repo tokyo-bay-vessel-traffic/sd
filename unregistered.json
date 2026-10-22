@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-10-22T21:30:41.129Z",
+  "generatedAt": "2026-10-22T21:45:27.111Z",
   "portFetched": true,
-  "count": 4,
+  "count": 3,
   "ships": [
-    {
-      "name": "BF GIANT",
-      "kind": "西航路",
-      "flag": "LBR",
-      "date": "10/23"
-    },
     {
       "name": "HANSA ASIA",
       "kind": "西航路",
