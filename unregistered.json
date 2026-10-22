@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-10-22T14:45:30.964Z",
+  "generatedAt": "2026-10-22T15:00:54.525Z",
   "portFetched": true,
-  "count": 5,
+  "count": 4,
   "ships": [
     {
       "name": "BF GIANT",
       "kind": "西航路",
       "flag": "LBR",
       "date": "10/23"
-    },
-    {
-      "name": "EVER SIGMA",
-      "kind": "フルコンテナ船",
-      "flag": "UNITED KINGDOM",
-      "date": "10/22"
     },
     {
       "name": "HANSA ASIA",
