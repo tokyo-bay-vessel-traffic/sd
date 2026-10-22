@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-22T23:00:49.173Z",
+  "generatedAt": "2026-10-22T23:15:43.459Z",
   "portFetched": true,
-  "count": 4,
+  "count": 3,
   "ships": [
     {
       "name": "HANSA ASIA",
@@ -20,12 +20,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/29"
-    },
-    {
-      "name": "VELDA",
-      "kind": "東航路",
-      "flag": "PAN",
-      "date": "10/24"
     }
   ]
 }
