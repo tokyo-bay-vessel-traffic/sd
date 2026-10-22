@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-22T14:00:54.897Z",
+  "generatedAt": "2026-10-22T14:15:28.828Z",
   "portFetched": true,
   "count": 5,
   "ships": [
@@ -11,8 +11,8 @@
     },
     {
       "name": "EVER SIGMA",
-      "kind": "西航路",
-      "flag": "GBR",
+      "kind": "フルコンテナ船",
+      "flag": "UNITED KINGDOM",
       "date": "10/22"
     },
     {
