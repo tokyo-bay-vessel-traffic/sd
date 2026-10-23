@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-23T07:30:38.425Z",
+  "generatedAt": "2026-10-23T07:45:29.570Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "BAO YUAN 18",
@@ -20,6 +20,12 @@
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
       "date": "10/26"
+    },
+    {
+      "name": "PEGASUS GLORY",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "10/25"
     },
     {
       "name": "SITC RUIDE",
