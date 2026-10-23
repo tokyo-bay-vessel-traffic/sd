@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-23T15:15:31.397Z",
+  "generatedAt": "2026-10-23T15:30:39.182Z",
   "portFetched": true,
   "count": 7,
   "ships": [
@@ -23,14 +23,14 @@
     },
     {
       "name": "PEGASUS GLORY",
-      "kind": "西航路",
-      "flag": "LBR",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
       "date": "10/25"
     },
     {
       "name": "SITC RUIDE",
-      "kind": "西航路",
-      "flag": "HKG",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
       "date": "10/25"
     },
     {
