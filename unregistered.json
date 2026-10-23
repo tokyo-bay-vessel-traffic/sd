@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-23T06:34:13.070Z",
+  "generatedAt": "2026-10-23T06:45:29.976Z",
   "portFetched": true,
-  "count": 5,
+  "count": 6,
   "ships": [
     {
       "name": "BAO YUAN 18",
@@ -14,6 +14,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/27"
+    },
+    {
+      "name": "MSC MAGNOLIA V",
+      "kind": "フルコンテナ船",
+      "flag": "CYPRUS",
+      "date": "10/26"
     },
     {
       "name": "SITC RUIDE",
