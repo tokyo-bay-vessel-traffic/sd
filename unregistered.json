@@ -1,13 +1,13 @@
 {
-  "generatedAt": "2026-10-23T00:30:39.999Z",
+  "generatedAt": "2026-10-23T00:45:27.671Z",
   "portFetched": true,
   "count": 3,
   "ships": [
     {
-      "name": "HANSA ASIA",
-      "kind": "西航路",
-      "flag": "MHL",
-      "date": "10/23"
+      "name": "BAO YUAN 18",
+      "kind": "一般貨物船",
+      "flag": "BAHAMAS",
+      "date": "10/26"
     },
     {
       "name": "HF LUCKY",
