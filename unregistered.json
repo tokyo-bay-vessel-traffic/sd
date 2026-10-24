@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-24T09:00:45.735Z",
+  "generatedAt": "2026-10-24T09:15:25.512Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "BAO YUAN 18",
@@ -38,12 +38,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/29"
-    },
-    {
-      "name": "VELDA",
-      "kind": "東航路",
-      "flag": "PAN",
-      "date": "10/24"
     }
   ]
 }
