@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-10-25T05:15:26.083Z",
+  "generatedAt": "2026-10-25T05:30:35.322Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "BAO YUAN 18",
-      "kind": "一般貨物船",
-      "flag": "BAHAMAS",
+      "kind": "東航路",
+      "flag": "BHS",
       "date": "10/26"
     },
     {
@@ -29,15 +29,21 @@
     },
     {
       "name": "SITC RUIDE",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/25"
+      "kind": "西航路",
+      "flag": "HKG",
+      "date": "10/26"
     },
     {
       "name": "SITC WEIHAI",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/29"
+    },
+    {
+      "name": "STAR SEEKER",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/26"
     }
   ]
 }
