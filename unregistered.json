@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-25T17:15:30.888Z",
+  "generatedAt": "2026-10-25T17:30:35.464Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "BAO YUAN 18",
@@ -19,12 +19,6 @@
       "name": "MSC MAGNOLIA V",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
-      "date": "10/26"
-    },
-    {
-      "name": "PEGASUS GLORY",
-      "kind": "西航路",
-      "flag": "LBR",
       "date": "10/26"
     },
     {
