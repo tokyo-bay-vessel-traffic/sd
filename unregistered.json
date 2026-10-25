@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-25T04:00:43.279Z",
+  "generatedAt": "2026-10-25T04:15:25.668Z",
   "portFetched": true,
   "count": 6,
   "ships": [
@@ -29,8 +29,8 @@
     },
     {
       "name": "SITC RUIDE",
-      "kind": "西航路",
-      "flag": "HKG",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
       "date": "10/25"
     },
     {
