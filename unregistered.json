@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-26T05:00:46.098Z",
+  "generatedAt": "2026-10-26T05:15:25.283Z",
   "portFetched": true,
   "count": 6,
   "ships": [
@@ -11,8 +11,8 @@
     },
     {
       "name": "EVER SHINE",
-      "kind": "フルコンテナ船",
-      "flag": "UNITED KINGDOM",
+      "kind": "西航路",
+      "flag": "GBR",
       "date": "10/27"
     },
     {
@@ -23,9 +23,9 @@
     },
     {
       "name": "MSC MAGNOLIA V",
-      "kind": "フルコンテナ船",
-      "flag": "CYPRUS",
-      "date": "10/26"
+      "kind": "西航路",
+      "flag": "CYP",
+      "date": "10/27"
     },
     {
       "name": "SITC WEIHAI",
