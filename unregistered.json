@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-26T07:45:27.343Z",
+  "generatedAt": "2026-10-26T08:00:46.836Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "BAO YUAN 18",
@@ -20,6 +20,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/31"
+    },
+    {
+      "name": "M.THOMAS",
+      "kind": "東航路",
+      "flag": "PAN",
+      "date": "10/27"
     },
     {
       "name": "MSC MAGNOLIA V",
