@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-26T08:00:46.836Z",
+  "generatedAt": "2026-10-26T08:15:28.654Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "BAO YUAN 18",
@@ -38,12 +38,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/29"
-    },
-    {
-      "name": "STAR SEEKER",
-      "kind": "西航路",
-      "flag": "BHS",
-      "date": "10/26"
     }
   ]
 }
