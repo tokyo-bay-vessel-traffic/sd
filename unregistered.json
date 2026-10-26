@@ -1,6 +1,19 @@
 {
-  "generatedAt": "2026-10-26T15:00:52.385Z",
+  "generatedAt": "2026-10-26T15:15:28.758Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 2,
+  "ships": [
+    {
+      "name": "NORWEGIAN JADE",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/28"
+    },
+    {
+      "name": "新潮丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "10/28"
+    }
+  ]
 }
