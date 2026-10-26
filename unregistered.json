@@ -1,43 +1,6 @@
 {
-  "generatedAt": "2026-10-26T14:00:47.761Z",
+  "generatedAt": "2026-10-26T14:15:29.734Z",
   "portFetched": true,
-  "count": 6,
-  "ships": [
-    {
-      "name": "BAO YUAN 18",
-      "kind": "一般貨物船",
-      "flag": "BAHAMAS",
-      "date": "10/26"
-    },
-    {
-      "name": "EVER SHINE",
-      "kind": "西航路",
-      "flag": "GBR",
-      "date": "10/27"
-    },
-    {
-      "name": "HF LUCKY",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/31"
-    },
-    {
-      "name": "M.THOMAS",
-      "kind": "東航路",
-      "flag": "PAN",
-      "date": "10/27"
-    },
-    {
-      "name": "MSC MAGNOLIA V",
-      "kind": "西航路",
-      "flag": "CYP",
-      "date": "10/27"
-    },
-    {
-      "name": "SITC WEIHAI",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "10/29"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
