@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2026-10-27T06:15:27.870Z",
+  "generatedAt": "2026-10-27T06:30:39.824Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
     {
       "name": "NORWEGIAN JADE",
       "kind": "西航路",
       "flag": "BHS",
       "date": "10/28"
+    },
+    {
+      "name": "UNION TIANJIN",
+      "kind": "フルコンテナ船",
+      "flag": "MARSHALL ISLANDS",
+      "date": "10/29"
     },
     {
       "name": "新潮丸",
