@@ -1,32 +1,8 @@
 {
-  "generatedAt": "2026-10-28T15:30:40.438Z",
+  "generatedAt": "2026-10-28T15:45:55.208Z",
   "portFetched": true,
-  "count": 5,
+  "count": 1,
   "ships": [
-    {
-      "name": "DISCOVERY BAY",
-      "kind": "西航路",
-      "flag": "LBR",
-      "date": "10/30"
-    },
-    {
-      "name": "EVER WIZ",
-      "kind": "西航路",
-      "flag": "SGP",
-      "date": "10/30"
-    },
-    {
-      "name": "HEDWIG SCHULTE",
-      "kind": "西航路",
-      "flag": "SGP",
-      "date": "10/30"
-    },
-    {
-      "name": "ICARIAN SPIRE",
-      "kind": "西航路",
-      "flag": "BHS",
-      "date": "10/30"
-    },
     {
       "name": "SITC MINGDE",
       "kind": "フルコンテナ船",
