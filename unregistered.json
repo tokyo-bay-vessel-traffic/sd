@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-28T04:15:29.034Z",
+  "generatedAt": "2026-10-28T04:30:40.302Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "SITC MINGDE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "10/31"
+    },
     {
       "name": "しゅれいＩＩ",
       "kind": "東航路",
