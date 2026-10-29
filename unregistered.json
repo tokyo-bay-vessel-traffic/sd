@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-29T02:30:38.832Z",
+  "generatedAt": "2026-10-29T02:35:10.925Z",
   "portFetched": true,
-  "count": 2,
+  "count": 4,
   "ships": [
     {
       "name": "EVER WIZ",
@@ -10,10 +10,22 @@
       "date": "10/30"
     },
     {
+      "name": "ONE PEARL RIVER",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "11/01"
+    },
+    {
       "name": "SITC MINGDE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "10/31"
+    },
+    {
+      "name": "XIN MING ZHOU 98",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
+      "date": "11/05"
     }
   ]
 }
