@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-10-29T01:30:37.070Z",
+  "generatedAt": "2026-10-29T01:45:26.062Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "EVER WIZ",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "10/30"
+    },
     {
       "name": "SITC MINGDE",
       "kind": "フルコンテナ船",
