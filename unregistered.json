@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T11:00:50.829Z",
+  "generatedAt": "2026-10-30T11:15:28.326Z",
   "portFetched": true,
   "count": 10,
   "ships": [
@@ -31,12 +31,12 @@
       "name": "HEDWIG SCHULTE",
       "kind": "西航路",
       "flag": "SGP",
-      "date": "10/30"
+      "date": "10/31"
     },
     {
       "name": "ICARIAN SPIRE",
-      "kind": "西航路",
-      "flag": "BHS",
+      "kind": "一般貨物船",
+      "flag": "BAHAMAS",
       "date": "10/30"
     },
     {
