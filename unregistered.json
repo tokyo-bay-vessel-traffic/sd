@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T07:30:36.045Z",
+  "generatedAt": "2026-10-30T07:45:28.041Z",
   "portFetched": true,
   "count": 10,
   "ships": [
@@ -7,7 +7,7 @@
       "name": "ATHOS I",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
-      "date": "11/01"
+      "date": "11/02"
     },
     {
       "name": "CORNEILLE",
