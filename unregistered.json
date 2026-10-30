@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T09:30:42.024Z",
+  "generatedAt": "2026-10-30T09:45:27.597Z",
   "portFetched": true,
   "count": 10,
   "ships": [
@@ -23,8 +23,8 @@
     },
     {
       "name": "EVER WIZ",
-      "kind": "西航路",
-      "flag": "SGP",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
       "date": "10/30"
     },
     {
