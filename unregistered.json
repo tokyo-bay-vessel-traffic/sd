@@ -1,13 +1,25 @@
 {
-  "generatedAt": "2026-10-30T05:00:45.631Z",
+  "generatedAt": "2026-10-30T05:15:27.950Z",
   "portFetched": true,
-  "count": 7,
+  "count": 10,
   "ships": [
     {
       "name": "ATHOS I",
       "kind": "フルコンテナ船",
       "flag": "LIBERIA",
       "date": "11/01"
+    },
+    {
+      "name": "CORNEILLE",
+      "kind": "西航路",
+      "flag": "LBR",
+      "date": "10/31"
+    },
+    {
+      "name": "DISCOVERY BAY",
+      "kind": "東航路",
+      "flag": "LBR",
+      "date": "10/31"
     },
     {
       "name": "EVER WIZ",
@@ -32,6 +44,12 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "11/01"
+    },
+    {
+      "name": "SILVER MOON",
+      "kind": "西航路",
+      "flag": "BHS",
+      "date": "10/31"
     },
     {
       "name": "SITC MINGDE",
