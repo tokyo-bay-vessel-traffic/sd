@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-30T14:45:29.163Z",
+  "generatedAt": "2026-10-30T15:00:50.166Z",
   "portFetched": true,
-  "count": 10,
+  "count": 8,
   "ships": [
     {
       "name": "ATHOS I",
@@ -22,22 +22,10 @@
       "date": "10/31"
     },
     {
-      "name": "EVER WIZ",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "10/30"
-    },
-    {
       "name": "HEDWIG SCHULTE",
       "kind": "西航路",
       "flag": "SGP",
       "date": "10/31"
-    },
-    {
-      "name": "ICARIAN SPIRE",
-      "kind": "一般貨物船",
-      "flag": "BAHAMAS",
-      "date": "10/30"
     },
     {
       "name": "ONE PEARL RIVER",
