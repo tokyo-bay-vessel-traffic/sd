@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-10-30T06:30:38.915Z",
+  "generatedAt": "2026-10-30T06:45:28.276Z",
   "portFetched": true,
   "count": 10,
   "ships": [
@@ -55,7 +55,7 @@
       "name": "SITC MINGDE",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
-      "date": "10/31"
+      "date": "11/01"
     },
     {
       "name": "XIN MING ZHOU 98",
