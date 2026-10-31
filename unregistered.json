@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-31T08:00:42.380Z",
+  "generatedAt": "2026-10-31T08:15:25.828Z",
   "portFetched": true,
-  "count": 8,
+  "count": 7,
   "ships": [
     {
       "name": "ATHOS I",
@@ -20,12 +20,6 @@
       "kind": "西航路",
       "flag": "SGP",
       "date": "11/01"
-    },
-    {
-      "name": "HEDWIG SCHULTE",
-      "kind": "西航路",
-      "flag": "SGP",
-      "date": "10/31"
     },
     {
       "name": "ONE PEARL RIVER",
