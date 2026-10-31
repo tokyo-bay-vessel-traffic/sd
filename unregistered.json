@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-31T06:30:33.266Z",
+  "generatedAt": "2026-10-31T06:45:26.117Z",
   "portFetched": true,
-  "count": 9,
+  "count": 8,
   "ships": [
     {
       "name": "ATHOS I",
@@ -12,12 +12,6 @@
     {
       "name": "CORNEILLE",
       "kind": "西航路",
-      "flag": "LBR",
-      "date": "10/31"
-    },
-    {
-      "name": "DISCOVERY BAY",
-      "kind": "東航路",
       "flag": "LBR",
       "date": "10/31"
     },
