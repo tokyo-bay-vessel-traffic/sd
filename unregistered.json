@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-10-31T11:00:43.352Z",
+  "generatedAt": "2026-10-31T11:15:28.089Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "ATHOS I",
@@ -26,12 +26,6 @@
       "kind": "西航路",
       "flag": "SGP",
       "date": "11/01"
-    },
-    {
-      "name": "SILVER MOON",
-      "kind": "西航路",
-      "flag": "BHS",
-      "date": "10/31"
     },
     {
       "name": "SITC MINGDE",
