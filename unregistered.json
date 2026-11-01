@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-01T00:00:46.310Z",
+  "generatedAt": "2026-11-01T00:15:27.368Z",
   "portFetched": true,
-  "count": 6,
+  "count": 5,
   "ships": [
     {
       "name": "ATHOS I",
@@ -13,12 +13,6 @@
       "name": "CORNEILLE",
       "kind": "西航路",
       "flag": "LBR",
-      "date": "11/01"
-    },
-    {
-      "name": "EVER WIZ",
-      "kind": "西航路",
-      "flag": "SGP",
       "date": "11/01"
     },
     {
