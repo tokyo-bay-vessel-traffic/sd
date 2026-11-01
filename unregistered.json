@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-01T15:00:46.432Z",
+  "generatedAt": "2026-11-01T15:15:28.745Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "ONE READINESS",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "11/03"
+    }
+  ]
 }
