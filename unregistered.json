@@ -1,37 +1,6 @@
 {
-  "generatedAt": "2026-11-01T04:30:36.700Z",
+  "generatedAt": "2026-11-01T04:45:29.333Z",
   "portFetched": true,
-  "count": 5,
-  "ships": [
-    {
-      "name": "ATHOS I",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
-      "date": "11/02"
-    },
-    {
-      "name": "CORNEILLE",
-      "kind": "西航路",
-      "flag": "LBR",
-      "date": "11/01"
-    },
-    {
-      "name": "ONE PEARL RIVER",
-      "kind": "西航路",
-      "flag": "SGP",
-      "date": "11/01"
-    },
-    {
-      "name": "SITC MINGDE",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "11/01"
-    },
-    {
-      "name": "XIN MING ZHOU 98",
-      "kind": "フルコンテナ船",
-      "flag": "CHINA",
-      "date": "11/05"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
