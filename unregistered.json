@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-01T23:15:28.542Z",
+  "generatedAt": "2026-11-01T23:30:35.704Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "RICH FORCE",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "11/04"
+    }
+  ]
 }
