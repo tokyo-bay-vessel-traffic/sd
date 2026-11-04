@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-04T05:00:48.192Z",
+  "generatedAt": "2026-11-04T05:15:28.428Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "MITSUI OCEAN SAKURA",
+      "kind": "西航路",
+      "flag": "JPN",
+      "date": "11/05"
+    },
     {
       "name": "しゅれいＩＩ",
       "kind": "東航路",
