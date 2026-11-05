@@ -1,24 +1,12 @@
 {
-  "generatedAt": "2026-11-05T15:15:36.137Z",
+  "generatedAt": "2026-11-05T15:30:51.306Z",
   "portFetched": true,
-  "count": 4,
+  "count": 2,
   "ships": [
     {
-      "name": "GSL KITHIRA",
-      "kind": "西航路",
-      "flag": "LBR",
-      "date": "11/07"
-    },
-    {
       "name": "HAI LIAN SHENG",
-      "kind": "西航路",
-      "flag": "CHN",
-      "date": "11/07"
-    },
-    {
-      "name": "MITSUI OCEAN SAKURA",
-      "kind": "西航路",
-      "flag": "JPN",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
       "date": "11/07"
     },
     {
