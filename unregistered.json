@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-05T05:30:40.137Z",
+  "generatedAt": "2026-11-05T05:45:28.109Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
+    {
+      "name": "HAI LIAN SHENG",
+      "kind": "フルコンテナ船",
+      "flag": "CHINA",
+      "date": "11/07"
+    },
     {
       "name": "MITSUI OCEAN SAKURA",
       "kind": "西航路",
