@@ -1,19 +1,6 @@
 {
-  "generatedAt": "2026-11-05T23:15:28.271Z",
+  "generatedAt": "2026-11-05T23:30:38.450Z",
   "portFetched": true,
-  "count": 2,
-  "ships": [
-    {
-      "name": "HAI LIAN SHENG",
-      "kind": "フルコンテナ船",
-      "flag": "CHINA",
-      "date": "11/07"
-    },
-    {
-      "name": "力栄",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "11/06"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
