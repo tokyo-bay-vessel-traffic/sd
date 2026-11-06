@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-06T02:30:38.017Z",
+  "generatedAt": "2026-11-06T02:45:28.300Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "GSL KITHIRA",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "11/07"
+    }
+  ]
 }
