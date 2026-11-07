@@ -1,13 +1,6 @@
 {
-  "generatedAt": "2026-11-07T20:00:45.289Z",
+  "generatedAt": "2026-11-07T20:15:28.401Z",
   "portFetched": true,
-  "count": 1,
-  "ships": [
-    {
-      "name": "GSL KITHIRA",
-      "kind": "西航路",
-      "flag": "LBR",
-      "date": "11/08"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
