@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-08T05:00:46.739Z",
+  "generatedAt": "2026-11-08T05:15:26.861Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "第２６親力丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "11/09"
+    }
+  ]
 }
