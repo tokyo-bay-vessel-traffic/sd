@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-09T04:15:28.822Z",
+  "generatedAt": "2026-11-09T04:30:37.208Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "YM WEALTH",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "11/10"
+    }
+  ]
 }
