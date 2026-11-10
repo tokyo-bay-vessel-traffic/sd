@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-10T01:30:38.054Z",
+  "generatedAt": "2026-11-10T01:45:30.187Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "PEGASUS GLORY",
+      "kind": "フルコンテナ船",
+      "flag": "LIBERIA",
+      "date": "11/12"
+    }
+  ]
 }
