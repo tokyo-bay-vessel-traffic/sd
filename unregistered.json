@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-10T08:30:37.623Z",
+  "generatedAt": "2026-11-10T08:45:35.062Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "FUJISUKA",
+      "kind": "一般貨物船",
+      "flag": "LIBERIA",
+      "date": "11/12"
+    },
     {
       "name": "PEGASUS GLORY",
       "kind": "フルコンテナ船",
