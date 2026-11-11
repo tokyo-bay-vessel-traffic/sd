@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-11-11T09:00:44.649Z",
-  "portFetched": true,
-  "count": 3,
+  "generatedAt": "2026-11-11T09:15:43.586Z",
+  "portFetched": false,
+  "count": 2,
   "ships": [
-    {
-      "name": "ONE DURBAN",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "11/16"
-    },
     {
       "name": "しゅれいＩＩ",
       "kind": "東航路",
