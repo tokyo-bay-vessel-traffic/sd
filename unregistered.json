@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-12T23:30:38.251Z",
+  "generatedAt": "2026-11-12T23:45:27.566Z",
   "portFetched": true,
-  "count": 3,
+  "count": 4,
   "ships": [
     {
       "name": "CAPE SYROS",
@@ -13,6 +13,12 @@
       "name": "ONE DURBAN",
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
+      "date": "11/16"
+    },
+    {
+      "name": "RICH SAILING",
+      "kind": "一般貨物船",
+      "flag": "BELIZE",
       "date": "11/16"
     },
     {
