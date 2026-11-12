@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-12T06:00:43.584Z",
+  "generatedAt": "2026-11-12T06:15:26.505Z",
   "portFetched": true,
-  "count": 3,
+  "count": 2,
   "ships": [
     {
       "name": "ONE DURBAN",
@@ -14,12 +14,6 @@
       "kind": "西航路",
       "flag": "JPN",
       "date": "11/13"
-    },
-    {
-      "name": "黎明",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "11/12"
     }
   ]
 }
