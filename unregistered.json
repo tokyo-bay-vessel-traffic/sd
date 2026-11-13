@@ -1,12 +1,18 @@
 {
-  "generatedAt": "2026-11-13T06:30:37.067Z",
+  "generatedAt": "2026-11-13T06:45:27.657Z",
   "portFetched": true,
-  "count": 6,
+  "count": 7,
   "ships": [
     {
       "name": "CAPE SYROS",
       "kind": "フルコンテナ船",
       "flag": "CYPRUS",
+      "date": "11/16"
+    },
+    {
+      "name": "EVER SALUTE",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
       "date": "11/16"
     },
     {
