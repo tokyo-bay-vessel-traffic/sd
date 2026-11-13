@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-13T05:30:38.247Z",
+  "generatedAt": "2026-11-13T05:45:28.093Z",
   "portFetched": true,
-  "count": 4,
+  "count": 6,
   "ships": [
     {
       "name": "CAPE SYROS",
@@ -10,16 +10,28 @@
       "date": "11/16"
     },
     {
+      "name": "NYK FUSHIMI",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "11/15"
+    },
+    {
       "name": "ONE DURBAN",
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
-      "date": "11/16"
+      "date": "11/18"
     },
     {
       "name": "RICH SAILING",
       "kind": "一般貨物船",
       "flag": "BELIZE",
       "date": "11/16"
+    },
+    {
+      "name": "STR LUCKY",
+      "kind": "東航路",
+      "flag": "PAN",
+      "date": "11/14"
     },
     {
       "name": "VESTA",
