@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-13T04:30:36.349Z",
+  "generatedAt": "2026-11-13T04:45:27.423Z",
   "portFetched": true,
-  "count": 5,
+  "count": 4,
   "ships": [
     {
       "name": "CAPE SYROS",
@@ -26,12 +26,6 @@
       "kind": "フルコンテナ船",
       "flag": "ANTIGUA AND BARBUDA",
       "date": "11/17"
-    },
-    {
-      "name": "立眞丸",
-      "kind": "西航路",
-      "flag": "JPN",
-      "date": "11/13"
     }
   ]
 }
