@@ -676,6 +676,10 @@
     'YM WEALTH':'636012252','海凜丸':'431013507',
     // 未登録船リストより(2026-11-11)
     'FUJISUKA':'636020745','PEGASUS GLORY':'636023329',
+    // 未登録船リスト＋港湾表示の国内船より(2026-11-13)。STR LUCKY(旧ATLANTIC VERACRUZ)/ONE DURBAN(旧OOCL DURBAN)/RICH SAILING(シエラレオネ籍の記録あり)は旧番号が残るためIMO。
+    // みどりは英語キーMIDORI(431301806=別のタンカー)と別船のため日本語名のみ。第十三英裕丸も日本語名のみ
+    'CAPE SYROS':'210497000','EVER SALUTE':'563102400','NYK FUSHIMI':'566335000','ONE DURBAN':'9567673','RICH SAILING':'9153991','STR LUCKY':'9550149',
+    'みどり':'431026739','第十三英裕丸':'431025497',
     // 個別追加（ONE CONTRIBUTION/CS BEST/かなざわ）
     'ONE CONTRIBUTION':'431225000','CS BEST':'566006000','かなざわ':'431007657','KANAZAWA':'431007657',
     // 今週(向こう1週間)の外航船（未登録分・第2弾）
@@ -4016,7 +4020,7 @@
   const EXCLUDE_BERTHS = new Set(
     ['P','KK','中防東','NA','LOB','LLB','LE','VAC','C','LLE','LLD','LLC','LLF','LM1','LM2','M']);
   // ふ頭（係船＝東京港港湾情報システムの航路）完全一致
-  const EXCLUDE_FU = new Set(['辰巳','大井水産・食品']);
+  const EXCLUDE_FU = new Set(['辰巳','大井水産・食品','大井建材']);
   // 必ず東/西航路に載る定期RORO船（神シリーズ・海シリーズ）。航路が確定した日付では、港湾システム由来の行を出さない
   // ※同じ名前の小型船・練習船を巻き込まないよう、5,000トン以上のときだけ対象
   const ROUTE_ONLY_SHIPS = new Set(['神永丸','神王丸','神珠丸','神北丸','神明丸','神加丸','神泉丸','海王丸','天王丸'].map(normShip));
