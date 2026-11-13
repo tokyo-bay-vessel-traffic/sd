@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-13T14:45:31.132Z",
+  "generatedAt": "2026-11-13T15:00:49.448Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "PEACE SAPPHIRE",
+      "kind": "一般貨物船",
+      "flag": "MARSHALL ISLANDS",
+      "date": "11/21"
+    },
     {
       "name": "VESTA",
       "kind": "フルコンテナ船",
