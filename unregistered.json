@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-13T02:30:37.765Z",
+  "generatedAt": "2026-11-13T02:45:26.697Z",
   "portFetched": true,
-  "count": 4,
+  "count": 5,
   "ships": [
     {
       "name": "CAPE SYROS",
@@ -20,6 +20,12 @@
       "kind": "一般貨物船",
       "flag": "BELIZE",
       "date": "11/16"
+    },
+    {
+      "name": "VESTA",
+      "kind": "フルコンテナ船",
+      "flag": "ANTIGUA AND BARBUDA",
+      "date": "11/17"
     },
     {
       "name": "立眞丸",
