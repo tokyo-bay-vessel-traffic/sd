@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-15T17:15:27.861Z",
+  "generatedAt": "2026-11-15T17:30:37.649Z",
   "portFetched": true,
-  "count": 3,
+  "count": 2,
   "ships": [
     {
       "name": "PEACE SAPPHIRE",
@@ -14,12 +14,6 @@
       "kind": "フルコンテナ船",
       "flag": "ANTIGUA AND BARBUDA",
       "date": "11/17"
-    },
-    {
-      "name": "陽光丸",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "11/16"
     }
   ]
 }
