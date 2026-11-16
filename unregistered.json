@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-16T04:15:29.078Z",
+  "generatedAt": "2026-11-16T04:30:37.579Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
+    {
+      "name": "NYK FUTAGO",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "11/19"
+    },
     {
       "name": "PEACE SAPPHIRE",
       "kind": "一般貨物船",
