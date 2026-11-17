@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-17T05:30:41.576Z",
+  "generatedAt": "2026-11-17T05:45:28.202Z",
   "portFetched": true,
-  "count": 3,
+  "count": 4,
   "ships": [
     {
       "name": "NYK FUTAGO",
@@ -19,6 +19,12 @@
       "name": "VESTA",
       "kind": "フルコンテナ船",
       "flag": "ANTIGUA AND BARBUDA",
+      "date": "11/18"
+    },
+    {
+      "name": "瑞竜丸",
+      "kind": "東航路",
+      "flag": "JPN",
       "date": "11/18"
     }
   ]
