@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-18T14:45:30.551Z",
+  "generatedAt": "2026-11-18T15:00:52.261Z",
   "portFetched": true,
-  "count": 5,
+  "count": 7,
   "ships": [
+    {
+      "name": "C.S.PRINCESS",
+      "kind": "一般貨物船",
+      "flag": "PANAMA",
+      "date": "11/26"
+    },
     {
       "name": "NYK FURANO",
       "kind": "西航路",
@@ -14,6 +20,12 @@
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "11/23"
+    },
+    {
+      "name": "OKEE AURELIA",
+      "kind": "フルコンテナ船",
+      "flag": "ANTIGUA AND BARBUDA",
+      "date": "11/26"
     },
     {
       "name": "PEACE SAPPHIRE",
