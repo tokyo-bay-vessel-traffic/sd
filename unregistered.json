@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-18T01:30:37.545Z",
+  "generatedAt": "2026-11-18T01:45:28.335Z",
   "portFetched": true,
-  "count": 5,
+  "count": 4,
   "ships": [
     {
       "name": "NYK FUTAGO",
@@ -23,12 +23,6 @@
     },
     {
       "name": "しゅれいＩＩ",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "11/18"
-    },
-    {
-      "name": "瑞竜丸",
       "kind": "東航路",
       "flag": "JPN",
       "date": "11/18"
