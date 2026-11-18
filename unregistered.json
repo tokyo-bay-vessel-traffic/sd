@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-18T08:30:39.779Z",
+  "generatedAt": "2026-11-18T08:45:29.524Z",
   "portFetched": true,
   "count": 6,
   "ships": [
@@ -23,8 +23,8 @@
     },
     {
       "name": "VESTA",
-      "kind": "フルコンテナ船",
-      "flag": "ANTIGUA AND BARBUDA",
+      "kind": "西航路",
+      "flag": "ATG",
       "date": "11/19"
     },
     {
