@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-18T05:00:46.409Z",
+  "generatedAt": "2026-11-18T05:15:27.483Z",
   "portFetched": true,
-  "count": 4,
+  "count": 6,
   "ships": [
+    {
+      "name": "NYK FURANO",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "11/19"
+    },
     {
       "name": "NYK FUTAGO",
       "kind": "フルコンテナ船",
@@ -26,6 +32,12 @@
       "kind": "東航路",
       "flag": "JPN",
       "date": "11/18"
+    },
+    {
+      "name": "瑞竜丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "11/19"
     }
   ]
 }
