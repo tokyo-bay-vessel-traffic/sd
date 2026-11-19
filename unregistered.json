@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T10:00:46.132Z",
+  "generatedAt": "2026-11-19T10:15:29.937Z",
   "portFetched": true,
   "count": 8,
   "ships": [
@@ -19,7 +19,7 @@
       "name": "NYK FURANO",
       "kind": "西航路",
       "flag": "SGP",
-      "date": "11/19"
+      "date": "11/20"
     },
     {
       "name": "NYK FUTAGO",
@@ -49,7 +49,7 @@
       "name": "VESTA",
       "kind": "西航路",
       "flag": "ATG",
-      "date": "11/19"
+      "date": "11/20"
     }
   ]
 }
