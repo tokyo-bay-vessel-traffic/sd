@@ -1,13 +1,19 @@
 {
-  "generatedAt": "2026-11-19T06:15:28.188Z",
+  "generatedAt": "2026-11-19T06:30:39.771Z",
   "portFetched": true,
-  "count": 6,
+  "count": 8,
   "ships": [
     {
       "name": "C.S.PRINCESS",
       "kind": "一般貨物船",
       "flag": "PANAMA",
       "date": "11/26"
+    },
+    {
+      "name": "CTS SUTONG",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "11/22"
     },
     {
       "name": "NYK FURANO",
@@ -32,6 +38,12 @@
       "kind": "一般貨物船",
       "flag": "MARSHALL ISLANDS",
       "date": "11/21"
+    },
+    {
+      "name": "SITC RUIDE",
+      "kind": "フルコンテナ船",
+      "flag": "HONG KONG",
+      "date": "11/23"
     },
     {
       "name": "VESTA",
