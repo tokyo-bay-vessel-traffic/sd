@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-19T15:00:51.099Z",
+  "generatedAt": "2026-11-19T15:15:28.794Z",
   "portFetched": true,
   "count": 10,
   "ships": [
@@ -41,8 +41,8 @@
     },
     {
       "name": "PEACE SAPPHIRE",
-      "kind": "一般貨物船",
-      "flag": "MARSHALL ISLANDS",
+      "kind": "西航路",
+      "flag": "MHL",
       "date": "11/21"
     },
     {
