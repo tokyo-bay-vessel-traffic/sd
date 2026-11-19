@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-19T23:00:46.151Z",
+  "generatedAt": "2026-11-19T23:15:27.244Z",
   "portFetched": true,
-  "count": 10,
+  "count": 9,
   "ships": [
     {
       "name": "ASIAN NAGA",
@@ -20,12 +20,6 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "11/22"
-    },
-    {
-      "name": "NYK FURANO",
-      "kind": "西航路",
-      "flag": "SGP",
-      "date": "11/20"
     },
     {
       "name": "NYK FUTAGO",
