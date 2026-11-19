@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-19T05:15:28.084Z",
+  "generatedAt": "2026-11-19T05:30:37.449Z",
   "portFetched": true,
-  "count": 7,
+  "count": 6,
   "ships": [
     {
       "name": "C.S.PRINCESS",
@@ -37,12 +37,6 @@
       "name": "VESTA",
       "kind": "西航路",
       "flag": "ATG",
-      "date": "11/19"
-    },
-    {
-      "name": "瑞竜丸",
-      "kind": "東航路",
-      "flag": "JPN",
       "date": "11/19"
     }
   ]
