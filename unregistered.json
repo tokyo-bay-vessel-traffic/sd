@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-19T14:45:29.414Z",
+  "generatedAt": "2026-11-19T15:00:51.099Z",
   "portFetched": true,
-  "count": 8,
+  "count": 10,
   "ships": [
+    {
+      "name": "ASIAN NAGA",
+      "kind": "ＲＯＲＯ船",
+      "flag": "PANAMA",
+      "date": "11/27"
+    },
     {
       "name": "C.S.PRINCESS",
       "kind": "一般貨物船",
@@ -44,6 +50,12 @@
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "11/23"
+    },
+    {
+      "name": "TIDE VANTAGE",
+      "kind": "フルコンテナ船",
+      "flag": "BAHAMAS",
+      "date": "11/27"
     },
     {
       "name": "VESTA",
