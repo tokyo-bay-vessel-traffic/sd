@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-20T15:01:09.779Z",
+  "generatedAt": "2026-11-20T15:15:32.192Z",
   "portFetched": true,
-  "count": 4,
+  "count": 5,
   "ships": [
     {
       "name": "CTS SUTONG",
@@ -17,15 +17,21 @@
     },
     {
       "name": "EVER WEB",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "11/22"
+    },
+    {
+      "name": "NAUSICAA",
+      "kind": "西航路",
+      "flag": "GBR",
       "date": "11/22"
     },
     {
       "name": "WAN HAI 293",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "11/23"
+      "kind": "西航路",
+      "flag": "SGP",
+      "date": "11/22"
     }
   ]
 }
