@@ -1,61 +1,13 @@
 {
-  "generatedAt": "2026-11-20T00:45:27.658Z",
+  "generatedAt": "2026-11-20T01:00:47.870Z",
   "portFetched": true,
-  "count": 9,
+  "count": 1,
   "ships": [
-    {
-      "name": "ASIAN NAGA",
-      "kind": "ＲＯＲＯ船",
-      "flag": "PANAMA",
-      "date": "11/27"
-    },
-    {
-      "name": "C.S.PRINCESS",
-      "kind": "一般貨物船",
-      "flag": "PANAMA",
-      "date": "11/26"
-    },
     {
       "name": "CTS SUTONG",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "11/22"
-    },
-    {
-      "name": "NYK FUTAGO",
-      "kind": "フルコンテナ船",
-      "flag": "SINGAPORE",
-      "date": "11/23"
-    },
-    {
-      "name": "OKEE AURELIA",
-      "kind": "フルコンテナ船",
-      "flag": "ANTIGUA AND BARBUDA",
-      "date": "11/26"
-    },
-    {
-      "name": "PEACE SAPPHIRE",
-      "kind": "一般貨物船",
-      "flag": "MARSHALL ISLANDS",
-      "date": "11/21"
-    },
-    {
-      "name": "SITC RUIDE",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "11/23"
-    },
-    {
-      "name": "TIDE VANTAGE",
-      "kind": "フルコンテナ船",
-      "flag": "BAHAMAS",
-      "date": "11/27"
-    },
-    {
-      "name": "VESTA",
-      "kind": "西航路",
-      "flag": "ATG",
-      "date": "11/20"
     }
   ]
 }
