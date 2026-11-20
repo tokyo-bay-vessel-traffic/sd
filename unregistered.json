@@ -1,7 +1,7 @@
 {
-  "generatedAt": "2026-11-20T04:15:27.665Z",
+  "generatedAt": "2026-11-20T04:30:36.820Z",
   "portFetched": true,
-  "count": 2,
+  "count": 3,
   "ships": [
     {
       "name": "CTS SUTONG",
@@ -11,6 +11,12 @@
     },
     {
       "name": "EVER WEB",
+      "kind": "フルコンテナ船",
+      "flag": "SINGAPORE",
+      "date": "11/22"
+    },
+    {
+      "name": "WAN HAI 293",
       "kind": "フルコンテナ船",
       "flag": "SINGAPORE",
       "date": "11/22"
