@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-11-23T14:30:40.767Z",
+  "generatedAt": "2026-11-23T14:45:30.386Z",
   "portFetched": true,
-  "count": 2,
+  "count": 1,
   "ships": [
     {
       "name": "CTS SUTONG",
       "kind": "フルコンテナ船",
       "flag": "HONG KONG",
       "date": "11/25"
-    },
-    {
-      "name": "PANSTAR GENIE No2",
-      "kind": "西航路",
-      "flag": "KOR",
-      "date": "11/24"
     }
   ]
 }
