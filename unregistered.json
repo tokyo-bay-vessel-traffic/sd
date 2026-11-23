@@ -1,13 +1,6 @@
 {
-  "generatedAt": "2026-11-23T23:00:50.338Z",
+  "generatedAt": "2026-11-23T23:15:30.872Z",
   "portFetched": true,
-  "count": 1,
-  "ships": [
-    {
-      "name": "CTS SUTONG",
-      "kind": "フルコンテナ船",
-      "flag": "HONG KONG",
-      "date": "11/25"
-    }
-  ]
+  "count": 0,
+  "ships": []
 }
