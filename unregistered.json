@@ -1,8 +1,14 @@
 {
-  "generatedAt": "2026-11-25T05:15:37.412Z",
+  "generatedAt": "2026-11-25T05:30:36.200Z",
   "portFetched": true,
-  "count": 1,
+  "count": 2,
   "ships": [
+    {
+      "name": "OSAKA VOYAGER",
+      "kind": "フルコンテナ船",
+      "flag": "KOREA, REPUBLIC OF",
+      "date": "11/27"
+    },
     {
       "name": "第十五興徳丸",
       "kind": "東航路",
