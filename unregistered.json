@@ -1,6 +1,13 @@
 {
-  "generatedAt": "2026-11-25T05:00:45.003Z",
+  "generatedAt": "2026-11-25T05:15:37.412Z",
   "portFetched": true,
-  "count": 0,
-  "ships": []
+  "count": 1,
+  "ships": [
+    {
+      "name": "第十五興徳丸",
+      "kind": "東航路",
+      "flag": "JPN",
+      "date": "11/26"
+    }
+  ]
 }
