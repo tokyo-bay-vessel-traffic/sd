@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-11-27T16:15:42.555Z",
+  "generatedAt": "2026-11-27T16:30:54.029Z",
   "portFetched": false,
-  "count": 2,
+  "count": 1,
   "ships": [
-    {
-      "name": "OSAKA VOYAGER",
-      "kind": "西航路",
-      "flag": "KOR",
-      "date": "11/29"
-    },
     {
       "name": "RDO ENDEAVOUR",
       "kind": "西航路",
