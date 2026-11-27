@@ -1,19 +1,13 @@
 {
-  "generatedAt": "2026-11-27T10:30:48.317Z",
+  "generatedAt": "2026-11-27T10:45:35.279Z",
   "portFetched": false,
-  "count": 2,
+  "count": 1,
   "ships": [
     {
       "name": "RDO ENDEAVOUR",
       "kind": "西航路",
       "flag": "LBR",
       "date": "11/28"
-    },
-    {
-      "name": "しゅれいＩＩ",
-      "kind": "東航路",
-      "flag": "JPN",
-      "date": "11/27"
     }
   ]
 }
