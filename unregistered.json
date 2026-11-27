@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-11-27T05:15:31.360Z",
+  "generatedAt": "2026-11-27T05:30:39.589Z",
   "portFetched": true,
   "count": 3,
   "ships": [
@@ -11,8 +11,8 @@
     },
     {
       "name": "RDO ENDEAVOUR",
-      "kind": "フルコンテナ船",
-      "flag": "LIBERIA",
+      "kind": "西航路",
+      "flag": "LBR",
       "date": "11/28"
     },
     {
