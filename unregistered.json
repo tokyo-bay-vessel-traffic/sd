@@ -1,14 +1,8 @@
 {
-  "generatedAt": "2026-11-28T15:45:35.864Z",
+  "generatedAt": "2026-11-28T16:00:55.439Z",
   "portFetched": false,
-  "count": 3,
+  "count": 2,
   "ships": [
-    {
-      "name": "HONG DA",
-      "kind": "西航路",
-      "flag": "HKG",
-      "date": "11/30"
-    },
     {
       "name": "OSAKA VOYAGER",
       "kind": "西航路",
